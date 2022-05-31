@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <head>
-    <title>Développer de manière accessible - Stratis</title>
+    <title>Développer accessible - Stratis</title>
     <meta charset="utf-8">    <!-- Layout stylesheet -->
     <link rel="stylesheet" href="css/font/tiny.css" type="text/css" media="screen">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
@@ -48,7 +48,7 @@
         <div id="wrappernav">
             <p class="related"><a href="http://www.stratis.fr" target="_blank"><img src="img_slide/stratis-logo.png"
                                                                                     alt="stratis.fr"/></a>
-                Développer de manière accessible</p>
+                Développer accessible</p>
             <!--				<ul class="related">-->
             <!--					<li><a href="http://www.stratis.fr" target="_blank"><img src="img_slide/stratis-logo.png" alt="stratis.fr" /></a></li>-->
             <!--					<li><a href="#" target="_blank">Télécharger la ressource en PDF</a></li>-->
@@ -65,7 +65,7 @@
             <section class="slide couv">
                 <div class="slide-couv">
                     <div class="slide-couv--wrapper">
-                        <h1>Développer de manière accessible</h1>
+                        <h1>Développer accessible</h1>
                         <img src="img_slide/handicaps.png" alt="Handicaps visuels, moteurs, cognitifs et auditifs"
                              class="margin-normal"><br>
                         <img src="img_slide/stratis-logo-big.png" alt="Stratis" class="margin-big">
@@ -78,7 +78,7 @@
                     <div class="slide-simple--wrapper">
                         <h1>Introduction</h1>
                         <p class="center">HTML, CSS, JavaScript...
-                            <br>RGAA... <br>ARIA...</p>
+                            <br>ARIA...<br>RGAA, WCAG... </p>
                     </div>
                 </div>
             </section>
@@ -141,7 +141,44 @@
                 </header>
                 <div class="slide-simple">
                     <div class="slide-simple--wrapper">
-                        <h2>ARIA</h2>
+                        <h2>Utiliser les ressources du RGAA</h2>
+                        <p>Vous trouverez sur le
+                            <a href="https://www.numerique.gouv.fr/publications/rgaa-accessibilite/obligations/"
+                               rel="noopener noreferrer"
+                               target="_blank">site du RGAA</a> toutes les informations le concernant.</p>
+                        <ul>
+                            <li><a
+                                    href="https://www.numerique.gouv.fr/publications/rgaa-accessibilite/obligations/#contenu"
+                                    rel="noopener noreferrer"
+                                    target="_blank">Les obligations légales&nbsp;;</a></li>
+                            <li>La méthode technique&nbsp;:
+                                <ul>
+                                    <li>
+                                        <a href="https://www.numerique.gouv.fr/publications/rgaa-accessibilite/methode/criteres/#contenu"
+                                           rel="noopener noreferrer"
+                                           target="_blank">Les critères, leur tests et références aux WCAG</a>&nbsp;;
+                                    </li>
+                                    <li>
+                                        <a href="https://www.numerique.gouv.fr/publications/rgaa-accessibilite/methode/glossaire/#contenu"
+                                           rel="noopener noreferrer"
+                                           target="_blank">Le glossaire</a>&nbsp;;
+                                    </li>
+                                    <li>
+                                        <a href="https://www.numerique.gouv.fr/publications/rgaa-accessibilite/methodologie-test/#contenu"
+                                           rel="noopener noreferrer"
+                                           target="_blank">Une méthodologie de test simplifiée</a>.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h1>ARIA</h1>
                         <p><strong>ARIA est une spécification technique du W3C</strong> qui a pour but d'<strong>améliorer
                             l'accessibilité des contenus</strong> développés avec HTML, JavaScript, et les technologies
                             connexes.</p>
@@ -164,46 +201,245 @@
 
             <section class="slide">
                 <header class="main-header clearfix">
-                    <h1 class="main-title">Introduction</h1>
+                    <h1 class="main-title">ARIA</h1>
                 </header>
-                <div class="slide-double --title">
-                    <div class="slide-double--title"><h2 style="margin:0">ARIA</h2></div>
-                    <div class="slide-double--left">
-                        <h3>Les attributs <code>role</code></h3>
-                        <p>Fournissent des informations sur l'objectif, l'identité, le rôle d'un élément HTML.</p>
-                        <p>Exemples avec des éléments existants en HTML&nbsp;:</p>
-                        <ul>
-                            <li>Navigation&nbsp;: <code>role="navigation"</code></li>
-                            <li>Titre&nbsp;: <code>role="heading"</code></li>
-                            <li>Région principale&nbsp;: <code>role="main"</code></li>
-                            <li>Lien&nbsp;: <code>role="link"</code></li>
-                        </ul>
-                        <p>Exemples avec des éléments inexistants en HTML&nbsp;:</p>
-                        <ul>
-                            <li>Arbre&nbsp;: <code>role="tree"</code></li>
-                            <li>Onglet&nbsp;: <code>role="tab"</code></li>
-                            <li>Barre de défilement&nbsp;: <code>role="scrollbar"</code></li>
-                            <li>Zone de recherche&nbsp;: <code>role="search"</code></li>
-                            <li>...</li>
-                        </ul>
-                    </div>
-                    <div class="slide-double--right">
-                        <h3>Les attributs <code>aria-*</code></h3>
-                        <p>Fournissent des informations relatives à l'état d'un élément.</p>
-                        <p>Exemples&nbsp;:</p>
-                        <ul>
-                            <li>Élément affiché/caché&nbsp;: <code>aria-hidden</code></li>
-                            <li>Élément coché/décoché&nbsp;: <code>aria-checked</code></li>
-                            <li>Élément sélectionné/désélectionné&nbsp;: <code>aria-selected</code></li>
-                            <li>Élément pressé/non-pressé&nbsp;: <code>aria-pressed</code></li>
-                            <li>Élément activé/désactivé&nbsp;: <code>aria-disabled</code></li>
-                            <li>Élément réduit/développé&nbsp;: <code>aria-expanded</code></li>
-                            <li>...</li>
-                        </ul>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Quand utiliser ARIA ?</h2>
+                        <p class="encadre">ARIA ne doit être utilisé que lorsque c'est nécessaire&nbsp;!</p>
+                        <p><b>Utilisez les fonctionnalités HTML natives en priorité pour fournir la sémantique.</b></p>
+                        <p>HTML peut parfois montrer certaines limites&nbsp;: contrôle limité sur le code, composant
+                            trop complexe, équivalents HTML trop complexe à implémenter... ARIA devient alors un outil
+                            précieux pour améliorer l'accessibilité.</p>
                     </div>
                 </div>
             </section>
 
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">ARIA</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Quand utiliser ARIA ?</h2>
+                        <p class="encadre">ARIA ne doit être utilisé que lorsque c'est nécessaire&nbsp;!</p>
+                        <p><b>Toujours préférer les fonctionnalités HTML natives pour fournir la sémantique.</b></p>
+                        <p>HTML peut parfois montrer certaines limites&nbsp;: contrôle limité sur le code, composant
+                            trop complexe, équivalents HTML trop complexe à implémenter... ARIA devient alors un outil
+                            précieux pour améliorer l'accessibilité.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">ARIA</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>L'attribut <code>role</code></h2>
+                        <p>Fournissent des informations sur le type et le rôle d'un élément HTML.<br>
+                            <a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" target="_blank"
+                               rel="noopener noreferrer">Ressources&nbsp;: tous les rôles dans les WCAG</a></p>
+                        <h3>Les éléments principaux du document, ou <strong lang="en">Landmarks</strong></h3>
+                        <ul>
+                            <li>L'entête du site&nbsp;: <code>&lt;header role="banner"&gt;</code></li>
+                            <li>Les navigations principales et secondaires&nbsp;: <code>&lt;nav
+                                role="navigation"&gt;</code></li>
+                            <li>L'accès à la recherche&nbsp;: <code>&lt;div role="search"&gt;&lt;form&gt;</code></li>
+                            <li>La région principale&nbsp;: <code>&lt;main role="main"&gt;</code></li>
+                            <li>La région complémentaire (colonne de contenu supplémentaire par exemple)&nbsp;: <code>&lt;aside
+                                role="complementary"&gt;</code></li>
+                            <li>Le bas de page&nbsp;: <code>&lt;footer role="contentinfo"&gt;</code></li>
+                        </ul>
+                        <p><a href="https://www.w3.org/TR/wai-aria-1.1/#landmark_roles" target="_blank"
+                              rel="noopener noreferrer">Ressources&nbsp;: tous les <span lang="en">landmarks</span> dans
+                            les WCAG</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">ARIA</h1>
+                </header>
+                <div class="slide-double --title">
+                    <div class="slide-double--title">
+                        <h2 style="margin:0">L'attribut <code>role</code></h2>
+                    </div>
+                    <div class="slide-double--left">
+                        <h3>Les éléments interactifs autonomes</h3>
+                        <ul>
+                            <li>Bouton&nbsp;: <code>role="button"</code></li>
+                            <li>Lien&nbsp;: <code>role="link"</code></li>
+                            <li>Case à cocher&nbsp;: <code>role="checkbox"</code></li>
+                            <li>Bouton radio&nbsp;: <code>role="radio"</code></li>
+                            <li>Barre de progression&nbsp;: <code>role="progressbar"</code></li>
+                            <li>...</li>
+                        </ul>
+                        <p><a href="https://www.w3.org/TR/wai-aria-1.1/#widget_roles" target="_blank"
+                              rel="noopener noreferrer">Ressources&nbsp;: tous les rôles d'éléments interactifs dans les
+                            WCAG</a></p>
+                    </div>
+                    <div class="slide-double--right">
+                        <h3>Les éléments interactifs composites (notion de conteneur/contenu et de parent/enfant)</h3>
+                        <ul>
+                            <li>Menu&nbsp;: <code>&lt;ul role="menu"&gt;&lt;li role="menuitem"&gt;</code></li>
+                            <li>Onglets&nbsp;: <br/><code>&lt;div role="tab"&gt;<br/>
+                                &nbsp;&lt;ul role="tablist"&gt;&lt;li
+                                role="tablist"&gt;Onglet&lt;/li&gt;&lt;/ul&gt;<br/>
+                                &nbsp;&lt;div role="tabpanel"&gt;Contenu&lt;/div&gt;<br/>
+                                &lt;/div&gt;</code>
+                            </li>
+                            <li>Arbre&nbsp;: <code>&lt;ul role="tree"&gt;&lt;li role="treeitem"&gt;</code></li>
+                            <li>...</li>
+                        </ul>
+                        <p><a href="https://www.w3.org/TR/wai-aria-1.1/#widget_roles" target="_blank"
+                              rel="noopener noreferrer">Ressources&nbsp;: tous les rôles d'éléments interactifs dans les
+                            WCAG</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">ARIA</h1>
+                </header>
+                <div class="slide-double --title">
+                    <div class="slide-double--title">
+                        <h2 style="margin:0">L'attribut <code>role</code></h2>
+                    </div>
+                    <div class="slide-double--left">
+                        <h3>Les éléments de structuration du contenu (titres, images, listes, tableaux,
+                            infobulles...)</h3>
+                        <ul>
+                            <li>Titre&nbsp;: <code>role="heading"</code></li>
+                            <li>Lien&nbsp;: <code>role="link"</code></li>
+                            <li>Image&nbsp;: <code>role="img"</code></li>
+                            <li>Liste&nbsp;: <code>role="list"</code>, <code>role="listitem"</code></li>
+                            <li>Tableau&nbsp;: <code>role="table"</code>, <code>role="cell"</code>,
+                                <code>role="row"</code></li>
+                            <li>...</li>
+                        </ul>
+                        <p><a href="https://www.w3.org/TR/wai-aria-1.1/#document_structure_roles" target="_blank"
+                              rel="noopener noreferrer">Ressources&nbsp;: tous les rôles d'éléments de contenu dans les
+                            WCAG</a></p>
+                    </div>
+                    <div class="slide-double--right">
+                        <h3>Les zones <span lang="en">Live</span></h3>
+                        <p>Zones lues à chaque modification/apparition/disparition (JavaScript)&nbsp;:</p>
+                        <ul>
+                            <li>Alerte&nbsp;: <code>role="alert"</code></li>
+                            <li>Information générique&nbsp;: <code>role="log"</code></li>
+                            <li>Information de statut ou d'état&nbsp;: <code>role="status"</code></li>
+                            <li>...</li>
+                        </ul>
+                        <p><a href="https://www.w3.org/TR/wai-aria-1.1/#live_region_roles" target="_blank"
+                              rel="noopener noreferrer">Ressources&nbsp;: tous les rôles de zones <span
+                                lang="en">Live</span> dans les WCAG</a></p>
+                        <h3>Les fenêtres&nbsp;:</h3>
+                        <ul>
+                            <li>Fenêtre de dialogue&nbsp;: <code>role="alertdialog"</code></li>
+                            <li>Fenêtre modale&nbsp;: <code>role="dialog"</code></li>
+                        </ul>
+                        <p><a href="https://www.w3.org/TR/wai-aria-1.1/#window_roles" target="_blank"
+                              rel="noopener noreferrer">Ressources&nbsp;: tous les rôles de fenêtres dans les WCAG</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">ARIA</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Les attributs <code>aria-*</code></h2>
+                        <h3>Quelques attributs d'état et de propriété, notamment pour les éléments interactifs</h3>
+                        <ul>
+                            <li>Élément réduit/développé&nbsp;: <code>aria-expanded</code></li>
+                            <li>Élément affiché/caché&nbsp;: <code>aria-hidden</code></li>
+                            <li>Nom accessible d'un élément&nbsp;: <code>aria-label</code></li>
+                            <li>Niveau hiérarchique (titre, arbre...)&nbsp;: <code>aria-level</code></li>
+                            <li>Élément sélectionné/désélectionné&nbsp;: <code>aria-selected</code></li>
+                            <li>Élément pressé/non-pressé&nbsp;: <code>aria-pressed</code></li>
+                            <li>Élément actif/inactif&nbsp;: <code>aria-disabled</code></li>
+                            <li>Élément obligatoire (champ de formulaire)&nbsp;: <code>aria-required</code></li>
+                            <li>...</li>
+                        </ul>
+                        <p><a href="https://www.w3.org/TR/wai-aria-1.1/#attrs_widgets" target="_blank"
+                              rel="noopener noreferrer">Ressources&nbsp;: tous les attributs aria d'éléments interactifs
+                            dans les WCAG</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">ARIA</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Les attributs <code>aria-*</code></h2>
+                        <h3>Quelques attributs de zone <span lang="en">Live</span></h3>
+                        <ul>
+                            <li>Indique que l'élément sera modifié afin que les technologies d'assistance puisse
+                                "l'écouter"&nbsp;: <code>aria-live</code>
+                                <ul>
+                                    <li>Avec la valeur <code>polite</code>, les technologies d'assistance informeront
+                                        l'utilisateur sans interrompre la tâche en cours (message à priorité peu
+                                        élevée).
+                                    </li>
+                                    <li>Avec la valeur <code>assertive</code>, les technologies d'assistance avertiront
+                                        immédiatement l'utilisateur pouvant effacer la file d'attente des informations
+                                        non-restituées (message à priorité très élevée).
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Indique si les technologies d'assistance présenteront la totalité (<code>true</code>) ou
+                                seulement certaines parties de l'élément modifié ou seulement l'enfant modifié (<code>false</code>)&nbsp;:
+                                <code>aria-atomic</code></li>
+                            <li>Indique qu'un élément est en cours de modification (<code>true</code>) et que les
+                                technologies d'assistance doivent attendre que les modifications soient terminées avant
+                                de les exposer à l'utilisateur (<code>false</code>)&nbsp;:
+                                <code>aria-busy</code></li>
+                            <li>...</li>
+                        </ul>
+                        <p><a href="https://www.w3.org/TR/wai-aria-1.1/#attrs_liveregions" target="_blank"
+                              rel="noopener noreferrer">Ressources&nbsp;: tous les attributs aria de zones <span
+                                lang="en">Live</span> dans les WCAG</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">ARIA</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Les attributs <code>aria-*</code></h2>
+                        <h3>Quelques attributs de relation</h3>
+                        <ul>
+                            <li>Indique le ou les éléments dont la présence est contrôlée par l'élément
+                                courant&nbsp;: <code>aria-controls</code></li>
+                            <li>Définir une relation enfant/parent lorsque la hiérarchie du DOM ne peut pas être
+                                utilisée pour représenter la relation&nbsp;: <code>aria-owns</code></li>
+                            <li>Indique le ou les éléments qui identifient l'élément actuel&nbsp;: <code>aria-labelledby</code>
+                            </li>
+                            <li>Indique le ou les éléments qui décrivent l'élément actuel&nbsp;: <code>aria-describedby</code>
+                            </li>
+                            <li>Indique l'élément actuel comme étant un message d'erreur&nbsp;:
+                                <code>aria-errormessage</code></li>
+                            <li>...</li>
+                        </ul>
+                        <p><a href="https://www.w3.org/TR/wai-aria-1.1/#attrs_relationships" target="_blank"
+                              rel="noopener noreferrer">Ressources&nbsp;: tous les attributs aria de relations dans les
+                            WCAG</a></p>
+                    </div>
+                </div>
+            </section>
 
             <section class="slide">
                 <div class="slide-simple">

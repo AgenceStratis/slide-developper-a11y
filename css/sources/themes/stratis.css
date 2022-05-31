@@ -33,7 +33,7 @@ Index
     --font-alt: #fff;
     --main-bg: #fff;
     --backg: #666;
-    --backg-alt: #F9F9F9;
+    --backg-alt: #e2e2e2;
     --theme: #ca3432;
 
 }
@@ -615,7 +615,7 @@ button.disc1:focus {
  */
 
 .slide .encadre {
-    background: var(--backg-alt);
+    background: var(--backg);
     font-family: 'os-bold';
     padding: 1rem;
 }
