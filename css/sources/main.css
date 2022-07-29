@@ -602,7 +602,7 @@ img.center {
     align-items: center;
     padding: 2rem;
     width: 70%;
-    max-width: 1080px;
+    /*max-width: 1080px;*/
     margin: 0 auto;
 }
 
@@ -617,8 +617,8 @@ img.center {
     justify-content: center;
     align-items: center;
     padding: 2rem;
-    width: 70%;
-    max-width: 1080px;
+    width: 90%;
+    /*max-width: 1080px;*/
     margin: 0 auto;
 }
 

@@ -32,7 +32,7 @@ Index
     --font: #000;
     --font-alt: #fff;
     --main-bg: #fff;
-    --backg: #666;
+    --backg: #ddd;
     --backg-alt: #e2e2e2;
     --theme: #ca3432;
 
@@ -176,10 +176,6 @@ caption {
 
 thead {
     border-bottom: 1px solid var(--backg);
-}
-
-tbody tr:nth-child(even) {
-    background-color: var(--backg-alt);
 }
 
 th {
@@ -398,7 +394,7 @@ q {
 
 .slide-counter-total {
     background-color: var(--backg);
-    color: var(--font-alt);
+    /*color: var(--font-alt);*/
     border: 1px solid transparent;
 }
 

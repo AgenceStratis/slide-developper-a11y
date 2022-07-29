@@ -118,7 +118,7 @@ button {
 }
 
 .slide button {
-	border: 1px solid #F9F9F9;
+	border: 1px solid #e2e2e2;
 	border-radius: 3px;
 	font-size: 90%;
 	margin-bottom: 2px;
@@ -126,7 +126,7 @@ button {
 
 .slide button:hover {
 	border: 1px solid #ca3432;
-	background: #F9F9F9;
+	background: #e2e2e2;
 }
 
 figcaption {
@@ -152,7 +152,7 @@ blockquote::before {
 	top: 0;
 	left: 0;
 	font-size: 12rem;
-	color: #666;
+	color: #ddd;
 	line-height: 0.7em;
 	letter-spacing: -0.2em;
 }
@@ -162,8 +162,8 @@ kbd {
 	position: relative;
 	top: -2px;
 	padding: 1px 3px;
-	border: 1px solid #666;
-	background: #F9F9F9;
+	border: 1px solid #ddd;
+	background: #e2e2e2;
 	font-size: 70%;
 	line-height: 1em;
 	white-space: nowrap;
@@ -207,15 +207,11 @@ caption {
 	font-size: 60%;
 	font-weight: bold;
 	text-align: left;
-	background: #F9F9F9;
+	background: #e2e2e2;
 }
 
 thead {
-	border-bottom: 1px solid #666;
-}
-
-tbody tr:nth-child(even) {
-	background-color: #F9F9F9;
+	border-bottom: 1px solid #ddd;
 }
 
 th {
@@ -433,12 +429,11 @@ q {
 .slide-counter-current {
 	background-color: #fff;
 	color: #000;
-	border: 1px solid #666;
+	border: 1px solid #ddd;
 }
 
 .slide-counter-total {
-	background-color: #666;
-	color: #fff;
+	background-color: #ddd; /*color: var(--font-alt);*/
 	border: 1px solid transparent;
 }
 
@@ -479,7 +474,7 @@ q {
 .index span {
 	padding: 0;
 	color: #fff;
-	background-color: #666;
+	background-color: #ddd;
 }
 
 #navbar li:nth-child(2) {
@@ -493,7 +488,7 @@ q {
  */
 
 .modeplan .slide {
-	border-bottom: 2px solid #666;
+	border-bottom: 2px solid #ddd;
 	padding-top: 1em;
 }
 
@@ -513,7 +508,7 @@ q {
 
 .credit a {
 	padding: 2px 3px;
-	border: 1px solid #F9F9F9;
+	border: 1px solid #e2e2e2;
 	border-radius: 3px;
 	text-decoration: none;
 }
@@ -521,7 +516,7 @@ q {
 .credit a:hover,
 .credit a:focus {
 	background: #ca3432;
-	border: 1px solid #666;
+	border: 1px solid #ddd;
 }
 
 /** @subsection 7.1 COLUMN **/
@@ -559,7 +554,7 @@ button.disc1:focus {
  */
 
 .tool-block {
-	background-color: #F9F9F9;
+	background-color: #e2e2e2;
 	color: #000;
 	box-shadow: 0 0 10px #000;
 	width: 400px;
@@ -569,7 +564,7 @@ button.disc1:focus {
 	padding-top: 5px;
 	font-size: 1.2em;
 	text-align: center;
-	border-bottom: 1px dashed #666;
+	border-bottom: 1px dashed #ddd;
 	text-transform: uppercase;
 }
 
@@ -597,7 +592,7 @@ button.disc1:focus {
 .help {
 	border: 1px solid #ca3432;
 	border-radius: 5px;
-	background: #666;
+	background: #ddd;
 	color: #fff;
 }
 
@@ -607,14 +602,14 @@ button.disc1:focus {
 }
 
 .btn-setting { /* Save & Default button*/
-	background-color: #666;
-	border: 1px solid #666;
+	background-color: #ddd;
+	border: 1px solid #ddd;
 	color: #fff;
 }
 
 .btn-setting:hover,
 .btn-setting:focus {
-	background: #F9F9F9;
+	background: #e2e2e2;
 	color: #000;
 }
 
@@ -625,7 +620,7 @@ button.disc1:focus {
  */
 
 #volet.Flash {
-	background: #666;
+	background: #ddd;
 }
 
 /**
@@ -654,7 +649,7 @@ button.disc1:focus {
  */
 
 .slide .encadre {
-	background: #e2e2e2;
+	background: #ddd;
 	font-family: 'os-bold';
 	padding: 1rem;
 }

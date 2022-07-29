@@ -852,8 +852,7 @@ img.center {
 	-ms-flex-align: center;
 	align-items: center;
 	padding: 2rem;
-	width: 70%;
-	max-width: 1080px;
+	width: 70%; /*max-width: 1080px;*/
 	margin: 0 auto;
 }
 
@@ -868,8 +867,7 @@ img.center {
 	-ms-flex-align: center;
 	align-items: center;
 	padding: 2rem;
-	width: 70%;
-	max-width: 1080px;
+	width: 90%; /*max-width: 1080px;*/
 	margin: 0 auto;
 }
 
