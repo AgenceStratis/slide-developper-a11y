@@ -1412,16 +1412,16 @@
                                 moins de 4.5:1.
                             </li>
                             <li>Supérieur ou égal à 24px, le ratio de contraste entre le texte et son arrière-plan doit
-                                être au moins de 3:1.
+                                être <strong>au moins de 3:1</strong>.
                             </li>
                         </ul>
                         <h3>Texte en gras :</h3>
                         <ul>
                             <li>Inférieur à 18.5px, le ratio de contraste entre le texte et son arrière-plan doit être
-                                au moins de 4.5:1.
+                                <strong>au moins de 4.5:1</strong>.
                             </li>
                             <li>Supérieur ou égale à 18.5px, le ratio de contraste entre le texte et son arrière-plan
-                                doit être au moins de 3:1.
+                                doit être <strong>au moins de 3:1</strong>.
                             </li>
                         </ul>
                     </div>
@@ -1445,7 +1445,7 @@
                             graphique statistique, des pictogrammes...
                         </p>
                         <p>Le rapport de contraste entre les couleurs du composant et son arrière-plan, ou
-                            entre couleurs contiguës est d'au moins 3:1.</p>
+                            entre couleurs contiguës est d'<strong>au moins 3:1</strong>.</p>
                     </div>
                 </div>
             </section>
@@ -2606,7 +2606,25 @@ HAUT
                 <div class="slide-double">
                     <div class="slide-double--left">
                         <h2>Un lien n'est pas un bouton et inversement</h2>
-                        <p class="encadre">Un lien va quelque part ≠ Un bouton fait quelque chose</p>
+                        <h3>Un lien&nbsp;:</h3>
+                        <ul>
+                            <li>permet de naviguer vers une autre page</li>
+                            <li>permet de naviguer vers un autre contenu de la page (ancre)</li>
+                            <li>Balise <code>&lt;a href&gt;</code> ou attribut <code>role="link"</code></li>
+                        </ul>
+                        <h3>Un bouton&nbsp;:</h3>
+                        <ul>
+                            <li>lit une vidéo, la met en pause, baisse le volume</li>
+                            <li>lance un slider, le met en pause, change de slide</li>
+                            <li>ouvre/ferme un menu, une fenêtre contextuelle, une fenêtre modale</li>
+                            <li>soumet ou vide un formulaire</li>
+                            <li>affiche/cache un contenu</li>
+                            <li>active une option</li>
+                            <li>Balise <code>&lt;button&gt;</code> ou attribut <code>role="button"</code> (+ JS)</li>
+                        </ul>
+                    </div>
+                    <div class="slide-double--right">
+                        <p class="encadre">Un lien emmène quelque part ≠ Un bouton fait quelque chose</p>
                         <p>Si un lien exécute une action au lieu de changer de page, l'utilisateur risque de ne pas
                             comprendre ce qu'il se passe.</p>
                         <p><strong>Les liens ne doivent donc pas être utilisées pour déclencher des actions. C'est le
@@ -2624,22 +2642,6 @@ HAUT
                         <p>De plus les agents utilisateur proposent des fonctionnalités différentes dans le cas d'un
                             bouton ou d'un lien. Par exemple, un lien peut être ouvert dans un nouvel onglet.
                         </p>
-                    </div>
-                    <div class="slide-double--right">
-                        <h3>Un lien&nbsp;:</h3>
-                        <ul>
-                            <li>permet de naviguer vers une autre page</li>
-                            <li>permet de naviguer vers un autre contenu de la page (ancre)</li>
-                        </ul>
-                        <h3>Un bouton&nbsp;:</h3>
-                        <ul>
-                            <li>lit une vidéo, la met en pause, baisse le volume</li>
-                            <li>lance un slider, le met en pause, change de slide</li>
-                            <li>ouvre/ferme un menu, une fenêtre contextuelle, une fenêtre modale</li>
-                            <li>soumet ou vide un formulaire</li>
-                            <li>affiche/cache un contenu</li>
-                            <li>active une option</li>
-                        </ul>
                     </div>
                 </div>
             </section>
@@ -2690,7 +2692,7 @@ HAUT
                     <div class="slide-double--left">
                         <h2>Intitulé visible et nom accessible : le nom accessible</h2>
                         <p>Le nom accessible est le nom déterminé via l'API d'accessibilité de l'agent utilisateur.<br>
-                            C'est ce texte que les aides techniques (lecteur d'écran) prendront en compte.</p>
+                            C'est ce texte que les aides techniques (lecteur d'écran) restitueront.</p>
                         <p>Dans le cas d'un lien, <strong>le nom accessible est obtenu selon l'ordre suivant</strong>&nbsp;:
                         </p>
                         <ul>
@@ -2892,12 +2894,12 @@ HAUT
                 <div class="slide-double">
                     <div class="slide-double--left">
                         <h2>Contexte du lien</h2>
+                        <p><strong>Un lien explicite hors contexte est toujours préférable</strong>.</p>
                         <p>Un lien non explicite du type "cliquer ici" ou "en savoir plus" oblige l'utilisateur à
                             interroger le contexte du lien. La navigation devient plus complexe et plus longue.</p>
-                        <p><strong>Un lien explicite hors contexte est toujours préférable</strong>.</p>
                         <p>Si le lien n'est pas explicite hors contexte, le contexte doit permettre de le
                             rendre explicite.</p>
-                        <p><a href="https://demos-a11y.netlify.app/demo-code-liens.html#lien-hors-contexte"
+                        <p><a href="https://demos-a11y.netlify.app/demo-code-liens.html#lien-explicite-contexte"
                               target="blank" rel="noreferrer noopener">Accéder à la démo des liens non pertinents explicités grâce au contexte</a>
                         </p>
                     </div>
@@ -2935,6 +2937,7 @@ HAUT
                 <div class="slide-simple">
                     <div class="slide-simple--wrapper">
                         <h2>Contexte du lien&nbsp;: rendre un lien explicite dans le code</h2>
+                        <p>Quelques propositions&nbsp;:</p>
                         <ul>
                             <li>Avec un attribut <code>aria-describedby</code> sur le lien pour améliorer la description en faisant référence à un autre texte</li>
                             <li>Avec un attribut <code>aria-label</code> sur le lien pour améliorer le nom accessible</li>
@@ -2944,6 +2947,42 @@ HAUT
                         <p class="encadre"><a href="https://demos-a11y.netlify.app/demo-code-liens.html#lien-explicite-code"
                               target="blank" rel="noreferrer noopener">Accéder à la démo des liens rendus explicites grâce au code</a>
                         </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Les liens</h1>
+                </header>
+                <div class="slide-double">
+                    <div class="slide-double--left">
+                        <h2>Lien visible</h2>
+                        <p class="encadre">Critère 10.6. Dans chaque page web, chaque lien dont la nature n'est pas évidente est-il visible par rapport au texte environnant&nbsp;</p>
+                        <ul>
+                            <li>La couleur du lien a un <strong>rapport de contraste supérieur ou égal à 3:1</strong> par rapport au texte environnant.</li>
+                            <li>Le lien dispose d'une <strong>indication visuelle au survol et au focus autre qu'un changement de couleur</strong>.</li>
+                        </ul>
+                        <p class="encadre"><a href="https://demos-a11y.netlify.app/demo-code-liens.html#visibilite-liens" target="blank" rel="noreferrer noopener">Accéder à la démo des liens dont la nature n'est pas évidente</a>
+                    </div>
+                    <div class="slide-double--right">
+                        <h3>Non conforme</h3>
+                        <pre><code>L&rsquo;accessibilité du Web signifie que <a href="#" style="color:#fff;text-decoration:none">les personnes en situation de handicap</a> peuvent utiliser le Web. Plus précisément, qu&rsquo;elles peuvent percevoir, comprendre, naviguer et interagir avec le Web, et qu&rsquo;elles peuvent contribuer sur le Web.</code></pre>
+                        <h3>Conforme</h3>
+                        <pre><code>L&rsquo;accessibilité du Web signifie que <a href="#" style="color:#fff;text-decoration:underline">les personnes en situation de handicap</a> peuvent utiliser le Web. Plus précisément, qu&rsquo;elles peuvent percevoir, comprendre, naviguer et interagir avec le Web, et qu&rsquo;elles peuvent contribuer sur le Web.</code></pre>
+                        <h3>Conforme</h3>
+                        <pre><code style="background:white;color:black;border:1px solid black">L&rsquo;accessibilité du Web signifie que <a href="#" style="color:green;text-decoration:none">les personnes en situation de handicap</a> peuvent utiliser le Web. Plus précisément, qu&rsquo;elles peuvent percevoir, comprendre, naviguer et interagir avec le Web, et qu&rsquo;elles peuvent contribuer sur le Web.</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Les liens</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Exercice</h2>
                     </div>
                 </div>
             </section>
@@ -2962,7 +3001,7 @@ HAUT
                             intitulé identique.</p>
                     </div>
                 </div>
-            </section-->
+            </section>
 
             <section class="slide">
                 <header class="main-header clearfix">
@@ -3032,7 +3071,7 @@ HAUT
                             le format et le poids dans le lien.</p>
                     </div>
                 </div>
-            </section>
+            </section-->
 
             <!--section class="slide">
                 <div class="slide-simple">
