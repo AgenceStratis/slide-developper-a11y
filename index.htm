@@ -242,6 +242,109 @@
             <section class="slide">
                 <div class="slide-simple">
                     <div class="slide-simple--wrapper">
+                        <h1>DOM et arbre d'accessibilité</h1>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">DOM et arbre d'accessibilité</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Le chemin critique du rendu</h2>
+                        <p>Une page HTML est affichée sur un navigateur en plusieurs étapes que l'on appelle "chemin
+                            critique du rendu"&nbsp;:</p>
+                        <ol>
+                            <li><strong>Construction du DOM</strong> (<span lang="en">Document Object Model</span>)&nbsp;:
+                                représentation des éléments
+                            </li>
+                            <li><strong>Construction du CSSOM</strong> (<span lang="en">CSS Object Model</span>)&nbsp;:
+                                représentation des styles associés aux éléments
+                            </li>
+                            <li><strong>Exécution du code Javascript</strong></li>
+                            <li><strong>Création de l'arbre de rendu</strong>&nbsp;: représente ce qui va être affiché
+                                sur la page au regard du DOM et du CSSOM
+                            </li>
+                            <li><strong>Génération de la mise en page</strong>&nbsp;: application des CSS en fonction de
+                                la taille de la fenêtre active (ou viewport)
+                            </li>
+                            <li><strong>Conversion du contenu visible final de la page en pixels</strong></li>
+                        </ol>
+                        <p>Au terme de ces 6 étapes, le <strong>fichier source HTML initial est affiché dans le
+                            navigateur</strong>.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">DOM et arbre d'accessibilité</h1>
+                </header>
+                <div class="slide-double">
+                    <div class="slide-double--left">
+                        <h2>Le DOM</h2>
+                        <p><strong>Le DOM est représentation du code HTML source sous la forme d'un arbre</strong>. Il
+                            permet de convertir le document HTML en un modèle objet manipulable (consulter, modifier)
+                            par différentes applications (extensions de navigateurs) ou langages (Javascript).</p>
+                        <ul>
+                            <li>le premier parent est l'élément racine <code>&lt;html&gt;</code></li>
+                            <li>les branches sont les éléments imbriqués</li>
+                            <li>les feuilles sont le contenu des éléments</li>
+                        </ul>
+                        <p><strong>Le DOM n'est pas une représentation exacte du code source HTML</strong>.</p>
+                        <ul>
+                            <li>Corrigé par le navigateur si le code HTML n'est pas valide</li>
+                            <li>Modifié en JavaScript, sans modifier le document HTML source</li>
+                        </ul>
+                        <p><strong>Le DOM n'est pas la page qui s'affiche dans le navigateur</strong>. Ce qui s'affiche
+                            dans le navigateur, c'est l'arbre de rendu (combinaison du DOM et du CSSOM) qui ne comprend
+                            que ce qui sera visible à l'écran (<code>display:none</code>).</p>
+                    </div>
+                    <div class="slide-double--right">
+                        <p class="center"><img src="img_slide/arbre-rendu.png" alt=""></p>
+                        <p class="encadre">L'arbre de rendu complet (DOM + CSSOM) est consultable dans la console des
+                            navigateurs (F12).</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">DOM et arbre d'accessibilité</h1>
+                </header>
+                <div class="slide-double">
+                    <div class="slide-double--left">
+                        <h2>L'arbre d'accessibilité</h2>
+                        <p><strong>L'arbre d'accessibilité</strong> ressemble au DOM, mais <strong>représente les
+                            éléments d'une manière différente</strong>. <br>Il est destiné à être
+                            <strong>utilisés par les technologies d'assistance</strong> pour restituer le contenu d'une
+                            page.</p>
+                        <p>Un objet de l'arbre d'accessibilité contient jusqu'à 4 informations pour chaque élément&nbsp;:</p>
+                        <ul>
+                            <li>son nom permettant d'y faire référence</li>
+                            <li>sa description permettant de le décrire et de compléter son nom</li>
+                            <li>un rôle pour expliquer son utilité</li>
+                            <li>un état, exemple coché/décoché pour une case à cocher</li>
+                        </ul>
+                    </div>
+                    <div class="slide-double--right">
+                        <figure role="figure"
+                                aria-label="Bel orage dans la baie de Saint-Tropez – Jean-Baptiste Bellet">
+                            <img src="img_slide/arbre-a11y.png"
+                                 alt="un exemple d'arbre d'accessibilité">
+                            <figcaption>L'arbre d'accessibilité sur Firefox</figcaption>
+                        </figure>
+                        <p class="encadre">L'arbre d'accessibilité est consultable dans la console des navigateurs
+                            (F12). Celui de Firefox est particulièrement optimisé.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
                         <h1>ARIA</h1>
                         <p><strong>ARIA est une spécification technique du W3C</strong> qui a pour but d'<strong>améliorer
                             l'accessibilité des contenus</strong> développés avec HTML, JavaScript, et les technologies
@@ -350,7 +453,7 @@
                 </header>
                 <div class="slide-double --title">
                     <div class="slide-double--title">
-                        <h2 style="margin:0">L'attribut <code>role</code></h2>
+                        <h2>L'attribut <code>role</code></h2>
                     </div>
                     <div class="slide-double--left">
                         <h3>Les éléments autonomes</h3>
@@ -409,7 +512,7 @@
                 </header>
                 <div class="slide-double --title">
                     <div class="slide-double--title">
-                        <h2 style="margin:0">L'attribut <code>role</code></h2>
+                        <h2>L'attribut <code>role</code></h2>
                     </div>
                     <div class="slide-double--left">
                         <h3>Les éléments de structuration du contenu (titres, images, listes, tableaux,
@@ -1126,7 +1229,7 @@
                 </header>
                 <div class="slide-double --title">
                     <div class="slide-double--title">
-                        <h2 style="margin:0">Un titre de cadre pertinent : l'attribut <code>title</code></h2>
+                        <h2>Un titre de cadre pertinent : l'attribut <code>title</code></h2>
                     </div>
                     <div class="slide-double--left">
                         <p>Si vous intégrez une <strong
@@ -2891,16 +2994,19 @@ HAUT
                 <header class="main-header clearfix">
                     <h1 class="main-title">Les liens</h1>
                 </header>
-                <div class="slide-double">
-                    <div class="slide-double--left">
+                <div class="slide-double --title">
+                    <div class="slide-double--title">
                         <h2>Contexte du lien</h2>
+                    </div>
+                    <div class="slide-double--left">
                         <p><strong>Un lien explicite hors contexte est toujours préférable</strong>.</p>
                         <p>Un lien non explicite du type "cliquer ici" ou "en savoir plus" oblige l'utilisateur à
                             interroger le contexte du lien. La navigation devient plus complexe et plus longue.</p>
                         <p>Si le lien n'est pas explicite hors contexte, le contexte doit permettre de le
                             rendre explicite.</p>
                         <p><a href="https://demos-a11y.netlify.app/demo-code-liens.html#lien-explicite-contexte"
-                              target="blank" rel="noreferrer noopener">Accéder à la démo des liens non pertinents explicités grâce au contexte</a>
+                              target="blank" rel="noreferrer noopener">Accéder à la démo des liens non pertinents
+                            explicités grâce au contexte</a>
                         </p>
                     </div>
                     <div class="slide-double--right">
@@ -2939,13 +3045,21 @@ HAUT
                         <h2>Contexte du lien&nbsp;: rendre un lien explicite dans le code</h2>
                         <p>Quelques propositions&nbsp;:</p>
                         <ul>
-                            <li>Avec un attribut <code>aria-describedby</code> sur le lien pour améliorer la description en faisant référence à un autre texte</li>
-                            <li>Avec un attribut <code>aria-label</code> sur le lien pour améliorer le nom accessible</li>
-                            <li>Avec un attribut <code>title</code> sur le lien pour améliorer la description du lien</li>
-                            <li>En déplaçant le lien sur un texte explicite, et en agrandissant la taille de la zone cliquable en CSS</li>
+                            <li>Avec un attribut <code>aria-describedby</code> sur le lien pour améliorer la description
+                                en faisant référence à un autre texte
+                            </li>
+                            <li>Avec un attribut <code>aria-label</code> sur le lien pour améliorer le nom accessible
+                            </li>
+                            <li>Avec un attribut <code>title</code> sur le lien pour améliorer la description du lien
+                            </li>
+                            <li>En déplaçant le lien sur un texte explicite, et en agrandissant la taille de la zone
+                                cliquable en CSS
+                            </li>
                         </ul>
-                        <p class="encadre"><a href="https://demos-a11y.netlify.app/demo-code-liens.html#lien-explicite-code"
-                              target="blank" rel="noreferrer noopener">Accéder à la démo des liens rendus explicites grâce au code</a>
+                        <p class="encadre"><a
+                                href="https://demos-a11y.netlify.app/demo-code-liens.html#lien-explicite-code"
+                                target="blank" rel="noreferrer noopener">Accéder à la démo des liens rendus explicites
+                            grâce au code</a>
                         </p>
                     </div>
                 </div>
@@ -2955,23 +3069,38 @@ HAUT
                 <header class="main-header clearfix">
                     <h1 class="main-title">Les liens</h1>
                 </header>
-                <div class="slide-double">
-                    <div class="slide-double--left">
+
+                <div class="slide-double --title">
+                    <div class="slide-double--title">
                         <h2>Lien visible</h2>
-                        <p class="encadre">Critère 10.6. Dans chaque page web, chaque lien dont la nature n'est pas évidente est-il visible par rapport au texte environnant&nbsp;</p>
+                    </div>
+                    <div class="slide-double--left">
+                        <p class="encadre">Critère 10.6. Dans chaque page web, chaque lien dont la nature n'est pas
+                            évidente est-il visible par rapport au texte environnant&nbsp;</p>
                         <ul>
-                            <li>La couleur du lien a un <strong>rapport de contraste supérieur ou égal à 3:1</strong> par rapport au texte environnant.</li>
-                            <li>Le lien dispose d'une <strong>indication visuelle au survol et au focus autre qu'un changement de couleur</strong>.</li>
+                            <li>La couleur du lien a un <strong>rapport de contraste supérieur ou égal à 3:1</strong>
+                                par rapport au texte environnant.
+                            </li>
+                            <li>Le lien dispose d'une <strong>indication visuelle au survol et au focus autre qu'un
+                                changement de couleur</strong>.
+                            </li>
                         </ul>
-                        <p class="encadre"><a href="https://demos-a11y.netlify.app/demo-code-liens.html#visibilite-liens" target="blank" rel="noreferrer noopener">Accéder à la démo des liens dont la nature n'est pas évidente</a>
+                        <p class="encadre"><a
+                                href="https://demos-a11y.netlify.app/demo-code-liens.html#visibilite-liens"
+                                target="blank" rel="noreferrer noopener">Accéder à la démo des liens dont la nature
+                            n'est pas évidente</a></p>
                     </div>
                     <div class="slide-double--right">
                         <h3>Non conforme</h3>
-                        <pre><code>L&rsquo;accessibilité du Web signifie que <a href="#" style="color:#fff;text-decoration:none">les personnes en situation de handicap</a> peuvent utiliser le Web. Plus précisément, qu&rsquo;elles peuvent percevoir, comprendre, naviguer et interagir avec le Web, et qu&rsquo;elles peuvent contribuer sur le Web.</code></pre>
+                        <pre><code>L&rsquo;accessibilité du Web signifie que <a href="#"
+                                                                                style="color:#fff;text-decoration:none">les personnes en situation de handicap</a> peuvent utiliser le Web. Plus précisément, qu&rsquo;elles peuvent percevoir, comprendre, naviguer et interagir avec le Web, et qu&rsquo;elles peuvent contribuer sur le Web.</code></pre>
                         <h3>Conforme</h3>
-                        <pre><code>L&rsquo;accessibilité du Web signifie que <a href="#" style="color:#fff;text-decoration:underline">les personnes en situation de handicap</a> peuvent utiliser le Web. Plus précisément, qu&rsquo;elles peuvent percevoir, comprendre, naviguer et interagir avec le Web, et qu&rsquo;elles peuvent contribuer sur le Web.</code></pre>
+                        <pre><code>L&rsquo;accessibilité du Web signifie que <a href="#"
+                                                                                style="color:#fff;text-decoration:underline">les personnes en situation de handicap</a> peuvent utiliser le Web. Plus précisément, qu&rsquo;elles peuvent percevoir, comprendre, naviguer et interagir avec le Web, et qu&rsquo;elles peuvent contribuer sur le Web.</code></pre>
                         <h3>Conforme</h3>
-                        <pre><code style="background:white;color:black;border:1px solid black">L&rsquo;accessibilité du Web signifie que <a href="#" style="color:green;text-decoration:none">les personnes en situation de handicap</a> peuvent utiliser le Web. Plus précisément, qu&rsquo;elles peuvent percevoir, comprendre, naviguer et interagir avec le Web, et qu&rsquo;elles peuvent contribuer sur le Web.</code></pre>
+                        <pre><code style="background:white;color:black;border:1px solid black">L&rsquo;accessibilité du Web signifie que <a
+                                href="#"
+                                style="color:green;text-decoration:none">les personnes en situation de handicap</a> peuvent utiliser le Web. Plus précisément, qu&rsquo;elles peuvent percevoir, comprendre, naviguer et interagir avec le Web, et qu&rsquo;elles peuvent contribuer sur le Web.</code></pre>
                     </div>
                 </div>
             </section>
@@ -3073,44 +3202,29 @@ HAUT
                 </div>
             </section-->
 
-            <!--section class="slide">
+            <section class="slide">
                 <div class="slide-simple">
                     <div class="slide-simple--wrapper">
-                        <h1>Le titre de page</h1>
-                        <h2>Les critères du RGAA</h2>
-                        <ul>
-                            <li>Critère 8.5. Chaque page web a-t-elle un titre de page&nbsp;?</li>
-                            <li>Critère 8.6. Pour chaque page web ayant un titre de page, ce titre est-il pertinent&nbsp;?</li>
-                        </ul>
+                        <h1>Les scripts</h1>
                     </div>
                 </div>
             </section>
 
             <section class="slide">
                 <header class="main-header clearfix">
-                    <h1 class="main-title">Le titre de page</h1>
+                    <h1 class="main-title">Les scripts</h1>
                 </header>
                 <div class="slide-simple">
                     <div class="slide-simple--wrapper">
                         <h2>Enjeu pour l'utilisateur</h2>
+                        <p>Les sites web actuels sont tous enrichis de composants d'interfaces gérés en Javascript
+                            (menu, fenêtre modale, accordéon, système d'onglets, calendrier, etc.).</p>
                         <ul>
-                            <li>Permet de <strong>savoir</strong> rapidement si le <strong>contenu</strong> de la
-                                page
-                                est <strong>intéressant</strong>.
+                            <li>Les aveugles et les grands malvoyants doivent pouvoir comprendre le nom, le rôle, les
+                                propriétés et les changements d'états.
                             </li>
-                            <li>Les personnes ayant un <strong>handicap visuel</strong>, pourront <strong>différencier
-                                les pages ouvertes dans plusieurs fenêtres ou onglets</strong> et <strong>être
-                                informées
-                                des processus</strong>.
-                            </li>
-                            <li>Les personnes souffrant de <strong>handicaps cognitifs</strong>, de mémoire à court
-                                terme et/ou de difficultés de lecture pourront ainsi <strong>identifier plus
-                                    facilement
-                                    les pages par leur titre</strong>.
-                            </li>
-                            <li>Les personnes souffrant de <strong>handicaps moteurs</strong> et utilisant une
-                                reconnaissance vocale, <strong>pourront naviguer plus facilement de page en
-                                    page</strong>.
+                            <li>Les handicapés moteurs qui ne peuvent pas utiliser un pointeur (souris) doivent pouvoir
+                                interagir avec les interfaces au clavier.
                             </li>
                         </ul>
                     </div>
@@ -3119,34 +3233,222 @@ HAUT
 
             <section class="slide">
                 <header class="main-header clearfix">
-                    <h1 class="main-title">Le titre de page</h1>
+                    <h1 class="main-title">Les scripts</h1>
                 </header>
                 <div class="slide-simple">
                     <div class="slide-simple--wrapper">
-                        <h2>Un bon titre de page</h2>
-                        <p>Un titre de page devrait pouvoir répondre à ces questions&nbsp;:</p>
-                        <ul>
-                            <li>Identifie-t-il l'entité&nbsp;?</li>
-                            <li>Identifie-t-il le sujet de la page&nbsp;?</li>
-                            <li>Donne-t-il du sens quand il est lu hors contexte (plan du site, recherche
-                                interne/externe, favori, historique)&nbsp;?
+                        <h2>Composants d'interface compatibles avec les technologies d'assistance</h2>
+                        <p class="encadre">Critère 7.1. Chaque script est-il, si nécessaire, compatible avec les
+                            technologies d'assistance&nbsp;?</p>
+                        <p>Deux solutions afin de concevoir une interface riche&nbsp;:</p>
+                        <ol>
+                            <li>Se baser sur des gabarits de conception existant.</li>
+                            <li>Si le gabarit de conception n'existe pas, tester l'interface sur une base de
+                                référence.
                             </li>
-                            <li>Est-il court&nbsp;?</li>
-                            <li>Est-il unique&nbsp;?</li>
-                        </ul>
+                        </ol>
                     </div>
                 </div>
             </section>
 
             <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Les scripts</h1>
+                </header>
+
+                <div class="slide-double --title">
+                    <div class="slide-double--title">
+                        <h2>Base de référence</h2>
+                    </div>
+                    <div class="slide-double--left">
+                        <p>Avec ou sans un gabarit de conception, <strong>toujours tester les composants développés dans
+                            un
+                            environnement de test</strong>.</p>
+                        <p>Impossible de tester sur toutes les configurations existantes, <strong>le RGAA impose donc de
+                            tester sur les configurations les plus utilisées</strong>.</p>
+                        <p>Si la <strong>configuration utilisateur est connue</strong> (intranet), <strong>restreindre
+                            cette
+                            base de référence</strong> à la configuration connue.</p>
+                        <p>Pour qu'un composant d'interface soit considéré comme <strong>compatible à
+                            l'accessibilité</strong>, il doit être
+                            <strong>fonctionnel sur l'ensemble de la base de référence</strong>.</p>
+                    </div>
+                    <div class="slide-double--right">
+                        <h3>Exemple de base de référence</h3>
+                        <table>
+                            <tr>
+                                <th>Système d'exploitation</th>
+                                <th>Agent utilisateur</th>
+                                <th>Technologie d'assistance</th>
+                            </tr>
+                            <tr>
+                                <td>Windows 10</td>
+                                <td>Firefox</td>
+                                <td>NVDA 2021.2</td>
+                            </tr>
+                            <tr>
+                                <td>Windows 10</td>
+                                <td>Chrome</td>
+                                <td>Jaws 2021</td>
+                            </tr>
+                            <tr>
+                                <td>MacOS High Sierra</td>
+                                <td>Safari 12</td>
+                                <td>VoiceOver</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Les scripts</h1>
+                </header>
                 <div class="slide-simple">
                     <div class="slide-simple--wrapper">
-                        <h1>Les changements de langue</h1>
-                        <h2>Les critères du RGAA</h2>
+                        <h2>Gabarits de conception ARIA (<span lang="en">Design Pattern</span>)</h2>
+                        <p><strong>Ces gabarits de conception permettent aux développeurs de suivre un cahier des
+                            charges précis dans la conception des interfaces riches.</strong></p>
+                        <p>Structure d'un gabarit de conception&nbsp;:</p>
                         <ul>
-                            <li>Critère 8.7. Dans chaque page web, chaque changement de langue est-il indiqué dans
-                                le
-                                code source (hors cas particuliers)&nbsp;?
+                            <li>Une <strong>description du composant d'interface</strong></li>
+                            <li>Un ou plusieurs <strong>exemples de développement</strong></li>
+                            <li>Les <strong>interactions clavier</strong></li>
+                            <li>Une <strong>description des rôles, des propriétés sur les éléments et des changements
+                                d'états</strong></li>
+                        </ul>
+                        <p class="encadre"><a href="https://www.w3.org/WAI/ARIA/apg/patterns/"
+                                              target="blank" rel="noreferrer noopener">Les gabarits de conception ARIA
+                            sur l'APG (<span lang="en">ARIA Authoring Practices Guide</span> - Guide des pratiques de
+                            création ARIA)</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Les scripts</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Gabarits de conception ARIA (<span lang="en">Design Pattern</span>)</h2>
+                        <h3>Étude d'un gabarit de conception</h3>
+                        <p class="center encadre"><a href="https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/"
+                                                     target="blank" rel="noreferrer noopener">Gabarit de conception de
+                            la fenêtre modale sur l'AGP</a></p>
+                        <p class="center encadre"><a href="https://demos-a11y.netlify.app/demo-code-modale.html"
+                                                     target="blank" rel="noreferrer noopener">DEMO d'une fenêtre
+                            modale</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Les scripts</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Interface riche sans gabarit de conception</h2>
+                        <p class="encadre">L'utilisation d'un gabarit de conception n'est pas une obligation.</p>
+                        <ul>
+                            <li>Ils ne peuvent pas couvrir l'ensemble des interfaces riches imaginables.</li>
+                            <li>Un composant possédant un gabarit de conception peut être rendu accessible sans pour
+                                autant
+                                suivre un gabarit.
+                            </li>
+                        </ul>
+                        <p>Souvent, il est plus simple de rendre accessible un développement déjà existant et
+                            inaccessible,
+                            sans devoir le modifier entièrement pour intégrer un gabarit de conception.</p>
+                        <p>Il faudra alors veiller à ce que <strong>les propriétés et les états soient correctement
+                            interprétés</strong> par les technologies d'assistance et les navigateurs.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Les scripts</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Interface riche sans gabarit de conception</h2>
+                        <p class="center encadre"><a href="https://demos-a11y.netlify.app/demo-code-disclosure.html"
+                                                     target="blank" rel="noreferrer noopener">DEMO d'un composant qui
+                            affiche et masque une zone de contenu</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Les scripts</h1>
+                </header>
+                <div class="slide-double">
+                    <div class="slide-double--left">
+                        <h2>Des alternatives pertinentes</h2>
+                        <p class="encadre">Critère 7.2. Pour chaque script ayant une alternative, cette alternative
+                            est-elle pertinente&nbsp;?</p>
+                        <p>Dans le cas d'un script non conforme (bibliothèque externe, core d'un CMS), <strong>fournir
+                            une
+                            alternative accessible offrant le même niveau d'information</strong>.</p>
+                        <p>Dans d'autre cas, l'alternative au script peut être <strong>simplement sous forme
+                            textuelle</strong>.</p>
+                    </div>
+                    <div class="slide-double--right">
+                        <h3>Exemple 1&nbsp;:</h3>
+                        <p class="center">
+                            <img style="display:inline;vertical-align:top;max-width:40%" src="img_slide/datepicker1.png"
+                                 alt="un champ date avec datepicker non accessible">
+                            <img style="display:inline;vertical-align:top;max-width:40%" src="img_slide/datepicker2.png"
+                                 alt="un champ date avec la mention 'format : jj/mm/aaaa'">
+                        </p>
+                        <h3>Exemple 2&nbsp;:</h3>
+                        <p class="center">
+                            <img style="display:inline;vertical-align:top;max-width:40%" src="img_slide/annuaire1.png"
+                                 alt="annuaire affiché sous forme de cartographie, avec filtrage par mot-clé et thématiques">
+                            <img style="display:inline;vertical-align:top;max-width:40%" src="img_slide/annuaire2.png"
+                                 alt="annuaire affiché sous forme de liste, avec filtrage par mot-clé et thématiques">
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Les scripts</h1>
+                </header>
+
+                <div class="slide-double --title">
+                    <div class="slide-double--title">
+                        <h2>Compatibilité au clavier et au dispositif de pointage</h2>
+                    </div>
+                    <div class="slide-double--left">
+                        <p class="encadre">Critère 7.3. Chaque script est-il contrôlable par le clavier et par tout
+                            dispositif de pointage (hors cas particuliers)&nbsp;?</p>
+                        <p>Les personnes utilisant un clavier ou un dispositif similaire doivent pouvoir accéder à tous
+                            les éléments interactifs, et dans un ordre cohérent.</p>
+                        <p>Plusieurs touches possibles&nbsp;:</p>
+                        <ul>
+                            <li>Accéder à un élément interactif&nbsp; <code>TAB</code> et <code>SHIFT + TAB</code></li>
+                            <li>Activer un bouton&nbsp;: Entrée et Espace</li>
+                            <li>Cocher une case à cocher&nbsp;: Espace</li>
+                            <li>Naviguer dans une liste déroulante&nbsp;: Espace pour ouvrir, Flèches haut et bas pour
+                                sélectionner
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="slide-double--right">
+                        <p>Quelques exemples souvent rencontrés et à proscrire&nbsp;:</p>
+                        <ul>
+                            <li>Soumettre un formulaire au <code>onchange()</code> sur une liste déroulante <code>&lt;select&gt;</code>
+                            </li>
+                            <li>Rendre un élément cliquable, autre qu'un bouton ou un lien, avec <code>onclick()</code>,
+                                <code>onmousedown()</code>, <code>onkeypress()</code> sans le rendre interactif avec
+                                l'attribut
+                                <code>tabindex="0"</code>, et sans gérer le bon comportement en JS
                             </li>
                         </ul>
                     </div>
@@ -3155,237 +3457,617 @@ HAUT
 
             <section class="slide">
                 <header class="main-header clearfix">
-                    <h1 class="main-title">Les changements de langue</h1>
+                    <h1 class="main-title">Les scripts</h1>
                 </header>
                 <div class="slide-simple">
                     <div class="slide-simple--wrapper">
-                        <h2>Enjeu pour l'utilisateur</h2>
-                        <p>Cela permet aux <strong>aides techniques</strong> de <strong>présenter</strong>
-                            correctement aux utilisateurs les <strong>changements de langues</strong>. Les mots et
-                            expressions en langue étrangère doivent être <strong>prononcés</strong> ou restitués
-                            dans
-                            leur <strong>langue d'origine pour être compris</strong>.</p>
-                        <p>Votre éditeur de texte riche doit pouvoir vous permettre de changer la langue
-                            d'un contenu s'il est différent de celui de la page.</p>
-                        <p><a rel="noreferrer noopener"
-                              href="https://www.loc.gov/standards/iso639-2/php/code_list.php"
-                              target="_blank">Liste des codes ISO pour la représentation des noms de
-                            langues</a>.</p>
+                        <h2>Compatibilité au clavier et au dispositif de pointage</h2>
+                        <p class="center encadre"><a href="https://demos-a11y.netlify.app/demo-code-clavier.html"
+                                                     target="blank" rel="noreferrer noopener">DEMO des comportements au
+                            clavier</a></p>
                     </div>
                 </div>
             </section>
 
             <section class="slide">
                 <header class="main-header clearfix">
-                    <h1 class="main-title">Les changements de langue</h1>
+                    <h1 class="main-title">Les scripts</h1>
                 </header>
                 <div class="slide-simple">
                     <div class="slide-simple--wrapper">
-                        <h2>Cas particuliers</h2>
+                        <h2>Compatibilité au clavier et au dispositif de pointage&nbsp;:<br>Gestion de la reprise de
+                            focus</h2>
+                        <p>Certains scripts peuvent supprimer le focus. Exemples&nbsp;:</p>
+                        <ul>
+                            <li>Suppression d'une ligne d'un tableau</li>
+                            <li>Soumission d'un formulaire (contact, recherche) dynamiquement sans rechargement de page
+                                (ajax)
+                            </li>
+                            <li>Single Page Application&nbsp;: le contenu entier de la page se recharge dynamiquement
+                                sans rechargement de page (ajax)
+                            </li>
+                        </ul>
+                        <p><strong>Dans ce cas, le focus retourne au début de la page, l'utilisateur doit alors
+                            retrouver sa
+                            position initiale.</strong></p>
+                        <p class="encadre">Le focus doit alors être repositionné sur un autre élément logique. Utiliser
+                            la fonction JavaScript <code>focus()</code></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Les scripts</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Compatibilité au clavier et au dispositif de pointage&nbsp;:<br>Gestion de la reprise de
+                            focus</h2>
+                        <p>La reprise de focus avec <code>focus()</code> peut se faire <strong>sur un élément ne pouvant
+                            recevoir le focus</strong>, comme un titre <code>&lt;h2&gt;</code>, le conteneur d'un menu
+                            <code>&lt;nav&gt;</code>...</p>
+                        <p>Utiliser l'attribut <code>tabindex</code> pour <strong>rendre interactif un élément non
+                            interactif</strong>.</p>
+                        <ul>
+                            <li><strong>Une valeur positive</strong> <code>tabindex="1|2|3..."</code>&nbsp;: la
+                                navigation suivra l'ordre croisant des éléments ayant un <code>tabindex</code> avec une
+                                valeur positive. <br><strong>Attention&nbsp;: cette technique est rarement utilisée car,
+                                    mal utilisée ou mal comprise, elle peut corrompre totalement la navigation d'une
+                                    page au clavier</strong>.
+                            </li>
+                            <li><strong>Une valeur à 0</strong> <code>tabindex="0"</code>&nbsp;: l'élément peut capturer
+                                le focus et la navigation clavier. L'ordre de navigation est linéaire et correspond à
+                                l'ordre des éléments dans le DOM.
+                            </li>
+                            <li><strong>Une valeur négative</strong> <code>tabindex="-1"</code>&nbsp;: l'élément peut
+                                capturer le focus avec <code>focus()</code> mais la navigation clavier est impossible.
+                                <br>Cette valeur est utilisée pour reprendre le focus sans gêner la navigation clavier.
+                                Exemple lors de l'ouverture d'une fenêtre modale, le focus peut être renvoyé sur le
+                                conteneur <code>&lt;div&gt;</code> du contenu de la modale.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Les scripts</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Compatibilité au clavier et au dispositif de pointage&nbsp;:<br>Gestion de la reprise de
+                            focus</h2>
+                        <p class="center encadre"><a
+                                href="https://developer.mozilla.org/fr/docs/Web/API/HTMLElement/focus"
+                                target="blank" rel="noreferrer noopener">Documentation de la méthode
+                            <code>HTMLElement.focus()</code></a></p>
+                        <p class="center encadre"><a href="https://demos-a11y.netlify.app/demo-code-modale.html"
+                                                     target="blank" rel="noreferrer noopener">DEMO d'une fenêtre
+                            modale</a></p>
+                        <p class="center encadre"><a href="https://demos-a11y.netlify.app/demo-code-focus.html"
+                                                     target="blank" rel="noreferrer noopener">DEMO de gestion du
+                            focus</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Les scripts</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Piège au clavier</h2>
+                        <p class="encadre">Critère 12.9. Dans chaque page web, la navigation ne doit pas contenir de
+                            piège au clavier. Cette règle est-elle respectée&nbsp;?</p>
+                        <p>Un piège au clavier bloque un utilisateur au clavier dans un composant <strong>sans lui
+                            laisser la
+                            possibilité de le contourner ou de se débloquer</strong>. <br><strong>L'issue est un
+                            rechargement de page</strong> (et une forte frustation).</p>
+                        <p class="encadre">À noter&nbsp;: <br>Un piège au clavier peut être mis en place volontairement,
+                            mais un moyen logique de déblocage doit exister.<br>Exemple&nbsp;: bloquer un
+                            utilisateur dans une fenêtre modale, mais pouvoir fermer avec le bouton "Fermer" ou la
+                            touche Echap.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Les scripts</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Piège au clavier</h2>
+                        <p class="center encadre"><a href="https://demos-a11y.netlify.app/demo-code-piege.html"
+                                                     target="blank" rel="noreferrer noopener">DEMO d'un piège au
+                            clavier</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Les scripts</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Messages de statuts et zones Live</h2>
+                        <p class="encadre">Critère 7.5. Dans chaque page web, les messages de statut sont-ils
+                            correctement restitués par les technologies d'assistance&nbsp;?</p>
+                        <ul>
+                            <li><strong>Les zones Live</strong> sont restituées aux technologies d'assistance lorsque
+                                <strong>leur contenu est
+                                    mis à jour dynamiquement sans rechargement</strong> de la page (en Javascript). <br>Ils
+                                sont ajoutés via les attributs
+                                <code>aria-live</code> et <code>aria-atomic</code>.
+                            </li>
+                            <li><strong>Les messages de statuts</strong> sont des zones Live spécifiques qui permettent
+                                de
+                                <strong>notifier
+                                    l'utilisateur</strong>. Les messages doivent être brefs, sans changement de contexte
+                                et
+                                sans déplacement du focus. <br>Ils sont ajoutés via l'attribut
+                                <code>role</code>.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Les scripts</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Messages de statuts et zones Live</h2>
+                        <p>4 types de messages de statuts&nbsp;:</p>
+                        <ol>
+                            <li><code>role="status"</code> informe sur la réussite ou le résultat d'une action. Ce
+                                message n'est pas suffisamment important pour justifier d'une alerte. <br><strong><code>role="status"</code>
+                                    = <code>aria-live="polite" aria-atomic="true"</code></strong></li>
+                            <li><code>role="alert"</code> informe d'un message important, une suggestion, d'une erreur.
+                                <br><strong><code>role="alert"</code> = <code>aria-live="assertive"
+                                    aria-atomic="true"</code></strong></li>
+                            <li><code>role="log"</code> une zone live qui indique l'ajout de nouvelles informations dans
+                                un ordre logique comme un journal de salon de discussion, journal d'erreurs...
+                                <br><strong><code>role="log"</code> = <code>aria-live="polite"
+                                    aria-atomic="false"</code></strong></li>
+                            <li><code>role="progressbar"</code> informe l'utilisateur sur la progression d'une tâche qui
+                                dure dans le temps.
+                            </li>
+                        </ol>
+                        <p class="encadre">La valeur par défaut de <code>aria-atomic</code> est <code>false</code>.</p>
+                        <p class="encadre">Attention : <br>Le support de la propriété <code>aria-atomic="true"</code> de
+                            <code>role="status"</code> n'est que partiel. L'utilisation de
+                            <code>aria-live="polite" aria-atomic="true"</code> est à privilégier et respecte la
+                            conformité.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Les scripts</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Messages de statuts et zones Live</h2>
+                        <p class="center encadre"><a href="https://demos-a11y.netlify.app/demo-code-status.html"
+                                                     target="blank" rel="noreferrer noopener">DEMO des messages de
+                            status et zones Live</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Les scripts</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Changement de contexte</h2>
+                        <p class="encadre">Critère 7.4. Pour chaque script qui initie un changement de contexte,
+                            l'utilisateur est-il averti ou en a-t-il le contrôle&nbsp;?</p>
+                        <p>Un changement de contexte est <strong>une modification, une suppression ou l'ajout d'un ou
+                            plusieurs contenus</strong> dans une page. Les changements de contexte peuvent ne pas être
+                            perçus et provoquer des incompréhensions chez les utilisateurs qui ne peuvent percevoir la
+                            page dans sa globalité.</p>
+                        <ul>
+                            <li><strong>Changement d'agent utilisateur</strong>, par exemple l'<strong>ouverture d'un
+                                fichier PDF</strong> dans un autre logiciel
+                            </li>
+                            <li><strong>Changement d'espace de restitution</strong>, par exemple l'<strong>affichage
+                                d'une nouvelle page
+                                ou d'un nouvel onglet</strong></li>
+                            <li><strong>Changement de focus</strong>, par exemple l'<strong>ouverture d'une fenêtre
+                                modale</strong></li>
+                            <li><strong>Changement de contenu dynamique</strong> dans une page, par exemple <strong>une
+                                erreur côté
+                                client sur un champ de formulaire</strong></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Les scripts</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Changement de contexte</h2>
+                        <h3>Quelques exemples</h3>
+                        <ul>
+                            <li>À l'action d'un bouton, la page est rechargée (hors bouton de soumission de formulaire).
+                                Le bouton devra être pertinent et prévenir l'utilisateur.
+                            </li>
+                            <li>La validation de la soumission d'un formulaire est géré côté client (ajax). Si le
+                                formulaire disparait et laisse place à un texte confirmant la soumission, le focus sera
+                                perdu. Il sera nécessaire de gérer la reprise de focus et s'assurer de la lecture du
+                                texte de validation.
+                            </li>
+                            <li>À l'ouverture d'une fenêtre modale, l'espace de restitution change et le contenu hors de
+                                la fenêtre n'est plus accessible. L'utilisateur doit être informé de ce changement avant
+                                d'ouvrir la fenêtre. La gestion du focus devra aussi être prise en compte à l'ouverture
+                                et à la fermeture de la fenêtre modale.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Les scripts</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Compatibilité au clavier et au dispositif de pointage&nbsp;:<br>Gestion de la reprise de
+                            focus</h2>
+                        <p class="center encadre"><a href="https://demos-a11y.netlify.app/demo-code-clavier.html"
+                                                     target="blank" rel="noreferrer noopener">DEMO des changements de
+                            contexte</a></p>
+                        <p class="center encadre"><a href="https://demos-a11y.netlify.app/demo-code-focus.html"
+                                                     target="blank" rel="noreferrer noopener">DEMO de gestion du
+                            focus</a></p>
+                        <p class="center encadre"><a href="https://demos-a11y.netlify.app/demo-code-modale.html"
+                                                     target="blank" rel="noreferrer noopener">DEMO d'une fenêtre
+                            modale</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h1>Éléments obligatoires</h1>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Éléments obligatoires</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Respect des standards</h2>
+                        <p class="encadre">Critère 8.1. Chaque page web est-elle définie par un type de
+                            document&nbsp;?<br><br>Critère 8.2. Pour chaque page web, le code source généré est-il
+                            valide selon le type de document spécifié&nbsp;?<br><br>Critère 8.9. Dans chaque page web,
+                            les balises ne doivent pas être utilisées uniquement à des fins de présentation. Cette règle
+                            est-elle respectée ?
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Éléments obligatoires</h1>
+                </header>
+
+                <div class="slide-double --title">
+                    <div class="slide-double--title">
+                        <h2>Respect des standards&nbsp;: Le DOCTYPE</h2>
+                    </div>
+                    <div class="slide-double--left">
+                        <p>Le DOCTYPE doit être valide au regard de la norme.</p>
+                        <p class="encadre"><a href="https://www.w3.org/QA/2002/04/valid-dtd-list.html" target="_blank"
+                                              rel="noreferrer noopener">Liste des DOCTYPEs valides sur le site du
+                            W3C</a></p>
+                        <p>La déclaration d'un type de document est importante et permet la compatibilité entre les
+                            agents utilisateurs et les technologies d'assistance.</p>
+                    </div>
+                    <div class="slide-double--right center">
+                        <h3>DOCTYPE HTML5&nbsp;:</h3>
+                        <pre><code class="--big">&lt;!DOCTYPE html&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Éléments obligatoires</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Respect des standards&nbsp;: Validité du code HTML</h2>
+                        <p><strong>Selon le DOCTYPE déclaré, le code source généré devra être valide au regard de
+                            l'accessibilité.</strong></p>
+                        <p>Afin de prendre en charge les éléments dynamiques, <strong>c'est le DOM qu'il est nécessaire
+                            de
+                            valider et non pas le code source de la page.</strong></p>
+                        <p class="encadre center"><a href="https://dequeuniversity.com/validator" target="_blank"
+                                                     rel="noreferrer noopener">Bookmarklet de validation du DOM</a></p>
+                        <p class="encadre">À noter&nbsp;: <br>Il n'est pas demandé d'avoir un code source 100% valide.
+                            Seules les erreurs sont à prendre en compte, pas les
+                            <span lang="en">warning</span>. De plus, chaque erreur doit être vérifiée.<br>Exemple : les
+                            <code>id="CalqueX"</code> dupliqués dans les <code>svg</code> sont souvent des erreurs
+                            n'ayant aucun impact.
+                        </p>
+                        <p>Le code source généré doit respecter&nbsp;:</p>
+                        <ul>
+                            <li><strong>Les balises, attributs et valeurs d'attributs respectent les règles d'écriture
+                                ;</strong></li>
+                            <li><strong>L'imbrication des balises est conforme ;</strong></li>
+                            <li><strong>L'ouverture et la fermeture des balises sont conformes ;</strong></li>
+                            <li><strong>Les valeurs d'attribut <code>id</code> sont uniques dans la page ;</strong></li>
+                            <li><strong>Les attributs ne sont pas doublés sur un même élément.</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Éléments obligatoires</h1>
+                </header>
+                <div class="slide-double --title">
+                    <div class="slide-double--title">
+                        <h2>Respect des standards&nbsp;: Respect de la sémantique</h2>
+                    </div>
+                    <div class="slide-double--left">
+                        <p><strong>Les balises HTML donnent du sens aux éléments. Omettre ou utiliser à contre sens la
+                            sémantique des éléments peut créer des situations de non-sens pour les
+                            utilisateurs.</strong></p>
+                        <p>Exemples&nbsp;: <br>Utiliser le style d'une citation pour mettre en évidence un
+                            paragraphe.<br>
+                            Utiliser une balise de titre pour donner de l'importance à un paragraphe.</p>
+                    </div>
+                    <div class="slide-double--right">
+                        <p><strong>L'utilisation des éléments <code>&lt;div&gt;</code> ou <code>&lt;span&gt;</code> avec
+                            plusieurs
+                            <code>&lt;br&gt;</code> pour créer des paragraphes est non conforme.</strong></p>
+                        <p>Exemples&nbsp;:</p>
+                        <pre><code>&lt;div&gt;Ce texte n&#39;est pas un paragraphe.
+&lt;br&gt;&lt;br&gt;
+Pourtant il devrait l&#39;&ecirc;tre.&lt;/div&gt;</code></pre>
+                        <pre><code>&lt;span&gt;Celui-ci aussi.&lt;/span&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Éléments obligatoires</h1>
+                </header>
+                <div class="slide-double --title">
+                    <div class="slide-double--title">
+                        <h2>Code de langue</h2>
+                    </div>
+                    <div class="slide-double--left">
+                        <p class="encadre">Critère 8.3. Dans chaque page web, la langue par défaut est-elle présente&nbsp;?<br><br>Critère
+                            8.4. Pour chaque page web ayant une langue par défaut, le code de langue est-il pertinent&nbsp;?<br><br>Critère
+                            8.7. Dans chaque page web, chaque changement de langue est-il indiqué dans le code source
+                            (hors cas particuliers)&nbsp;?<br><br>Critère 8.8. Dans chaque page web, le code de langue
+                            de chaque changement de langue est-il valide et pertinent&nbsp;?</p>
+                        <ul>
+                            <li>Les logiciels de traduction braille peuvent suivre correctement le changement de
+                                langue.
+                            </li>
+                            <li>Les synthèses vocales qui prennent en charge plusieurs langues pourront prononcer le
+                                contenu dans la langue indiquée.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="slide-double--right">
+                        <p><strong>Le code langue d'une page est défini par l'attribut <code>lang</code> et/ou
+                            <code>xml:lang</code> de la balise
+                            <code>&lt;html&gt;</code>.</strong><br>S'ils sont utilisés ensemble sur un même élément, ils
+                            doivent
+                            être identiques.</p>
+                        <p>Tout texte qui change de langue dans la page doit aussi définir le code langue correspondant
+                            sur sa balise HTML.</p>
+                        <p>Le code de langue doit être conforme à la <a
+                                href="https://fr.wikipedia.org/wiki/Liste_des_codes_ISO_639-1" target="_blank"
+                                rel="noreferrer noopener">norme ISO 639-1</a> (2 lettres).</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Éléments obligatoires</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Code de langue&nbsp;: Cas particuliers</h2>
                         <ul>
                             <li><strong>Noms propres</strong>.</li>
-                            <li><strong>Noms communs</strong> de langue étrangère <a
-                                    href="https://www.dictionnaire-academie.fr/" target="_blank"><strong>présents
-                                dans
-                                le dictionnaire officiel de la langue</strong></a> par défaut de la page web
-                                (exemple&nbsp;:
-                                « e-mail », « pull-over », « basket », « revolver », « hamburger » …).
+                            <li><strong>Noms communs de langue étrangère, mais présents dans le dictionnaire officiel de
+                                la langue</strong> par défaut de la
+                                page web. <br>Exemples&nbsp;: "e-mail", "pull-over", "basket", "revolver",
+                                "hamburger"...).
                             </li>
-                            <li><strong>Noms communs</strong> de langue étrangère, absents dans le dictionnaire
-                                officiel
-                                de la langue par défaut de la page web, et qui sont <strong>passés dans le langage
-                                    commun</strong> (exemple&nbsp;: « newsletter », « week-end », « tee-shirt » …).
+                            <li><strong>Noms communs de langue étrangère</strong>, absents du dictionnaire officiel de
+                                la langue par
+                                défaut de la page web, et qui sont <strong>passés dans le langage commun</strong>. <br>Exemples&nbsp;:
+                                "newsletter", "week-end", "tee-shirt"...).
                             </li>
-                            <li><strong>Termes issus d'une langue morte ou imaginaire</strong> pour laquelle il
-                                n'existe
+                            <li><strong>Terme issus d'une langue morte ou imaginaire</strong> pour laquelle il n'existe
                                 pas d'interprétation vocale.
                             </li>
                         </ul>
+                        <p class="encadre center"><a
+                                href="https://www.dictionnaire-academie.fr/" target="_blank"
+                                rel="noreferrer noopener">Dictionnaire de l'Académie française</a></p>
                     </div>
                 </div>
             </section>
 
             <section class="slide">
                 <header class="main-header clearfix">
-                    <h1 class="main-title">Les changements de langue</h1>
+                    <h1 class="main-title">Éléments obligatoires</h1>
                 </header>
-                <div class="slide-double">
-                    <div class="slide-double--left">
-                        <h2>Technique</h2>
-                        <p><q role="presentation">C'est le développeur <span lang="en">freelance</span> qui a
-                            provoqué
-                            ce <span lang="en">bug</span>.</q></p>
-                        <pre><code>&lt;p&gt;C&#39;est le d&eacute;veloppeur &lt;span lang=&quot;en&quot;&gt;freelance&lt;/span&gt; qui a provoqu&eacute; ce &lt;span lang=&quot;en&quot;&gt;bug&lt;/span&gt;.&lt;/p&gt;</code></pre>
-                        <p><a href="exercices/test-ckeditor.html" target="_blank">Démonstration dans l'éditeur de
-                            texte
-                            riche</a>.</p>
-                    </div>
-                    <div class="slide-double--right">
-                        <p class="center"><img src="img_slide/lang-2.jpg" alt=""></p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
                 <div class="slide-simple">
                     <div class="slide-simple--wrapper">
-                        <h1>Ne pas utiliser les éléments typographiques à des fins de présentation</h1>
-                        <h2>Les critères du RGAA</h2>
+                        <h2>Titre de page</h2>
+                        <p class="encadre">Critère 8.5. Chaque page web a-t-elle un titre de page&nbsp;?<br><br>Critère
+                            8.6. Pour chaque page web ayant un titre de page, ce titre est-il pertinent&nbsp;?</p>
                         <ul>
-                            <li>Critère 8.9. Dans chaque page web, les balises ne doivent pas être utilisées
-                                uniquement
-                                à des fins de présentation. Cette règle est-elle respectée&nbsp;?
+                            <li><strong>Première information disponible</strong>, sert de base aux navigateurs pour
+                                produire un
+                                <strong>historique de navigation</strong>, une <strong>mise en favoris</strong>, une
+                                <strong>liste d'onglets ouverts</strong>.
+                                <strong>Primordial pour le SEO</strong>.
+                            </li>
+                            <li><strong>Informe d'un processus ou d'une étape</strong>&nbsp;: moteur de recherche
+                                interne, filtrage d'articles, étapes d'un formulaire de contact, abonnement à une lettre
+                                d'information...
+                            </li>
+                            <li><strong>Ne le mettre à jour qu'après un rechargement de la page</strong>. Pas lors de
+                                modifications côté client (ajax), sauf si l'URL change et permet de retrouver le même
+                                état de la page (historique, favoris).
                             </li>
                         </ul>
+                        <p class="encadre">Le titre de la page doit évidemment être pertinent, même dans le cas d'un
+                            processus.</p>
                     </div>
                 </div>
             </section>
 
             <section class="slide">
                 <header class="main-header clearfix">
-                    <h1 class="main-title">Ne pas utiliser les éléments typographiques à des fins de
-                        présentation</h1>
+                    <h1 class="main-title">Éléments obligatoires</h1>
                 </header>
                 <div class="slide-simple">
                     <div class="slide-simple--wrapper">
-                        <h2>Enjeu pour l'utilisateur</h2>
-                        <p>Les <strong>contenus sont formatés visuellement</strong> pour <strong>indiquer
-                            la structure du contenu</strong>.</p>
-                        <ul>
-                            <li><strong>Les titres</strong> sont souvent en caractère <strong>plus grand et
-                                gras</strong>,
-                            </li>
-                            <li>les éléments de <strong>liste</strong> sont précédés d'une <strong>puce et d'une
-                                indentation</strong>,
-                            </li>
-                            <li>les <strong>paragraphes</strong> possèdent une <strong>marge inférieure</strong>...
-                            </li>
-                        </ul>
-                        <p>Les utilisateurs de synthèse vocale n'ayant pas l'information visuelle, doivent
-                            pouvoir comprendre le sens de chaque élément.<br>
-                            <strong>Il est donc nécessaire de ne pas formater les éléments sur la seule base d'un
-                                style
-                                visuel, mais aussi à partir du sens de chaque élément</strong>.</p>
+                        <h2>Titre de page&nbsp;: Exemples</h2>
+                        <p><strong>Pagination</strong></p>
+                        <pre><code>&lt;title&gt;Actualit&eacute;s - Page 2 sur 3 - Nom du site&lt;/title&gt;</code></pre>
+                        <p><strong>Un ou plusieurs filtres utilisés dans une recherche</strong></p>
+                        <pre><code>&lt;title&gt;R&eacute;sultats pour &quot;Ville&quot; - 2 filtres activ&eacute;s - Actualit&eacute;s - Nom du site&lt;/title&gt;</code></pre>
+                        <p>Il n'est pas nécessaire d'ajouter l'ensemble des filtres, le but étant de permettre à
+                            l'utilisateur de comprendre le changement d'état de la page.</p>
+                        <p><strong>Erreur sur un formulaire</strong></p>
+                        <pre><code>&lt;title&gt;Erreur - Contact - Nom du site&lt;/title&gt;</code></pre>
+                        <p><strong>Étapes ou validation d'un processus</strong></p>
+                        <pre><code>&lt;title&gt;Vérification des données saisies - Créer mon compte - Nom du site&lt;/title&gt;
+&lt;title&gt;Compte créé - Créer mon compte - Nom du site&lt;/title&gt;</code></pre>
+                        <p><strong>Pas de résultat de recherche</strong></p>
+                        <pre><code>&lt;title&gt;Aucun résultat pour &quot;Ville&quot; - Nom du site&lt;/title&gt;</code></pre>
                     </div>
                 </div>
             </section>
 
             <section class="slide">
                 <header class="main-header clearfix">
-                    <h1 class="main-title">Ne pas utiliser les éléments typographiques à des fins de
-                        présentation</h1>
+                    <h1 class="main-title">Éléments obligatoires</h1>
                 </header>
                 <div class="slide-simple">
                     <div class="slide-simple--wrapper">
-                        <h2>Quelques mauvaises
-                            pratiques</h2>
-                        <ul>
-                            <li>Utiliser un style de titre pour mettre en avant un paragraphe.</li>
-                            <li>Utiliser une citation pour mettre en retrait un paragraphe.</li>
-                            <li>Utiliser des retours ligne ou des paragraphes vides pour ajouter une marge plus
-                                importante entre les éléments.
-                            </li>
-                            <li>Utiliser une liste pour mettre en retrait un paragraphe.</li>
-                            <li>Utiliser un soulignement autre que pour un lien.</li>
-                            <li>Utiliser des espaces pour aligner du texte.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <div class="slide-simple">
-                    <div class="slide-simple--wrapper">
-                        <h1>Des titres pertinents</h1>
-                        <h2>Les critères du RGAA</h2>
-                        <ul>
-                            <li>Critère 9.1. Dans chaque page web, l'information est-elle structurée par
-                                l'utilisation
-                                appropriée de titres&nbsp;?
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <header class="main-header clearfix">
-                    <h1 class="main-title">Des titres pertinents</h1>
-                </header>
-                <div class="slide-simple">
-                    <div class="slide-simple--wrapper">
-                        <h2>Enjeu pour l'utilisateur</h2>
-                        <p>Les titres sont utilisés pour <strong>structurer l'information</strong> d'une
-                            page, ainsi les <strong>utilisateurs</strong> peuvent <strong>comprendre</strong> et
-                            <strong>trouver</strong> plus facilement <strong>l'information</strong> et peuvent aussi
-                            <strong>naviguer</strong> à l'intérieur de la page <strong>de titre en titre</strong>.
+                        <h2>Sens de lecture</h2>
+                        <p class="encadre">Critère 8.10. Dans chaque page web, les changements du sens de lecture
+                            sont-ils signalés&nbsp;?</p>
+                        <p><strong>Le sens de lecture par défaut</strong> sur une page web <strong>est de gauche à
+                            droite</strong>.
+                        <p>
+                        <p><strong>Pour les langues s'écrivant de droite à gauche</strong> comme l'arabe ou l'hébreu, il
+                            est nécessaire de la
+                            <strong>spécifier dans le document</strong>.</p>
+                        <p>Comme pour les changements de langue, <strong>les changements de sens lecture doivent être
+                            réalisés sur le document</strong>, mais aussi <strong>sur un élément de la page</strong>.
                         </p>
+                        <p>Pour indiquer un sens de lecture, il est nécessaire d'<strong>utiliser l'attribut
+                            <code>dir</code></strong> sur la balise
+                            <code>html</code> ou <code>body</code> pour le document, ou sur la balise du texte dont le
+                            sens change.</p>
+                        <p>Cet attribut peut prendre deux valeurs :</p>
                         <ul>
-                            <li>Les personnes souffrant de <strong>handicaps cognitifs de mémoire à court terme
-                                et/ou de
-                                difficultés de lecture</strong> peuvent ainsi <strong>prévoir la lecture d'une
-                                section
-                                de la page</strong>.
-                            </li>
-                            <li>Les personnes souffrant de <strong>handicaps moteurs</strong> et ne <strong>naviguant
-                                qu'au clavier</strong> utilisent les titres pour <strong>naviguer plus
-                                rapidement</strong>.
-                            </li>
-                            <li>Les utilisateurs <strong>aveugles et malvoyants</strong> n'ont <strong>pas une
-                                vision
-                                globale</strong> de la page. Les titres de la page leurs fournissent un <strong>plan
-                                de
-                                la page</strong> et leur permet de <strong>naviguer plus facilement</strong>.
+                            <li><strong><code>ltr</code> (left to right)</strong> indique un sens de lecture de <strong>gauche
+                                à
+                                droite</strong></li>
+                            <li><strong><code>rtl</code> (right to left)</strong> indique un sens de lecture de <strong>droite
+                                à
+                                gauche</strong>.
                             </li>
                         </ul>
+                        <pre><code class="--big">&lt;span lang=&quot;ar&quot; dir=&quot;rtl&quot;&gt;شكرا جزيلا&lt;/span&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h1>Structuration de l'information</h1>
                     </div>
                 </div>
             </section>
 
             <section class="slide">
                 <header class="main-header clearfix">
-                    <h1 class="main-title">Des titres pertinents</h1>
+                    <h1 class="main-title">Structuration de l'information</h1>
                 </header>
                 <div class="slide-simple">
                     <div class="slide-simple--wrapper">
-                        <h2>Titrer des contenus</h2>
-                        <p>Dans les <strong>éditeurs de texte riche</strong>, il est <strong>possible</strong> de
-                            <strong>choisir différents niveaux de titres</strong>, généralement du niveau 2 à 6.</p>
-                        <p>Le niveau 1 est souvent réservé au titre de la page.</p>
-                        <p>Les <strong>titres</strong> doivent apparaitre dans un <strong>ordre logique</strong>, et
-                            doivent structurer les contenus dans un format relativement court.</p>
-                        <p>Si la page commence par un titre de niveau 1 et qu'une sous-section est ajoutée, le titre
-                            de
-                            la sous-section devra être de niveau 2 et ainsi de suite.</p>
+                        <h2>Hiérarchiser les contenus par des titres</h2>
+                        <p class="encadre">Critère 9.1. Dans chaque page web, l'information est-elle structurée par
+                            l'utilisation appropriée de titres&nbsp;?</p>
+                        <p><strong>Les titres sont utilisés pour structurer l'information d'une page</strong>
+                            (accessibilité, SEO).</p>
+                        <p><strong>Les aides techniques proposent des fonctionnalités de navigation de titre en
+                            titre</strong>, permettant aux utilisateurs de comprendre et trouver plus facilement
+                            l'information.</p>
+                        <ul>
+                            <li>Les personnes ayant un handicap cognitif de mémoire à court terme et/ou de difficultés
+                                de lecture peuvent ainsi prévoir la lecture d'une section de la page.
+                            </li>
+                            <li>Les personnes ayant un handicap moteur et ne naviguant qu'au clavier utilisent les
+                                titres pour naviguer plus rapidement.
+                            </li>
+                            <li>Les utilisateurs aveugles et malvoyants n'ont pas une vision globale de la page. Les
+                                titres de la page leurs fournissent un plan de la page et leur permet de naviguer plus
+                                facilement.
+                            </li>
+                        </ul>
+                        <p class="encadre">Les titres doivent être relativement court, et apparaitre dans un ordre
+                            logique.</p>
                     </div>
                 </div>
             </section>
 
             <section class="slide">
                 <header class="main-header clearfix">
-                    <h1 class="main-title">Des titres pertinents</h1>
+                    <h1 class="main-title">Structuration de l'information</h1>
                 </header>
-                <div class="slide-double">
-                    <div class="slide-double--left">
-                        <h2>Exemples non-conformes</h2>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Hiérarchiser les contenus par des titres&nbsp;: exemples non conformes</h2>
                         <ul>
                             <li>Un texte en grand et gras mais qui n'est pas sémantiquement un titre.</li>
                             <li>Un titre de niveau 3 visuellement plus grand qu'un titre de niveau 2.</li>
-                            <li>Un titre qui ne décrit pas la section.</li>
-                            <li>Plusieurs titres successifs utilisant le même texte.</li>
-                            <li>Une structure de titre anarchique, un titre de niveau 3 qui précède une sous-section
-                                avec un titre de niveau 2.
+                            <li>Un titre qui ne décrit pas ou n'introduit pas la section.</li>
+                            <li>Une structure de titre anarchique, comme un titre de niveau 3 qui précède une
+                                sous-section avec un titre de niveau 2.
                             </li>
-                        </ul>
-                    </div>
-                    <div class="slide-double--right">
-                        <h3>Conforme mais pas recommandé</h3>
-                        <ul>
-                            <li>Ne pas titrer une section (le problème est pour tous les utilisateurs, ce n'est plus
-                                de
-                                l'accessibilité)
-                            </li>
-                            <li>Sauter un niveau de titre, passer d'un niveau 2 à un niveau 4.</li>
                         </ul>
                     </div>
                 </div>
@@ -3393,341 +4075,506 @@ HAUT
 
             <section class="slide">
                 <header class="main-header clearfix">
-                    <h1 class="main-title">Des titres pertinents</h1>
+                    <h1 class="main-title">Structuration de l'information</h1>
                 </header>
-                <div class="slide-double">
+                <div class="slide-double --title">
+                    <div class="slide-double--title">
+                        <h2>Hiérarchiser les contenus par des titres&nbsp;: exemples autorisés</h2>
+                        <h3>Des titres cachés visuellement</h3>
+                    </div>
                     <div class="slide-double--left">
-                        <h2>Technique</h2>
-                        <pre><code>&lt;h1&gt;Titre de niveau 1&lt;/h1&gt;
-                            &lt;h2&gt;Titre de niveau 2&lt;/h2&gt;
-                            &lt;h3&gt;Titre de niveau 3&lt;/h3&gt;
-                            &lt;h4&gt;Titre de niveau 4&lt;/h4&gt;
-                            &lt;h5&gt;Titre de niveau 5&lt;/h5&gt;
-                            &lt;h6&gt;Titre de niveau 6&lt;/h6&gt;</code></pre>
-                        <p><a href="exercices/test-ckeditor.html" target="_blank">Démonstration dans l'éditeur de
-                            texte
-                            riche</a>.</p>
+                        <p>Même si tous les titres devraient être visibles, <strong>il est conforme de cacher
+                            visuellement
+                            certains titres, toujours lisibles par les aides techniques</strong>.</p>
+                        <p>Certains contenus ne sont graphiquement pas titrés. Exemple&nbsp;: un carrousel d'articles
+                            mis en avant dans l'entête d'une page.</p>
                     </div>
                     <div class="slide-double--right">
-                        <p class="center"><img src="img_slide/titres-1.png" alt=""></p>
-                        <p class="center"><img src="img_slide/titres-2.png" alt=""></p>
+                        <p>La classe <code>.sr-only</code> de bootstrap&nbsp;:</p>
+                        <pre><code>.sr-only {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}</code></pre>
                     </div>
                 </div>
             </section>
 
             <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Structuration de l'information</h1>
+                </header>
+                <div class="slide-double --title">
+                    <div class="slide-double--title">
+                        <h2>Hiérarchiser les contenus par des titres&nbsp;: exemples autorisés</h2>
+                        <h3>Ordre strict</h3>
+                    </div>
+                    <div class="slide-double--left">
+                        <p>Des contenus avec des titres de niveaux moins importants que le titre principal de la page
+                            (<code>&lt;h1&gt;</code>) peuvent être positionnés dans la page avant le celui-ci. Il n'est
+                            pas interdit d'avoir pour premier titre d'une page un
+                            <code>&lt;h2&gt;</code> ou un <code>&lt;h3&gt;</code>.</p>
+                    </div>
+                    <div class="slide-double--right">
+                        <pre><code>&lt;main&gt;
+    &lt;!&mdash;- Colonne de gauche --&gt;
+    &lt;div class=&quot;left-nav&quot;&gt;
+      &lt;h2&gt;Navigation&lt;/h2&gt;
+      &lt;!-- Contenu --&gt;
+    &lt;/div&gt;
+
+    &lt;!&mdash;- Contenu principal --&gt;
+    &lt;div class=&quot;main&quot;&gt;
+      &lt;article&gt;
+        &lt;h1&gt;Titre principal de l&#39;article&lt;/h1&gt;
+        &lt;!-- Contenu --&gt;
+      &lt;/article&gt;
+    &lt;/div&gt;
+
+    &lt;!&mdash;- Colonne de droite --&gt;
+    &lt;div class=&quot;left-nav&quot;&gt;
+      &lt;h2&gt;&Agrave; voir aussi&lt;/h2&gt;
+      &lt;!-- Contenu --&gt;
+    &lt;/div&gt;
+&lt;/main&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Structuration de l'information</h1>
+                </header>
                 <div class="slide-simple">
                     <div class="slide-simple--wrapper">
-                        <h1>Les listes</h1>
-                        <h2>Les critères du RGAA</h2>
-                        <ul>
-                            <li>Critère 9.3. Dans chaque page web, chaque liste est-elle correctement
-                                structurée&nbsp;?
-                            </li>
-                        </ul>
+                        <h2>Hiérarchiser les contenus par des titres&nbsp;: exemples autorisés</h2>
+                        <h3>le rôle <code>heading</code></h3>
+                        <p>Pour des raisons d'optimisation du référencement, il peut être utile de ne pas utiliser de
+                            balise titre
+                            <code>&lt;hn&gt;</code>.</p>
+                        <p>Avec ARIA, il est possible d'utiliser les attributs <code>role=&quot;heading&quot;</code> et
+                            <code>aria-level=&quot;1|2|3|4|5|6&quot;</code> pour faire le rendu correct des titres dans
+                            les technologies d'assistance sans influencer l'indexation de la page dans les moteurs.</p>
+                        <pre><code>&lt;div role=&quot;heading&quot; aria-level=&quot;2&quot;&gt;Flash Info&lt;/div&gt;</code></pre>
+                        <p class="center encadre"><a href="https://demos-a11y.netlify.app/role-elements-structure.html"
+                                                     target="blank" rel="noreferrer noopener">DEMO d'une page structurée
+                            avec HTML et ARIA</a></p>
                     </div>
                 </div>
             </section>
 
             <section class="slide">
                 <header class="main-header clearfix">
-                    <h1 class="main-title">Les listes</h1>
+                    <h1 class="main-title">Structuration de l'information</h1>
                 </header>
                 <div class="slide-simple">
                     <div class="slide-simple--wrapper">
-                        <h2>Enjeu pour l'utilisateur</h2>
-                        <p>Dans le cadre d'une liste, <strong>le nombre d'éléments que contient la liste est
-                            annoncé</strong>, <strong>ainsi que le niveau de l'élément dans les listes
-                            imbriquées</strong>.</p>
-                        <p>Les utilisateurs utilisant un clavier peuvent ainsi <strong>éviter une liste trop
-                            longue</strong>, ou <strong>naviguer dans la liste</strong> en se rendant au début ou à
-                            la
-                            fin de celle-ci.</p>
+                        <h2>Hiérarchiser les contenus par des titres&nbsp;: Outil</h2>
+                        <p class="center encadre">L'extension HeadingsMap <a
+                                href="https://addons.mozilla.org/fr/firefox/addon/headingsmap/"
+                                target="blank" rel="noreferrer noopener">pour Firefox</a> et <a
+                                href="https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi?hl=fr-FR"
+                                target="blank" rel="noreferrer noopener">pour Chrome</a></p>
                     </div>
                 </div>
             </section>
 
             <section class="slide">
                 <header class="main-header clearfix">
-                    <h1 class="main-title">Les listes</h1>
+                    <h1 class="main-title">Structuration de l'information</h1>
                 </header>
-                <div class="slide-double">
-                    <div class="slide-double--left">
-                        <h2>Liste ordonnée et non-ordonnée</h2>
-                        <p>Une liste est une <strong>suite d'éléments</strong> de contenu <strong>pouvant être
-                            regroupés</strong>. Ces listes <strong>peuvent être imbriquées</strong> pour structurer
-                            un
-                            contenu.</p>
-                        <p>On distingue les <strong>listes ordonnées</strong> des <strong>listes
-                            non-ordonnées</strong>.
-                        </p>
-                        <p>On utilise une <strong>liste ordonnée lorsque l'ordre des éléments est important</strong>.
-                        </p>
-                    </div>
-                    <div class="slide-double--right">
-                        <p>Recette&nbsp;:</p>
-                        <ol>
-                            <li>Mélanger les ingrédients solides</li>
-                            <li>Ajouter les œufs et le lait</li>
-                            <li>Mélanger le pâton</li>
-                        </ol>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <header class="main-header clearfix">
-                    <h1 class="main-title">Les listes</h1>
-                </header>
-                <div class="slide-double">
-                    <div class="slide-double--left">
-                        <h2>Liste de définition</h2>
-                        <p>La liste de définition (description) se différencie par la <strong>composition d'un ou
-                            plusieurs termes et une ou plusieurs descriptions</strong>.</p>
-                        <p>Cette liste est généralement utilisée pour <strong>décrire un terme, réaliser un contenu
-                            de
-                            type questions/réponses, des catégories et des sujets</strong>, etc.</p>
-                        <p>La liste de définition est <strong>rarement intégrée dans l'éditeur de texte
-                            riche</strong>.
-                        </p>
-                    </div>
-                    <div class="slide-double--right">
-                        <dl>
-                            <dt>Images</dt>
-                            <dd>Image de décoration</dd>
-                            <dd>Image véhiculant de l'information</dd>
-                        </dl>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <header class="main-header clearfix">
-                    <h1 class="main-title">Les listes</h1>
-                </header>
-                <div class="slide-double">
-                    <div class="slide-double--left">
-                        <h2>Technique</h2>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Structure du document</h2>
+                        <p class="encadre">Critère 9.2. Dans chaque page web, la structure du document est-elle
+                            cohérente (hors cas particuliers)&nbsp;?</p>
+                        <p>Une page est généralement structurée par zones de contenus&nbsp;:</p>
                         <ul>
-                            <li>Élément de liste non-ordonnée 1</li>
-                            <li>Élément de liste non-ordonnée 2</li>
+                            <li><strong>l'entête principal&nbsp;</strong></li>
+                            <li><strong>la navigation principale et éventuellement les navigations
+                                secondaires&nbsp;</strong></li>
+                            <li><strong>le contenu principal&nbsp;</strong></li>
+                            <li><strong>le pied de pag&nbsp;.</strong></li>
                         </ul>
-                        <p class="center"><img src="img_slide/list-1.jpg" alt=""></p>
-                        <pre><code>&lt;ul&gt;
- &lt;li&gt;&Eacute;l&eacute;ment de liste non-ordonn&eacute;e 1&lt;/li&gt;
- &lt;li&gt;&Eacute;l&eacute;ment de liste non-ordonn&eacute;e 2&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-                        <dl>
-                            <dt>Terme à définir&nbsp;:</dt>
-                            <dd>Définition 1</dd>
-                            <dd>Définition 2</dd>
-                        </dl>
-                        <pre><code>&lt;dl&gt;
-&lt;dt&gt;Terme &agrave; d&eacute;finir&nbsp;:&lt;/dt&gt;
-&lt;dd&gt;D&eacute;finition 1&lt;/dd&gt;
-&lt;dd&gt;D&eacute;finition 2&lt;/dd&gt;
-&lt;dl&gt;</code></pre>
+                        <p>Afin de garantir à l'utilisateur une compréhension et une navigation simple dans la structure
+                            du document,
+                            <strong>il est nécessaire d'identifier correctement ces zones</strong>.</p>
+                        <p class="encadre">Attention&nbsp;: <br>les balises présentées ci-après ne fonctionnent que
+                            lorsque le DOCTYPE utilisé est en HTML5.</p>
+                        <p class="center encadre"><a href="https://demos-a11y.netlify.app/role-landmarks-html.html"
+                                                     target="blank" rel="noreferrer noopener">DEMO d'une page structurée
+                            avec HTML</a><br><a href="https://demos-a11y.netlify.app/role-landmarks-aria.html"
+                                                target="blank" rel="noreferrer noopener">DEMO d'une page structurée
+                            avec ARIA</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Structuration de l'information</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Structure du document&nbsp;: l'entête principal</h2>
+                        <p><strong>Zone située généralement en haut du document et contenant un logo, un
+                            slogan...</strong></p>
+                        <p class="encadre">L'en-tête est structuré via une balise <code>&lt;header&gt;</code>. <br><br>Cette
+                            balise doit être unique en tant qu'enfant de la balise <code>&lt;body&gt;</code>. <br>À ne
+                            pas confondre avec la balise <code>&lt;header&gt;</code> d'un <code>&lt;article&gt;</code>
+                            ou d'une <code>&lt;section&gt;</code>.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Structuration de l'information</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Structure du document&nbsp;: les zones de navigation principale et secondaire</h2>
+                        <p><strong>La navigation principale</strong> est un élément que l'on retrouve sur toutes les
+                            pages du site Web. C'est celle
+                            <strong>que l'on trouve au début du contenu pour atteindre les principales pages du
+                                site</strong>.</p>
+                        <p>Il existe aussi <strong>des navigations secondaires dans des sections spécifiques</strong>.
+                            Elles doivent être <strong>identifiables de la même
+                                manière que la navigation principale</strong>.</p>
+                        <p>Parmi ces navigations secondaires, on retrouve&nbsp;:</p>
+                        <ul>
+                            <li>le fil d'Ariane&nbsp;;</li>
+                            <li>le menu d'évitement&nbsp;;</li>
+                            <li>la pagination d'une liste de résultats&nbsp;;</li>
+                            <li>un menu de sous-rubriques&nbsp;;</li>
+                            <li>une table des matières concernant un ensemble de pages.</li>
+                        </ul>
+                        <p class="encadre">Les navigations sont structurées via la balise <code>&lt;nav&gt;</code>.</p>
+                        <p class="encadre">Attention&nbsp;: les liens du pied de page renvoyant vers les mentions
+                            légales, plan du site et autres informations concernant le site ne sont pas considérés comme
+                            un menu de navigation principal ou secondaire.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Structuration de l'information</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Structure du document&nbsp;: la zone de contenu principal</h2>
+                        <p><strong>Zone de contenant les principaux contenus de la page. Cette zone est unique dans la
+                            page.</strong></p>
+                        <p class="encadre">Cette zone est structuré via une balise <code>&lt;main&gt;</code>.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Structuration de l'information</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Structure du document&nbsp;: le pied de page</h2>
+                        <p><strong>Zone située en bas de la page contenant des informations générale relatives au
+                            site.</strong> On y trouve par exemple les coordonnées du sujet du site, les mentions
+                            légales, les crédits, les conditions d'utilisation, le plan du site et éventuellement la
+                            page accessibilité.</p>
+                        <p class="encadre">Cette zone est structuré via une balise <code>&lt;footer&gt;</code>. <br><br>Cette
+                            balise doit être unique en tant qu'enfant de la balise <code>&lt;body&gt;</code>. <br>À ne
+                            pas confondre avec la balise <code>&lt;footer&gt;</code> d'un <code>&lt;article&gt;</code>
+                            ou d'une <code>&lt;section&gt;</code>.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Structuration de l'information</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Structuration des éléments de liste</h2>
+                        <p class="encadre">Critère 9.3. Dans chaque page web, chaque liste est-elle correctement
+                            structurée&nbsp;?</p>
+                        <p>Comme pour les titres, <strong>il est nécessaire de structurer les contenus avec les éléments
+                            appropriés</strong>. Dans le cadre d'une liste, le nombre d'éléments que contient la liste
+                            est annoncé par les technologies d'assistance, ainsi que le niveau de l'élément dans les
+                            listes imbriquées pour certaines.</p>
+                        <p><strong>Les utilisateurs utilisant un clavier</strong> peuvent ainsi <strong>éviter une
+                            liste</strong> trop longue, ou
+                            <strong>naviguer dans la liste</strong> en se rendant au début ou à la fin de celle-ci.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Structuration de l'information</h1>
+                </header>
+                <div class="slide-double --title">
+                    <div class="slide-double--title">
+                        <h2>Structuration des éléments de liste&nbsp;: Liste ordonnée et non ordonnée</h2>
+                    </div>
+                    <div class="slide-double--left">
+                        <p><strong>Une liste est une suite d'éléments de contenu pouvant être regroupés.</strong></p>
+                        <ul>
+                            <li><strong>Listes ordonnées</strong> <code>&lt;ol&gt;&lt;li&gt;</code>&nbsp;: l'ordre des
+                                éléments est important pour la compréhension (ex. : recette de cuisine).
+                            </li>
+                            <li><strong>Listes non-ordonnées</strong> <code>&lt;ul&gt;&lt;li&gt;</code>&nbsp;: l'ordre
+                                n'importe pas.
+                            </li>
+                        </ul>
+                        <p class="encadre">Il est également possible de structurer les listes non-ordonnées à l'aide des
+                            attributs <code>role="list"</code> et
+                            <code>role="listitem"</code>. <br><br>Attention, ARIA ne permet pas de différencier la liste
+                            ordonnée de la liste non-ordonnée. Ajouter la numération manuellement.</p>
+                        <p class="center encadre"><a href="https://demos-a11y.netlify.app/role-elements-structure.html"
+                                                     target="blank" rel="noreferrer noopener">DEMO d'une page structurée
+                            avec HTML et ARIA</a></p>
                     </div>
                     <div class="slide-double--right">
-                        <ol>
-                            <li>Élément de liste ordonnée 1</li>
-                            <li>Élément de liste ordonnée 2</li>
-                        </ol>
-                        <p class="center"><img src="img_slide/list-2.jpg" alt=""></p>
+                        <p><strong>Avec HTML</strong></p>
                         <pre><code>&lt;ol&gt;
- &lt;li&gt;&Eacute;l&eacute;ment de liste ordonn&eacute;e 1&lt;/li&gt;
- &lt;li&gt;&Eacute;l&eacute;ment de liste ordonn&eacute;e 2&lt;/li&gt;
-&lt;/ol&gt;</code></pre>
-                        <p><a href="exercices/test-ckeditor.html" target="_blank">Démonstration dans l'éditeur de
-                            texte
-                            riche</a>.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <div class="slide-simple">
-                    <div class="slide-simple--wrapper">
-                        <h1>Les citations</h1>
-                        <h2>Les critères du RGAA</h2>
-                        <ul>
-                            <li>Critère 9.4. Dans chaque page web, chaque citation est-elle correctement
-                                indiquée&nbsp;?
-                            </li>
-                        </ul>
+  &lt;li&gt;100g de farine&lt;/li&gt;
+  &lt;li&gt;100g de sucre&lt;/li&gt;
+  &lt;li&gt;2 oeufs&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+  &lt;li&gt;Accueil&lt;/li&gt;
+  &lt;li&gt;En pratique
+    &lt;ul&gt;
+      &lt;li&gt;Venir en bus&lt;/li&gt;
+      &lt;li&gt;Venir à v&eacute;lo&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                        <p><strong>Avec ARIA</strong></p>
+                        <pre><code>&lt;div role="list"&gt;
+  &lt;div role="listitem"&gt;1. 100g de farine&lt;/div&gt;
+  &lt;div role="listitem"&gt;2. 100g de sucre&lt;/div&gt;
+  &lt;div role="listitem"&gt;3. 2 oeufs&lt;/div&gt;
+&lt;/div&gt;
+&lt;div role="list"&gt;
+  &lt;div role="listitem"&gt;Accueil&lt;/div&gt;
+  &lt;div role="listitem"&gt;En pratique
+    &lt;div role="list"&gt;
+      &lt;div role="listitem"&gt;Venir en bus&lt;/div&gt;
+      &lt;div role="listitem"&gt;Venir à v&eacute;lo&lt;/div&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
                     </div>
                 </div>
             </section>
 
             <section class="slide">
                 <header class="main-header clearfix">
-                    <h1 class="main-title">Les citations</h1>
+                    <h1 class="main-title">Structuration de l'information</h1>
                 </header>
-                <div class="slide-simple">
-                    <div class="slide-simple--wrapper">
-                        <h2>Enjeu pour l'utilisateur</h2>
-                        <p>Les citations sont souvent marquées par des guillemets.</p>
-                        <p>Indiquer correctement une citation permet aux utilisateurs de lecteur d'écran de
-                            comprendre
+                <div class="slide-double --title">
+                    <div class="slide-double--title">
+                        <h2>Structuration des éléments de liste&nbsp;: Liste de définition</h2>
+                    </div>
+                    <div class="slide-double--left">
+                        <p><strong>La liste de définition (<code>&lt;dl&gt;</code>) se différencie par la composition
+                            d'un ou plusieurs termes (<code>&lt;dt&gt;</code>) et une ou plusieurs descriptions (<code>&lt;dd&gt;</code>).</strong>
+                        </p>
+                        <p>Cette liste est généralement utilisée pour décrire un terme, réaliser un contenu de type
+                            FAQ.</p>
+                    </div>
+                    <div class="slide-double--right">
+                        <pre><code>&lt;dl&gt;
+  &lt;dt&gt;Firefox&lt;/dt&gt;
+  &lt;dd&gt;Un navigateur Web&hellip;&lt;/dd&gt;
+  &lt;dd&gt;Petit panda roux&hellip;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;dl&gt;
+  &lt;dt&gt;Firefox&lt;/dt&gt;
+  &lt;dt&gt;Fx, Ff&lt;/dt&gt;
+  &lt;dd&gt;Un navigateur Web&hellip;&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Structuration de l'information</h1>
+                </header>
+                <div class="slide-double --title">
+                    <div class="slide-double--title">
+                        <h2>Les citations</h2>
+                    </div>
+                    <div class="slide-double--left">
+                        <p class="encadre">Critère 9.4. Dans chaque page web, chaque citation est-elle correctement
+                            indiquée&nbsp;?</p>
+                        <p>Les citations sont souvent marquées par des guillemets qui peuvent aussi bien marquer une
+                            citation qu'une emphase.</p>
+                        <p>Indiquer correctement une citation permet aux utilisateurs de lecteur d'écran de comprendre
                             qu'il s'agit bien d'une citation et de connaitre le début et la fin de celle-ci.</p>
                     </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <header class="main-header clearfix">
-                    <h1 class="main-title">Les citations</h1>
-                </header>
-                <div class="slide-simple">
-                    <div class="slide-simple--wrapper">
-                        <h2>En ligne ou en bloc</h2>
+                    <div class="slide-double--right">
                         <p>Il existe deux types de citations&nbsp;:</p>
                         <ul>
-                            <li>Les citations en ligne qui se trouve à l'intérieur d'un paragraphe.</li>
-                            <li>Les citations en bloc qui forment un élément de contenu indépendant et qui peut être
-                                lu
-                                hors contexte.
+                            <li>Les citations en ligne <code>&lt;q&gt;</code> qui se trouve à l'intérieur d'un
+                                paragraphe.
+                            </li>
+                            <li>Les citations en bloc
+                                <code>&lt;blockquote&gt;</code> qui forment un élément de contenu indépendant et qui
+                                peut être lu hors contexte.
                             </li>
                         </ul>
-                        <p>À noter que la citation en ligne est rarement présente dans l'éditeur de texte riche.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h1>Structuration de l'information</h1>
                     </div>
                 </div>
             </section>
 
             <section class="slide">
                 <header class="main-header clearfix">
-                    <h1 class="main-title">Les citations</h1>
+                    <h1 class="main-title">Présentation de l'information</h1>
                 </header>
                 <div class="slide-simple">
-                    <div class="slide-simple-wrapper">
-                        <h2>Technique</h2>
-                        <h3>Citation en ligne&nbsp;:</h3>
-                        <p>Chaque fois que Kenny est tué, Stan dira <q>Oh mon Dieu, ils ont tué Kenny !</q>.</p>
-                        <pre><code>&lt;p&gt;Chaque fois que Kenny est tu&eacute;, Stan dira &lt;q&gt;Oh mon Dieu, ils ont tu&eacute; Kenny !&lt;/q&gt;.&lt;/p&gt;</code></pre>
-                        <p aria-hidden="true">&nbsp;</p>
-                        <h3>Citation en bloc&nbsp;:</h3>
-                        <blockquote>
-                            <p>Vis comme si tu devais mourir demain.</p>
-                            <p>Apprends comme si tu devais vivre toujours.</p>
-                        </blockquote>
-                        <pre><code>&lt;blockquote&gt;
- &lt;p&gt;Vis comme si tu devais mourir demain.&lt;/p&gt;
- &lt;p&gt;Apprends comme si tu devais vivre toujours.&lt;/p&gt;
-&lt;/blockquote&gt;</code></pre>
-                        <p><a href="exercices/test-ckeditor.html" target="_blank">Démonstration dans l'éditeur de
-                            texte
-                            riche</a>.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <div class="slide-simple">
                     <div class="slide-simple--wrapper">
-                        <h1>Exercice</h1>
-                        <h2>Titres, listes, citations, liens, changements de langue...</h2>
-                        <p><a href="exercices/exercice-semantique.html" target="_blank">Corriger la sémantique de ce
-                            contenu</a>.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <div class="slide-simple">
-                    <div class="slide-simple--wrapper">
-                        <h1>Liens non-perceptibles</h1>
-                        <h2>Les critères du RGAA</h2>
+                        <h2>Mise en forme exclusive avec CSS</h2>
+                        <p class="encadre">Critère 10.1. Dans le site web, des feuilles de styles sont-elles utilisées
+                            pour contrôler la présentation de l'information&nbsp;?</p>
+                        <p>Selon leurs handicaps, <strong>les utilisateurs ont besoin de personnaliser
+                            l'affichage</strong> d'une page. Ils pourraient rencontrer des difficultés s'il leur est
+                            impossible de surcharger des styles.</p>
+                        <p>Les balises et attributs suivants sont interdits&nbsp;:</p>
                         <ul>
-                            <li>Critère 10.6. Dans chaque page web, chaque lien dont la nature n'est pas évidente
-                                est-il
-                                visible par rapport au texte environnant&nbsp;?
+                            <li><strong>Balises</strong>&nbsp;: <code>basefont</code>, <code>blink</code>,
+                                <code>center</code>, <code>font</code>, <code>marquee</code>,
+                                <code>s</code>, <code>strike</code>, <code>tt</code> et <code>big</code>.
+                            </li>
+                            <li><strong>Attributs</strong>&nbsp;: <code>align</code>, <code>alink</code>, <code>background</code>,
+                                <code>bgcolor</code>, <code>border</code>, <code>cellpadding</code>,
+                                <code>cellspacing</code>, <code>char</code>, <code>charoff</code>, <code>clear</code>,
+                                <code>compact</code>, <code>color</code>, <code>frameborder</code>, <code>hspace</code>,
+                                <code>link</code>, <code>marginheight</code>, <code>marginwidth</code>,
+                                <code>text</code>, <code>valign</code>,
+                                <code>vlink</code>, <code>vspace</code>, <code>size</code>.
                             </li>
                         </ul>
+                        <p class="encadre">Attention&nbsp;: les attributs <code>width</code> et <code>height</code>
+                            utilisés sur d'autres éléments que les balises
+                            <code>&lt;img&gt;</code>, <code>&lt;object&gt;</code>, <code>&lt;embed&gt;</code>, <code>&lt;canvas&gt;</code>
+                            et <code>&lt;svg&gt;</code> sont également interdits.</p>
                     </div>
                 </div>
             </section>
 
             <section class="slide">
                 <header class="main-header clearfix">
-                    <h1 class="main-title">Liens non-perceptibles</h1>
+                    <h1 class="main-title">Présentation de l'information</h1>
                 </header>
                 <div class="slide-simple">
                     <div class="slide-simple--wrapper">
-                        <h2>Enjeu pour l'utilisateur</h2>
-                        <p>Les personnes malvoyantes peuvent ne pas percevoir les liens qui ne sont pas discernables
-                            du
-                            reste du texte dans lequel ils sont insérés.</p>
-                        <h3>Exemple non conforme</h3>
-                        <p>Depuis le <a
-                                href="https://fr.wikipedia.org/wiki/Conf%C3%A9rence_des_Nations_unies_sur_l%27environnement_et_le_d%C3%A9veloppement"
-                                target="blank" class="noperceptible-link">sommet de la Terre de Rio de Janeiro</a>
-                            en
-                            1992, la préservation de la biodiversité est considérée comme un des enjeux essentiels
-                            du
-                            développement durable.</p>
+                        <h2>Contenus visibles sans CSS</h2>
+                        <p class="encadre">Critère 10.2. Dans chaque page web, le contenu visible porteur d'information
+                            reste-t-il présent lorsque les feuilles de styles sont désactivées&nbsp;?</p>
+                        <p><strong>Les images de fond insérées en CSS</strong> (propriété <code>background-image</code>)
+                            <strong>ne
+                                doivent jamais être porteuses d'information</strong>.</p>
+                        <p>Les utilisateurs ayant besoin de personnaliser l'affichage d'une page à l'aide de feuilles de
+                            styles personnalisées peuvent ne pas percevoir le contenu de ce type d'image.</p>
+                        <p>De plus une image de fond en CSS ne permet pas d'intégrer une alternative nativement. Il est
+                            toléré de prévoir une alternative via un texte caché en CSS mais cela est vivement
+                            déconseillé.</p>
                     </div>
                 </div>
             </section>
 
             <section class="slide">
                 <header class="main-header clearfix">
-                    <h1 class="main-title">Liens non-perceptibles</h1>
+                    <h1 class="main-title">Présentation de l'information</h1>
                 </header>
                 <div class="slide-simple">
                     <div class="slide-simple--wrapper">
-                        <h2>Liens qui ne sont pas perceptibles</h2>
-                        <p>Les liens signalés uniquement par la couleur doivent satisfaire ces conditions&nbsp;:</p>
+                        <h2>Contenus compréhensibles sans CSS</h2>
+                        <p class="encadre">Critère 10.3. Dans chaque page web, l'information reste-t-elle compréhensible
+                            lorsque les feuilles de styles sont désactivées&nbsp;?</p>
+                        <p><strong>L'ordre des éléments affichés doit correspondre à l'ordre dans le DOM.</strong></p>
+                        <p>Exemples de problèmes récurrents&nbsp;:</p>
                         <ul>
-                            <li>La couleur du lien a un rapport de contraste supérieur à 3:1 par rapport au texte
-                                environnant.
+                            <li>Une liste d'événements avec image, catégorie, date et titre&nbsp;: les personnes
+                                naviguant par titre pourraient comprendre que l'image, la catégorie et la date
+                                appartiennent à l'événement précédent.
                             </li>
-                            <li>Le lien dispose d'une indication visuelle au survol et à la prise de focus autre
-                                qu'un
-                                changement de couleur.
+                            <li>Un menu flottant&nbsp;: Si ce menu se trouve au début ou à la fin du code, il ne sera
+                                pas contextualisé avec le reste de la page&nbsp;;s'il se trouve à la fin, il risque de
+                                n'être jamais atteint.
                             </li>
                         </ul>
-                        <p class="encadre">Conseil&nbsp;: les liens et uniquement les liens devraient toujours être
-                            soulignés.</p>
+                        <p class="encadre">Le RGAA autorise la modification de l'ordre des éléments dans le code source
+                            avec CSS. Cependant, cela crée une incohérence entre l'ordre visuelle et l'ordre dans le
+                            code. La <a href="https://www.w3.org/WAI/WCAG21/Techniques/css/C27" target="_blank"
+                                        rel="noopener noreferrer">technique C27 des WCAG (en anglais)</a> n'autorise pas
+                            cette pratique.</p>
                     </div>
                 </div>
             </section>
 
             <section class="slide">
                 <header class="main-header clearfix">
-                    <h1 class="main-title">Liens non-perceptibles</h1>
+                    <<h1 class="main-title">Présentation de l'information</h1>
                 </header>
                 <div class="slide-simple">
                     <div class="slide-simple--wrapper">
-                        <h2>Exemples conformes</h2>
+                        <h2>Contenus compréhensibles sans CSS</h2>
+                        <p class="center encadre"><a href="https://demos-a11y.netlify.app/demo-code-ordre-css.html"
+                                                     target="blank" rel="noreferrer noopener">DEMO de contenus
+                            compréhensibles sans CSS</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Présentation de l'information</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Agrandissement du texte</h2>
+                        <p class="encadre">Critère 10.4. Dans chaque page web, le texte reste-t-il lisible lorsque la taille des caractères est augmentée jusqu'à 200%, au moins (hors cas particuliers)&nbsp;?<br><br>Critère 10.11. Pour chaque page web, les contenus peuvent-ils être présentés sans avoir recours à un défilement vertical pour une fenêtre ayant une hauteur de 256px ou à un défilement horizontal pour une fenêtre ayant une largeur de 320px (hors cas particuliers)&nbsp;?<br><br>Critère 10.12. Dans chaque page web, les propriétés d'espacement du texte peuvent-elles être redéfinies par l'utilisateur sans perte de contenu ou de fonctionnalité (hors cas particuliers)&nbsp;?</p>
+                        <p>Les malvoyants ont besoin d'agrandir la taille du texte (zoom texte) ou de l'interface (zoom graphique).</p>
+                        <p>Les personnes dyslexiques ont besoin de personnaliser la police d'écriture, la couleur de fond et la couleur du texte, l'espacement entre les caractères, les mots et les lignes...</p>
+                        <p><strong>La mise en forme de l'interface doit alors s'adapter convenablement pour que les contenus
+                            restent lisibles, compréhensibles et fonctionnels.</strong></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Présentation de l'information</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Agrandissement du texte&nbsp;: zoom de l'interface</h2>
+                        <p>Aucun contenu ne doit être perdu au zoom. Cette règle doit être satisfaite par une de ces conditions&nbsp;:</p>
                         <ul>
-                            <li>La Bretagne est une entité géographique et culturelle, et une des <a
-                                    href="https://fr.wikipedia.org/wiki/Pays_celtiques" target="_blank"
-                                    class="perceptible-link">nations dites celtiques</a>.
-                            </li>
-                            <li>La permaculture est un concept systémique et global qui vise à créer des écosystèmes
-                                respectant la <a rel="noreferrer noopener"
-                                                 href="https://fr.wikipedia.org/wiki/Biodiversit%C3%A9"
-                                                 target="blank">biodiversité</a>.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <div class="slide-simple">
-                    <div class="slide-simple--wrapper">
-                        <h1>Information donnée uniquement par la forme, taille ou position</h1>
-                        <h2>Les critères du RGAA</h2>
-                        <ul>
-                            <li>Critère 10.9. Dans chaque page web, l'information ne doit pas être donnée uniquement
-                                par
-                                la forme, taille ou position. Cette règle est-elle respectée&nbsp;?
-                            </li>
-                            <li>Critère 10.10. Dans chaque page web, l'information ne doit pas être donnée par la
-                                forme,
-                                taille ou position uniquement. Cette règle est-elle implémentée de façon pertinente&nbsp;?
-                            </li>
+                            <li><strong>lors de l'utilisation de la fonction d'agrandissement du texte du navigateur à 200%&nbsp;</strong></li>
+                            <li><strong>lors de l'utilisation de la fonction d'agrandissement du zoom graphique du navigateur
+                                à 200%&nbsp;</strong></li>
+                            <li><strong>lors de l'utilisation d'un composant d'interface propre au site permettant d'agrandir
+                                le texte ou le zoom.</strong></li>
                         </ul>
                     </div>
                 </div>
@@ -3735,524 +4582,23 @@ HAUT
 
             <section class="slide">
                 <header class="main-header clearfix">
-                    <h1 class="main-title">Information donnée uniquement par la forme, taille ou position</h1>
+                    <h1 class="main-title">Présentation de l'information</h1>
                 </header>
                 <div class="slide-simple">
                     <div class="slide-simple--wrapper">
-                        <h2>Enjeu pour
-                            l'utilisateur</h2>
-                        <p>Comme pour la couleur, <strong>l'information véhiculée uniquement par la forme, la taille
-                            ou
-                            la position peut rendre un contenu inutilisable ou incompréhensible</strong>.</p>
-                        <p>Les cas d'implémentation sont variables. Sur le plan rédactionnel ce sont les images qui
-                            véhiculeront le plus souvent une information par la forme, taille ou position. Il est
-                            donc
-                            nécessaire dans ce cas de fournir une alternative.</p>
+                        <h2>Agrandissement du texte&nbsp;: personnalisation de l'espacement du texte</h2>
+                        <p>Les contenus doivent rester lisibles et ne doivent pas se chevaucher lorsque l'utilisateur utilise cette feuille de style&nbsp;:</p>
+                        <pre><code>* {
+  line-height: 1.5 !important;
+  letter-spacing: 0.12em !important;
+  word-spacing: 0.16em !important;
+}
+p {
+  margin-bottom: 2em !important;
+}</code></pre>
                     </div>
                 </div>
             </section>
-
-            <section class="slide">
-                <header class="main-header clearfix">
-                    <h1 class="main-title">Information donnée uniquement par la forme, taille ou position</h1>
-                </header>
-                <div class="slide-simple">
-                    <div class="slide-simple--wrapper">
-                        <h2>Quelques exemples</h2>
-                        <p>Un nuage de tag mettant en avant les termes les plus recherchés&nbsp;:</p>
-                        <p class="center"><img src="img_slide/forme-1.png" alt="Nuage de tag"></p>
-                        <p class="Cmasque">Dans le cas ci-avant, l'information est donnée à la fois par la couleur
-                            mais
-                            aussi par la taille.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <header class="main-header clearfix">
-                    <h1 class="main-title">Information donnée uniquement par la forme, taille ou position</h1>
-                </header>
-                <div class="slide-double">
-                    <div class="slide-double--left">
-                        <h2>Quelques exemples</h2>
-                        <p class="center"><img src="img_slide/forme-2.png"
-                                               alt="Prévision météo sur la région parisienne avec indication du sens du vent">
-                        </p>
-                    </div>
-                    <div class="slide-double--right">
-                        <div class="Cmasque">
-                            <p>Cette prévision météo indique via une flèche pointée vers l'est le sens du
-                                vent. Afin de garantir le même niveau d'information à tous il est nécessaire
-                                d'ajouter
-                                pour les personnes ne pouvant percevoir cette forme une alternative à l'image «&nbsp;vent&nbsp;d'ouest&nbsp;».</p>
-                            <p>On notera une infobulle qui ne véhicule pas la bonne information.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <div class="slide-simple">
-                    <div class="slide-simple--wrapper">
-                        <h1 class="end-title">Les formulaires</h1>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <header class="main-header clearfix">
-                    <h1 class="main-title">Les formulaires</h1>
-                </header>
-                <div class="slide-simple">
-                    <div class="slide-simple--wrapper">
-                        <h1>Des étiquettes pertinentes</h1>
-                        <h2>Les critères du RGAA</h2>
-                        <ul>
-                            <li>Critère 11.1. Chaque champ de formulaire a-t-il une étiquette&nbsp;?</li>
-                            <li>Critère 11.2. Chaque étiquette associée à un champ de formulaire est-elle pertinente
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <header class="main-header clearfix">
-                    <h1 class="main-title">Formulaires > Des étiquettes pertinentes</h1>
-                </header>
-                <div class="slide-simple">
-                    <div class="slide-simple--wrapper">
-                        <h2>Enjeu pour l'utilisateur</h2>
-                        <p>Une étiquette de champ est un texte qui permet d'expliquer quelle donnée est attendue par
-                            le
-                            champ (nom, prénom, date de naissance, téléphone, etc.).<br><strong>Il faut que
-                                l'utilisateur comprenne ce qu'on attend de sa saisie</strong>.</p>
-                        <p><strong>L'étiquette est un élément obligatoire pour un champ</strong>.</p>
-                        <p>Ne pas demander <strong>plusieurs données dans un même champ</strong> en particulier pour
-                            des
-                            données qui peuvent être prédites par l'agent utilisateur.</p>
-                        <div class="encadre">
-                            <p>Attention&nbsp;: l'information grisé dans le champ, appelée <code>placeholder</code>,
-                                n'est
-                                pas une étiquette de champ.</p>
-                            <p>Il représente une indication complémentaire qui ne doit pas contenir d'instruction
-                                importante, du fait de son comportement (disparaît à la saisie, contraste
-                                insuffisant).</p>
-                            <p>Lorsque le <code>placeholder</code> est présent il est susceptible d'être restitué à
-                                la
-                                place de l'attribut <code>title</code>. <br>Lorsque ces deux attributs
-                                <code>title</code> et <code>placeholder</code> sont présents, ils doivent être
-                                identiques.</p>
-                        </div>
-                        <p class="center"><img src="img_slide/placeholder-1.jpg" alt=""></p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <header class="main-header clearfix">
-                    <h1 class="main-title">Formulaires</h1>
-                </header>
-                <div class="slide-simple">
-                    <div class="slide-simple--wrapper">
-                        <h1>Regrouper les champs</h1>
-                        <h2>Les critères du RGAA</h2>
-                        <ul>
-                            <li>Critère 11.5. Dans chaque formulaire, les champs de même nature sont-ils regroupés,
-                                si
-                                nécessaire&nbsp;?
-                            </li>
-                            <li>Critère 11.7. Dans chaque formulaire, chaque légende associée à un regroupement de
-                                champs de même nature est-elle pertinente&nbsp;?
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <header class="main-header clearfix">
-                    <h1 class="main-title">Formulaires > Regrouper les champs</h1>
-                </header>
-                <div class="slide-double">
-                    <div class="slide-double--left">
-                        <h2>Enjeu pour l'utilisateur</h2>
-                        <p>Dans certains formulaires, il est nécessaire de créer des <strong>regroupements
-                            de champs</strong>. Ces regroupements de champs sont utiles pour ne pas induire en
-                            erreur
-                            certains utilisateurs, notamment aveugles.</p>
-                        <p>Par exemple&nbsp;: lors d'une démarche d'inscription de plusieurs personnes, des
-                            champs identiques vont être affichés (prénom, nom, etc.). Afin que l'utilisateur sache à
-                            quelle personne sont associés les champs, il est nécessaire de créer un regroupement de
-                            champs avec une étiquette pertinente (personne 1).</p>
-                    </div>
-                    <div class="slide-double--right">
-                        <p class="center"><img src="img_slide/form1.png" alt=""></p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <header class="main-header clearfix">
-                    <h1 class="main-title">Formulaires</h1>
-                </header>
-                <div class="slide-simple">
-                    <div class="slide-simple--wrapper">
-                        <h1>Liste de choix</h1>
-                        <h2>Les critères du RGAA</h2>
-                        <ul>
-                            <li>Critère 11.8. Dans chaque formulaire, les items de même nature d'une liste de choix
-                                sont-ils regroupés de manière pertinente&nbsp;?
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <header class="main-header clearfix">
-                    <h1 class="main-title">Formulaires > Liste de choix</h1>
-                </header>
-                <div class="slide-simple">
-                    <div class="slide-simple--wrapper">
-                        <h2>Enjeu pour l'utilisateur</h2>
-                        <div>
-                            <p>Les informations dans une liste de choix doivent être présentées dans un ordre
-                                cohérent
-                                comme un ordre alphabétique, numérique ou logique.</p>
-                            <p>Exemple&nbsp;:</p>
-                            <ul>
-                                <li>Une liste des départements doit être organisée par ordre alphabétique si les
-                                    options
-                                    commencent par du texte ou par ordre numérique s'ils commencent par le numéro de
-                                    département.
-                                </li>
-                                <li>Une liste des mois de l'année doit être organisée par ordre logique.</li>
-                            </ul>
-                            <label for="mois">Mois de naissance</label>
-                            <select name="mois" id="mois">
-                                <option value="janvier">Janvier</option>
-                                <option value="fevrier">Février</option>
-                                <option value="mars">Mars</option>
-                                <option value="avril">Avril</option>
-                                <option value="mai">Mai</option>
-                                <option value="juin">Juin</option>
-                                <option value="juillet">Juillet</option>
-                                <option value="aout">Août</option>
-                                <option value="septembre">Septembre</option>
-                                <option value="octobre">Octobre</option>
-                                <option value="novembre">Novembre</option>
-                                <option value="decembre">Décembre</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <header class="main-header clearfix">
-                    <h1 class="main-title">Formulaires</h1>
-                </header>
-                <div class="slide-simple">
-                    <div class="slide-simple--wrapper">
-                        <h1>Des boutons pertinents</h1>
-                        <h2>Les critères du RGAA</h2>
-                        <ul>
-                            <li>Critère 11.9. Dans chaque formulaire, l'intitulé de chaque bouton est-il pertinent&nbsp;?</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <header class="main-header clearfix">
-                    <h1 class="main-title">Formulaires > Des boutons pertinents</h1>
-                </header>
-                <div class="slide-simple">
-                    <div class="slide-simple--wrapper">
-                        <h2>Enjeu pour l'utilisateur</h2>
-                        <div>
-                            <p>Les <strong>aveugles et les malvoyants</strong> n'ayant <strong>pas une vision
-                                d'ensemble
-                                de la page</strong>, peuvent ne pas <strong>être certains de l'action qu'ils
-                                réalisent</strong> si le bouton n'est pas pertinent.</p>
-                            <p>Les personnes souffrant de <strong>handicaps moteurs</strong> et utilisant une
-                                <strong>reconnaissance
-                                    vocale</strong> doivent pouvoir <strong>cibler le bouton à la voix</strong>. Si
-                                plusieurs boutons ont le même intitulé, l'utilisateur rencontrera des difficultés
-                                pour
-                                cibler celui qu'il veut actionner.</p>
-                            <p>Les boutons avec pour intitulés « Envoyer », « Soumettre » ou « Valider » ne sont
-                                <strong>pas suffisamment pertinents</strong>.</p>
-                            <p>Un bouton pertinent explicite l'action, par exemple&nbsp;: « M'inscrire à la lettre
-                                d'information », « Contacter le service urbanisme ».</p>
-                            <p>Il <strong>doit-être unique</strong> dans son contexte.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <header class="main-header clearfix">
-                    <h1 class="main-title">Formulaires</h1>
-                </header>
-                <div class="slide-simple">
-                    <div class="slide-simple--wrapper">
-                        <h1>Aide à la saisie</h1>
-                        <h2>Les critères du RGAA</h2>
-                        <ul>
-                            <li>Critère 11.10. Dans chaque formulaire, le contrôle de saisie est-il utilisé de
-                                manière
-                                pertinente (hors cas particuliers)&nbsp;?
-                            </li>
-                            <li>Critère 11.11. Dans chaque formulaire, le contrôle de saisie est-il accompagné, si
-                                nécessaire, de suggestions facilitant la correction des erreurs de saisie&nbsp;?
-                            </li>
-                            <li>Critère 11.13. La finalité d'un champ de saisie peut-elle être déduite pour
-                                faciliter le
-                                remplissage automatique des champs avec les données de l'utilisateur&nbsp;?
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <header class="main-header clearfix">
-                    <h1 class="main-title">Formulaires > Aide à la saisie</h1>
-                </header>
-                <div class="slide-simple">
-                    <div class="slide-simple--wrapper">
-                        <h2>Enjeu pour l'utilisateur</h2>
-                        <p>Les personnes ayant un <strong>handicap mental</strong> peuvent ne pas pouvoir remplir un
-                            champ de formulaire
-                            <strong>si le format attendu n'est pas précisé</strong>.</p>
-                        <p><strong>Tous les utilisateurs</strong> pourraient être dans l'incapacité de soumettre un
-                            formulaire
-                            <strong>lorsque
-                                les champs à caractère obligatoire ne sont pas indiqués</strong>.</p>
-                        <p><strong>Les aveugles et malvoyants qui utilisent un lecteur d'écran ou une loupe</strong>
-                            pourraient
-                            rencontrer des difficultés majeures <strong>si les messages d'erreur ne sont pas
-                                vocalisés</strong> à la
-                            soumission du formulaire, <strong>ou si ces messages d'erreur ne sont pas correctement
-                                liés
-                                aux
-                                champs correspondants</strong>.</p>
-                        <p>Les personnes ayant un <strong>handicap mental et/ou moteur</strong> peuvent passer
-                            beaucoup
-                            de temps, voir
-                            abandonner la saisie des champs d'un formulaire <strong>si leurs données utilisateur
-                                préalablement
-                                enregistrées ne sont pas suggérées</strong>.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <header class="main-header clearfix">
-                    <h1 class="main-title">Formulaires > Aide à la saisie</h1>
-                </header>
-                <div class="slide-simple">
-                    <div class="slide-simple--wrapper">
-                        <h2>Instructions d'aide à la saisie</h2>
-                        <p>Pour <strong>les champs texte sans masque de saisie</strong>, il est utile d'ajouter une
-                            <strong>instruction d'aide de saisie dans l'étiquette du champ</strong>.</p>
-                        <p>Ces aides de saisie permettent aux utilisateurs de <strong>savoir comment renseigner le
-                            champ
-                            convenablement</strong>.</p>
-                        <p>Cela concerne&nbsp;:</p>
-                        <ul>
-                            <li>Les champs texte « Courriel ». Il est nécessaire d'ajouter le format attendu «
-                                Courriel
-                                (jean.dupond@domain.fr) ».
-                            </li>
-                            <li>Les champs texte « Date » sans masque de saisie. Il est nécessaire d'ajouter le
-                                format
-                                attendu « Date (jj/mm/aaaa) ».
-                            </li>
-                            <li>Les champs texte « Adresse Web ». Il est nécessaire d'ajouter le format attendu «
-                                Adresse Web (www.site.com) ».
-                            </li>
-                            <li>Les champs d'envoi de fichiers. Il est nécessaire d'indiquer le type et le poids
-                                maximal
-                                autorisé.
-                            </li>
-                            <li>Les champs texte demandant uniquement des chiffres, des lettres, sans caractères
-                                spéciaux... Il est nécessaire d'ajouter le format attendu et le nombre de
-                                caractères.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <header class="main-header clearfix">
-                    <h1 class="main-title">Formulaires > Aide à la saisie</h1>
-                </header>
-                <div class="slide-double">
-                    <div class="slide-double--left">
-                        <h2>Suggestion de données utilisateur</h2>
-                        <p>Suggestion de remplissage automatique des données utilisateur&nbsp;:
-                            <strong>l'autocompletion</strong>.</p>
-                        <p>Nom, prénom, adresse, téléphone, courriel, identifiant/mot de passe...</p>
-                        <p>Pour <strong>éviter que le navigateur ne devine quelle information suggérer et insère des
-                            données invalides</strong>, la <strong>donnée attendue peut être précisée</strong>
-                            (attribut
-                            <code class="nohighlight">autocomplete</code>).</p>
-                        <p class="encadre">Les CMS ne proposent pas tous cette option, mais elle peut parfois être
-                            développée.</p>
-                    </div>
-                    <div class="slide-double--right">
-                        <p class="center"><img src="img_slide/autocomplete-drupal.jpg"
-                                               alt="Exemple de définition de l'autocompletion dans Drupal"></p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <div class="slide-simple">
-                    <div class="slide-simple--wrapper">
-                        <h1>Documents bureautiques en téléchargement</h1>
-                        <h2>Les critères du RGAA</h2>
-                        <ul>
-                            <li>Critère 13.3. Dans chaque page web, chaque document bureautique en téléchargement
-                                possède-t-il, si nécessaire, une version accessible (hors cas particuliers)&nbsp;?
-                            </li>
-                            <li>Critère 13.4. Pour chaque document bureautique ayant une version accessible, cette
-                                version offre-t-elle la même information&nbsp;?
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <header class="main-header clearfix">
-                    <h1 class="main-title">Documents bureautiques en téléchargement</h1>
-                </header>
-                <div class="slide-simple">
-                    <div class="slide-simple--wrapper">
-                        <h2>Enjeu pour l'utilisateur</h2>
-                        <p>Pour qu'ils soient utilisables par les personnes en situation de handicap, les documents
-                            bureautiques en téléchargement doivent être structurés de la même façon qu'une page web&nbsp;:
-                            avec des titres, des listes, etc.<br>Toutes les autres rubriques du référentiel
-                            s'appliquent
-                            également&nbsp;: les images, les couleurs, les liens, etc.</p>
-                        <ul>
-                            <li>Si votre document n'est pas accessible, prévenez l'utilisateur, indiquez le dans le
-                                nom
-                                du document sur votre site.
-                            </li>
-                            <li>Si vous n'avez pas les moyens de rendre les documents accessibles, vous devez au
-                                moins
-                                fournir une version alternative accessible.<br>
-                                Par exemple&nbsp;: pour un document PDF qui n'est pas accessible, vous pouvez
-                                réaliser
-                                une
-                                page web accessible avec le même contenu.
-                            </li>
-                        </ul>
-                        <p class="encadre">À noter&nbsp;: Les fichiers bureautiques publiés avant le 23 septembre
-                            2018,
-                            sauf s'ils sont nécessaires à l'accomplissement d'une démarche administrative relevant
-                            des
-                            tâches effectuées par l'organisme concerné, sont exemptés.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <div class="slide-simple">
-                    <div class="slide-simple--wrapper">
-                        <h1>L'accessibilité dans les réseaux sociaux</h1>
-                        <h2>Contenu textuel</h2>
-                        <ul>
-                            <li>Utilisation des Hashtags&nbsp;:
-                                <ul>
-                                    <li>Utiliser l'écriture Camel Case pour séparer les mots. Exemple
-                                        #WikipediaEnFrançais.
-                                    </li>
-                                    <li>Positionner le hashtag à la fin du poste quand c'est possible.</li>
-                                </ul>
-                            </li>
-                            <li>Utiliser les emojis avec parcimonie.
-                                <ul>
-                                    <li>Éviter les répétitions d'emojis ❤️❤️❤️.</li>
-                                    <li><a rel="noreferrer noopener" href="https://emojipedia.org" target="_blank">Vérifier
-                                        l'alternative de
-                                        l'emoji <span aria-hidden="true">(en)</span><span class="sr-only">(ressource en anglais)</span></a>
-                                        pour être certain que votre message reste cohérent.
-                                        Exemple&nbsp;:
-                                        <ul>
-                                            <li>😪 de la situation actuelle.</li>
-                                            <li>😥 de la situation actuelle.</li>
-                                        </ul>
-                                    </li>
-                                    <li>Ne pas remplacer de mots par des émojis.</li>
-                                    <li>Placer les émojis plutôt à la fin, l'information doit venir en premier
-                                        (alerte,
-                                        annonce...).
-                                    </li>
-                                    <li>Éviter les émojis au milieu des phrases, ou pire, au milieu des mots !</li>
-                                    <li>Utiliser des émojis connus.</li>
-                                    <li>Éviter les émoticônes, du type&nbsp;:)</li>
-                                    <li>Attention aux contrastes.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <p aria-hidden="true">&nbsp;</p>
-                        <p class="center"><a href="demos/demo-emojis.html" target="_blank">Démonstration NVDA dans
-                            une
-                            page HTML</a>.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <header class="main-header clearfix">
-                    <h1 class="main-title">L'accessibilité dans les réseaux sociaux</h1>
-                </header>
-                <div class="slide-double">
-                    <div class="slide-double--left">
-                        <h2>Images</h2>
-                        <p>Renseigner l'alternative des images quand cela est possible.</p>
-
-                    </div>
-                    <div class="slide-double--right">
-                        <p class="center"><img src="img_slide/alt-twitter.png"
-                                               alt="Exemple d'ajout d'une alternative dans Twitter"></p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide">
-                <header class="main-header clearfix">
-                    <h1 class="main-title">L'accessibilité dans les réseaux sociaux</h1>
-                </header>
-                <div class="slide-simple">
-                    <div class="slide-simple--wrapper">
-                        <h2>Vidéos</h2>
-                        <ul>
-                            <li>Titrer la vidéo.</li>
-                            <li>Fournir des sous-titrages.</li>
-                            <li>Fournir une transcription textuelle ou un lien vers celle-ci.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="slide end noprint">
-                <div class="slide-simple">
-                    <div class="slide-simple--wrapper">
-                        <h2 class="end-title">Des questions&nbsp;?</h2>
-                        <p>Merci de votre attention !</p>
-                    </div>
-                </div>
-            </section-->
-
         </main>
     </div>
     <div id="setting" class="tool-block tool-block-settings " role="dialog" tabindex="-1" style="display:none"></div>

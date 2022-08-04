@@ -376,7 +376,7 @@ q {
     background: #fff;
 }
 
-.slide-double--title h2 {
+.slide-double--title h2, .slide-double--title h3 {
     margin: 0;
 }
 
