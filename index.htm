@@ -3546,7 +3546,7 @@ HAUT
                         <p class="center encadre"><a href="https://demos-a11y.netlify.app/demo-code-modale.html"
                                                      target="blank" rel="noreferrer noopener">DEMO d'une fenêtre
                             modale</a></p>
-                        <p class="center encadre"><a href="https://demos-a11y.netlify.app/demo-code-focus.html"
+                        <p class="center encadre"><a href="https://demos-a11y.netlify.app/demo-code-tabindex.html"
                                                      target="blank" rel="noreferrer noopener">DEMO de gestion du
                             focus</a></p>
                     </div>
@@ -3732,7 +3732,7 @@ HAUT
                         <p class="center encadre"><a href="https://demos-a11y.netlify.app/demo-code-clavier.html"
                                                      target="blank" rel="noreferrer noopener">DEMO des changements de
                             contexte</a></p>
-                        <p class="center encadre"><a href="https://demos-a11y.netlify.app/demo-code-focus.html"
+                        <p class="center encadre"><a href="https://demos-a11y.netlify.app/demo-code-tabindex.html"
                                                      target="blank" rel="noreferrer noopener">DEMO de gestion du
                             focus</a></p>
                         <p class="center encadre"><a href="https://demos-a11y.netlify.app/demo-code-modale.html"
@@ -4440,7 +4440,7 @@ Pourtant il devrait l&#39;&ecirc;tre.&lt;/div&gt;</code></pre>
             <section class="slide">
                 <div class="slide-simple">
                     <div class="slide-simple--wrapper">
-                        <h1>Structuration de l'information</h1>
+                        <h1>Présentation de l'information</h1>
                     </div>
                 </div>
             </section>
@@ -4552,10 +4552,21 @@ Pourtant il devrait l&#39;&ecirc;tre.&lt;/div&gt;</code></pre>
                 <div class="slide-simple">
                     <div class="slide-simple--wrapper">
                         <h2>Agrandissement du texte</h2>
-                        <p class="encadre">Critère 10.4. Dans chaque page web, le texte reste-t-il lisible lorsque la taille des caractères est augmentée jusqu'à 200%, au moins (hors cas particuliers)&nbsp;?<br><br>Critère 10.11. Pour chaque page web, les contenus peuvent-ils être présentés sans avoir recours à un défilement vertical pour une fenêtre ayant une hauteur de 256px ou à un défilement horizontal pour une fenêtre ayant une largeur de 320px (hors cas particuliers)&nbsp;?<br><br>Critère 10.12. Dans chaque page web, les propriétés d'espacement du texte peuvent-elles être redéfinies par l'utilisateur sans perte de contenu ou de fonctionnalité (hors cas particuliers)&nbsp;?</p>
-                        <p>Les malvoyants ont besoin d'agrandir la taille du texte (zoom texte) ou de l'interface (zoom graphique).</p>
-                        <p>Les personnes dyslexiques ont besoin de personnaliser la police d'écriture, la couleur de fond et la couleur du texte, l'espacement entre les caractères, les mots et les lignes...</p>
-                        <p><strong>La mise en forme de l'interface doit alors s'adapter convenablement pour que les contenus
+                        <p class="encadre">Critère 10.4. Dans chaque page web, le texte reste-t-il lisible lorsque la
+                            taille des caractères est augmentée jusqu'à 200%, au moins (hors cas
+                            particuliers)&nbsp;?<br><br>Critère 10.11. Pour chaque page web, les contenus peuvent-ils
+                            être présentés sans avoir recours à un défilement vertical pour une fenêtre ayant une
+                            hauteur de 256px ou à un défilement horizontal pour une fenêtre ayant une largeur de 320px
+                            (hors cas particuliers)&nbsp;?<br><br>Critère 10.12. Dans chaque page web, les propriétés
+                            d'espacement du texte peuvent-elles être redéfinies par l'utilisateur sans perte de contenu
+                            ou de fonctionnalité (hors cas particuliers)&nbsp;?</p>
+                        <p>Les malvoyants ont besoin d'agrandir la taille du texte (zoom texte) ou de l'interface (zoom
+                            graphique).</p>
+                        <p>Les personnes dyslexiques ont besoin de personnaliser la police d'écriture, la couleur de
+                            fond et la couleur du texte, l'espacement entre les caractères, les mots et les
+                            lignes...</p>
+                        <p><strong>La mise en forme de l'interface doit alors s'adapter convenablement pour que les
+                            contenus
                             restent lisibles, compréhensibles et fonctionnels.</strong></p>
                     </div>
                 </div>
@@ -4568,12 +4579,16 @@ Pourtant il devrait l&#39;&ecirc;tre.&lt;/div&gt;</code></pre>
                 <div class="slide-simple">
                     <div class="slide-simple--wrapper">
                         <h2>Agrandissement du texte&nbsp;: zoom de l'interface</h2>
-                        <p>Aucun contenu ne doit être perdu au zoom. Cette règle doit être satisfaite par une de ces conditions&nbsp;:</p>
+                        <p>Aucun contenu ne doit être perdu au zoom. Cette règle doit être satisfaite par une de ces
+                            conditions&nbsp;:</p>
                         <ul>
-                            <li><strong>lors de l'utilisation de la fonction d'agrandissement du texte du navigateur à 200%&nbsp;</strong></li>
-                            <li><strong>lors de l'utilisation de la fonction d'agrandissement du zoom graphique du navigateur
+                            <li><strong>lors de l'utilisation de la fonction d'agrandissement du texte du navigateur à
+                                200%&nbsp;</strong></li>
+                            <li><strong>lors de l'utilisation de la fonction d'agrandissement du zoom graphique du
+                                navigateur
                                 à 200%&nbsp;</strong></li>
-                            <li><strong>lors de l'utilisation d'un composant d'interface propre au site permettant d'agrandir
+                            <li><strong>lors de l'utilisation d'un composant d'interface propre au site permettant
+                                d'agrandir
                                 le texte ou le zoom.</strong></li>
                         </ul>
                     </div>
@@ -4587,8 +4602,9 @@ Pourtant il devrait l&#39;&ecirc;tre.&lt;/div&gt;</code></pre>
                 <div class="slide-simple">
                     <div class="slide-simple--wrapper">
                         <h2>Agrandissement du texte&nbsp;: personnalisation de l'espacement du texte</h2>
-                        <p>Les contenus doivent rester lisibles et ne doivent pas se chevaucher lorsque l'utilisateur utilise cette feuille de style&nbsp;:</p>
-                        <pre><code>* {
+                        <p>Les contenus doivent rester lisibles et ne doivent pas se chevaucher lorsque l'utilisateur
+                            utilise cette feuille de style&nbsp;:</p>
+                        <pre><code class="--big">* {
   line-height: 1.5 !important;
   letter-spacing: 0.12em !important;
   word-spacing: 0.16em !important;
@@ -4596,6 +4612,380 @@ Pourtant il devrait l&#39;&ecirc;tre.&lt;/div&gt;</code></pre>
 p {
   margin-bottom: 2em !important;
 }</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Présentation de l'information</h1>
+                </header>
+                <div class="slide-double --title">
+                    <div class="slide-double--title">
+                        <h2>Agrandissement du texte&nbsp;: pas de barres de défilement horizontale et verticale</h2>
+                    </div>
+                    <div class="slide-double--left">
+                        <ul>
+                            <li><strong>Pas de barre de défilement horizontale</strong> lorsque le contenu se présente
+                                <strong>dans un
+                                    sens de lecture horizontal dans une fenêtre réduite à 320px</strong>.
+                            </li>
+                            <li><strong>Pas de barre de défilement verticale</strong> lorsque le contenu se présente
+                                <strong>dans un sens
+                                    de lecture vertical dans une fenêtre réduite à 256px</strong>.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="slide-double--right">
+                        <p>Cas particuliers&nbsp;:</p>
+                        <ul>
+                            <li>Les images, les graphiques ou les vidéos ;</li>
+                            <li>Les jeux.</li>
+                            <li>Les présentations (diaporama).</li>
+                            <li>Les tableaux de données.</li>
+                            <li>Les interfaces où il est nécessaire d'avoir un ascenseur horizontal lors de la
+                                manipulation de l'interface.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Présentation de l'information</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Agrandissement du texte&nbsp;: balise meta <code>viewport</code></h2>
+                        <p>La meta <code>viewport</code> <strong>ne doit pas interdire le zoom</strong> du navigateur
+                            jusqu'à 200%.</p>
+                        <p>Les paramètres ci-après <strong>ne sont pas conformes&nbsp;:</strong></p>
+                        <pre><code class="--big">&lt;meta name=&quot;viewport&quot; content=&quot;user-scalable=no&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;maximum-scale=1.0&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;maximum-scale=1.5&quot;&gt;</code></pre>
+                        <p>Le paramètre ci-après <strong>est conforme&nbsp;:</strong></p>
+                        <pre><code class="--big">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, minimum-scale=1.0&quot;&gt;</code></pre>
+                        <p class="encadre">L'utilisation de <code>user-scalable</code> avec la valeur <code>no</code>
+                            empêche l'utilisateur de zoomer. Ne pas utiliser cette propriété, ou utiliser la valeur
+                            <code>yes</code>.</p>
+                        <p class="encadre">L'utilisation de <code>maximum-scale</code> avec une valeur inférieure à 2
+                            empêche l'utilisateur de zoomer jusqu'à 200%. Ne pas utiliser cette propriété, ou utiliser
+                            une valeur supérieure ou égale à <code>2</code>.</p>
+                        <p class="center encadre"><a
+                                href="https://developer.mozilla.org/fr/docs/Web/HTML/Viewport_meta_tag"
+                                target="blank" rel="noreferrer noopener">Documentation de la meta viewport</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Présentation de l'information</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Agrandissement du texte&nbsp;: astuces de mise en place</h2>
+                        <ul>
+                            <li><strong>Ne pas limiter la hauteur des éléments en CSS</strong> (<code>height</code>).
+                                Préférer l'utilisation de
+                                <code>min-height</code> lorsque la hauteur doit être définie.
+                            </li>
+                            <li><strong>Utiliser des unités relatives pour définir les dimensions</strong> comme (<code>em</code>,
+                                <code>rem</code>,
+                                <code>%</code>, <code>vh</code>, <code>vw</code>,
+                                <code>vmin</code>, <code>vmax</code>) ainsi l'interface agira de façon homothétique.
+                            </li>
+                            <li><strong>Prévoir le déplacement des boites dans le flux.</strong></li>
+                            <li><strong>Limiter l'utilisation de la position <code>fixed</code> en CSS</strong>.
+                                Lorsqu'elle est utilisée, elle doit
+                                être maitrisée et ne pas masquer de contenus.
+                            </li>
+                            <li><strong>Utiliser les <span lang="en">media queries</span> pour définir des points de
+                                rupture</strong> lors d'un zoom graphique ou un changement de résolution (tablette,
+                                mobile)
+                            </li>
+                        </ul>
+                        <p class="center encadre"><a href="https://demos-a11y.netlify.app/role-landmarks-html.html"
+                                                     target="blank" rel="noreferrer noopener">DEMO d'utilisation des
+                            <span lang="en">medias
+                            queries</span></a></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Présentation de l'information</h1>
+                </header>
+                <div class="slide-double">
+                    <div class="slide-double--left">
+                        <h2>Couleurs de texte et de fond des contenus</h2>
+                        <p class="encadre">Critère 10.5. Dans chaque page web, les déclarations CSS de couleurs de fond
+                            d'élément et de police sont-elles correctement utilisées&nbsp;?</p>
+                        <p>Ce critère permet de vérifier la robustesse de la présentation des contenus lorsque
+                            l'utilisateur utilise une feuille de style personnalisée.</p>
+
+                    </div>
+                    <div class="slide-double--right">
+                        <ul>
+                            <li><strong>Tout élément doit avoir une couleur de texte (<code>color</code>) et de fond
+                                (<code>background-color</code>) en CSS</strong> au moins héritée d'un parent.
+                            </li>
+                            <li><strong>La couleur des textes et du fond</strong> doit être spécifiée en CSS <strong>au
+                                moins sur la balise
+                                <code>&lt;html&gt;</code> ou <code>&lt;body&gt;</code></strong>.
+                            </li>
+                        </ul>
+                        <div class="encadre">
+                            <p>Erreurs fréquentes&nbsp;:</p>
+                            <ul>
+                                <li>Définir uniquement une image de fond sans spécifier de couleur.</li>
+                                <li>Ajouter du texte sans couleur de fond par-dessus une image de contenu.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Présentation de l'information</h1>
+                </header>
+                <div class="slide-double">
+                    <div class="slide-double--left">
+                        <h2>Couleurs de texte et de fond des contenus&nbsp;: méthodes de vérification</h2>
+                        <p><strong>Vérifier en désactivant les images et les images de fond (WebDeveloper
+                            Toolbar).</strong></p>
+                        <p class="center"><img src="img_slide/webdevtoolbar-hide-images.png"
+                                               alt="ouvrir la webdeveloper toolbar, aller dans l'onglet Images, et cocher &quot;Hide background images&quot; et &quot;Hide images&quot;">
+                        </p>
+                        <p class="encadre"><a href="https://demos-a11y.netlify.app/demo-code-txt-bg-colors.html"
+                                              target="blank" rel="noreferrer noopener">DEMO de la définition des
+                            couleurs de texte et de fond</a>
+                        </p>
+                    </div>
+                    <div class="slide-double--right">
+                        <p><strong>Personnaliser la couleur par défaut du texte et du fond dans le paramétrage du
+                            navigateur.</strong></p>
+                        <div class="center">
+                            <figure role="figure"
+                                    aria-label="Capture d'écran de la configuration de la couleur par défaut des textes et du fond sur Firefox">
+                                <img src="img_slide/webdevtoolbar-config-firefox.png"
+                                     alt="Cliquer sur &quot;Gérer les couleurs&quot;, définir une couleur de texte et d'arrière plan très visible (rose et orange par exemple), et décocher l'option &quot;Utiliser les couleurs système&quot;">
+                                <figcaption>Capture d'écran de la configuration de la couleur par défaut des textes et
+                                    du fond sur Firefox
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <p class="encadre"><a href="https://www.juris-cnracl.retraites.fr/"
+                                              target="blank" rel="noreferrer noopener">DEMO sur le site de la CNRACL</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Présentation de l'information</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Visibilité du focus</h2>
+                        <p class="encadre">Critère 10.7. Dans chaque page web, pour chaque élément recevant le focus, la
+                            prise de focus est-elle visible&nbsp;?</p>
+                        <p>La visibilité du focus est cruciale pour les personnes qui ont des problèmes de motricité et
+                            qui ne peuvent pas utiliser une souris ou un pointeur. Ils utilisent donc principalement un
+                            clavier qui peut parfois être spécifique à leur handicap.</p>
+                        <ul>
+                            <li><strong>Le focus est personnalisable par la pseudo-classe <code>:focus</code> et la
+                                propriété <code>outline</code> en CSS.</strong></li>
+                            <li><strong>Le focus peut être personnalisé à condition que le ratio de contraste</strong>
+                                entre le focus et son arrière-plan soit
+                                <strong>supérieur ou égal à 3:1</strong>.
+                            </li>
+                            <li><strong>Le focus ne doit pas être supprimé ni dégradé</strong>. Mieux vaut <strong>laisser
+                                le focus par
+                                défaut du navigateur</strong> que de mal le personnaliser.
+                            </li>
+                            <li><strong>Utilisations interdites&nbsp;:</strong> <code>outline: 0|none|transparent</code>
+                            </li>
+                        </ul>
+                        <p class="encadre">À noter&nbsp;: l'utilisation d'une propriété autre que <code>outline</code> (<code>border</code>,
+                            <code>background</code>...) pour indiquer visuellement le focus n'est pas conforme.</p>
+                        <p class="encadre center"><a href="https://demos-a11y.netlify.app/demo-code-focus.html"
+                                                     target="blank" rel="noreferrer noopener">DEMO de la visibilité du
+                            focus</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Présentation de l'information</h1>
+                </header>
+                <div class="slide-double --title">
+                    <div class="slide-double--title">
+                        <h2>Contenus cachés</h2>
+                    </div>
+                    <div class="slide-double--left">
+                        <p class="encadre">Critère 10.8. Pour chaque page web, les contenus cachés ont-ils vocation à
+                            être ignorés par les technologies d'assistance&nbsp;?</p>
+                        <p>Il existe <strong>différentes techniques pour cacher des contenus</strong> spécifiques.
+                            Cependant, lorsque ces techniques sont mal utilisées,
+                            <strong>cela peut masquer du contenu</strong> aux personnes en situations de handicap et
+                            notamment <strong>aux
+                                technologies d'assistance</strong>.</p>
+                        <p>Les contenus masqués via les propriétés CSS suivantes sont ignorés par les technologies
+                            d'assistance&nbsp;:</p>
+                        <ul>
+                            <li><code>display: none;</code></li>
+                            <li><code>visibility: hidden;</code></li>
+                            <li><code>font-size: 0;</code></li>
+                            <li>attribut <code>aria-hidden="true"</code></li>
+                            <li>attribut HTML5 <code>hidden</code></li>
+                        </ul>
+                        <p><strong>Lorsque ces techniques sont employées, s'assurer que le contenu soit réellement
+                            ignoré par
+                            les aides techniques</strong>.</p>
+                    </div>
+                    <div class="slide-double--right">
+                        <h3>Scénario d'un contenu masqué qui ne doit pas être ignoré&nbsp;:</h3>
+                        <p>Une image avec lien qui, une fois survolée ou focussée, affiche du texte grâce à la propriété
+                            CSS
+                            <code>display:none</code>. <br>Le texte doit être restitué par les aides techniques. Mais il
+                            est ignoré à cause de l'utilisation d'une propriété incorrecte <code>display:none</code>
+                            pour afficher/cacher le texte.</p>
+                        <h3>Scénario d'un contenu masqué qui doit être ignoré&nbsp;:</h3>
+                        <p>Un menu, masqué avec la propriété <code>opacity:0</code>, s'affiche au clic sur un bouton le
+                            précédent. <br>Tant que le bouton n'est pas cliqué, menu doit être ignoré par les aides
+                            techniques, mais il ne l'est pas à cause de l'utilisation d'une propriété incorrecte <code>opacity:0</code>
+                            pour afficher/cacher le menu.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Présentation de l'information</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Contenus cachés&nbsp;: caché visuellement mais restitué aux technologies d'assistance</h2>
+                        <p>La classe <code>.sr-only</code> de bootstrap&nbsp;:</p>
+                        <pre><code class="--big">.sr-only {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Présentation de l'information</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Contenus cachés&nbsp;: caché visuellement mais restitué aux technologies d'assistance</h2>
+                        <p>La classe <code>.sr-only</code> de bootstrap&nbsp;:</p>
+                        <pre><code class="--big">.sr-only {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Présentation de l'information</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Information donnée par la forme, la taille ou la position uniquement</h2>
+                        <p class="encadre">Critère 10.9. Dans chaque page web, l'information ne doit pas être donnée
+                            uniquement par la forme, taille ou position. Cette règle est-elle respectée&nbsp;?<br><br>Critère
+                            10.10. Dans chaque page web, l'information ne doit pas être donnée par la forme, taille ou
+                            position uniquement. Cette règle est-elle implémentée de façon pertinente&nbsp;?
+                        </p>
+                        <p>Comme pour la couleur, l'information véhiculée uniquement par la forme, la taille ou la
+                            position peu rendre un contenu inutilisable ou incompréhensible.</p>
+                        <p>Les cas d'implémentation sont variables. Il sera nécessaire de proposer une alternative pour
+                            les non-voyants. Cette alternative passe essentiellement par le code pour être restitué aux
+                            lecteurs d'écran (alternative d'image, attribut de changement d'état ARIA, attribut
+                            <code>title</code> ou <code>aria-label[ledby]</code>, texte caché visuellement...)</p>
+                        <p class="encadre center"><a
+                                href="https://demos-a11y.netlify.app/demo-code-info-par-forme-taille-position.html#forme-position1"
+                                target="blank" rel="noreferrer noopener">DEMO: indiquer le déploiement d'un menu avec
+                            CSS</a>
+                            <a href="https://demos-a11y.netlify.app/demo-code-info-par-forme-taille-position.html#taille"
+                               target="blank" rel="noreferrer noopener">DEMO: indiquer la pertinence de résultats par la
+                                taille dans un nuage de tag</a>
+                            <a href="https://demos-a11y.netlify.app/demo-code-info-par-forme-taille-position.html#forme-position2"
+                               target="blank" rel="noreferrer noopener">DEMO: indiquer l'état actif d'un élément par une
+                                forme</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Présentation de l'information</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Contrôle et visibilité des composants d'interface</h2>
+                        <p class="encadre">Critère 10.13. Dans chaque page web, les contenus additionnels apparaissant à
+                            la prise de focus ou au survol d'un composant d'interface sont-ils contrôlables par
+                            l'utilisateur (hors cas particuliers)&nbsp;?
+                        </p>
+                        <p>Les malvoyants utilisent des zooms d'écran (loupe physique ou virtuelle) pour lire et interagir avec le contenu. Lorsque l'interface est zoomée, il est nécessaire de
+                            <strong>s'assurer qu'un contenu additionnel qui apparait à la prise de focus ou au survol reste
+                                contrôlable</strong> par l'utilisateur.</p>
+                        <ul>
+                            <li>Le contenu additionnel doit rester lisible.</li>
+                            <li>Le contenu additionnel doit être contrôlable pour pouvoir lire ce qu'il cache (touche <code>Echap</code>).</li>
+                        </ul>
+                        <p class="encadre center">Obligatoire seulement si le contenu additionnel masque un autre contenu, sur toutes les résolutions.</p>
+                        <p class="encadre center"><a
+                                href="https://demos-a11y.netlify.app/demo-code-contenus-add.html#controle"
+                                target="blank" rel="noreferrer noopener">DEMO: contrôle des contenus additionnels</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Présentation de l'information</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Contrôle et visibilité des composants d'interface</h2>
+                        <p class="encadre">Critère 10.14. Dans chaque page web, les contenus additionnels apparaissant via les styles CSS uniquement peuvent-ils être rendus visibles au clavier et par tout dispositif de pointage&nbsp;?
+                        </p>
+                        <p>Certains contenus sont masqués visuellement en CSS et affichés au survol de la souris. Les personnes handicapés moteurs qui utilisent
+                            <strong>un clavier ou un dispositif similaire doivent pouvoir afficher ces contenus masqués</strong>.</p>
+                        <p>Les propriétés CSS :hover et :focus doivent être prise en compte.</p>
+                        <p class="encadre center"><a
+                                href="https://demos-a11y.netlify.app/demo-code-contenus-add.html#visibilite"
+                                target="blank" rel="noreferrer noopener">DEMO: visibilité des contenus additionnels</a>
+                        </p>
                     </div>
                 </div>
             </section>
