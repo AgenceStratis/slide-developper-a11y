@@ -4708,8 +4708,7 @@ p {
                         </ul>
                         <p class="center encadre"><a href="https://demos-a11y.netlify.app/role-landmarks-html.html"
                                                      target="blank" rel="noreferrer noopener">DEMO d'utilisation des
-                            <span lang="en">medias
-                            queries</span></a></p>
+                            <span lang="en">medias queries</span></a></p>
                     </div>
                 </div>
             </section>
@@ -4949,7 +4948,7 @@ p {
                 </header>
                 <div class="slide-simple">
                     <div class="slide-simple--wrapper">
-                        <h2>Contrôle et visibilité des composants d'interface</h2>
+                        <h2>Contrôle et visibilité des contenus additionnels</h2>
                         <p class="encadre">Critère 10.13. Dans chaque page web, les contenus additionnels apparaissant à
                             la prise de focus ou au survol d'un composant d'interface sont-ils contrôlables par
                             l'utilisateur (hors cas particuliers)&nbsp;?
@@ -4969,7 +4968,7 @@ p {
                             contenu, sur toutes les résolutions.</p>
                         <p class="encadre center"><a
                                 href="https://demos-a11y.netlify.app/demo-code-contenus-add.html#controle"
-                                target="blank" rel="noreferrer noopener">DEMO: contrôle des contenus additionnels</a>
+                                target="blank" rel="noreferrer noopener">DEMO du contrôle des contenus additionnels</a>
                         </p>
                     </div>
                 </div>
@@ -5066,7 +5065,7 @@ p {
                             </li>
                         </ul>
                         <p><strong>L'étiquette invisible</strong> (<code>&lt;label&gt;</code> masqué,
-                            <code>aria-label</code>, <code>aria-title</code>) <strong>doit au moins contenir le texte
+                            <code>aria-label</code>, <code>title</code>) <strong>doit au moins contenir le texte
                                 visible</strong>.</p>
                         <p class="encadre">Attention&nbsp;: l'attribut <code>placeholder</code> n'est pas une étiquette
                             de champ. S'il est utilisé, le doubler avec un attribut
@@ -5127,6 +5126,10 @@ p {
                                 à la droite ou en dessous</strong>.</p>
                         <p class="encadre">À noter&nbsp;: le sens peut être inversé suivant le sens d'écriture de la
                             langue.</p>
+                        <p class="encadre center"><a
+                                href="https://demos-a11y.netlify.app/demo-code-form-label-position.html"
+                                target="blank" rel="noreferrer noopener">DEMO: étiquette accolée à son champ</a>
+                        </p>
                     </div>
                 </div>
             </section>
@@ -5137,7 +5140,7 @@ p {
                 </header>
                 <div class="slide-simple">
                     <div class="slide-simple--wrapper">
-                        <h2>Regroupement de champs - étiquettes de champs identiques</h2>
+                        <h2>Regroupement de champs&nbsp;: étiquettes de champs identiques</h2>
                         <p class="encadre">Critère 11.5. Dans chaque formulaire, les champs de même nature sont-ils
                             regroupés, si nécessaire&nbsp;?<br>Critère 11.6. Dans chaque formulaire, chaque regroupement
                             de champs de même nature a-t-il une légende&nbsp;?<br>Critère 11.7. Dans chaque formulaire,
@@ -5163,7 +5166,7 @@ p {
                 </header>
                 <div class="slide-simple">
                     <div class="slide-simple--wrapper">
-                        <h2>Regroupement de champs - cases à cocher et boutons radio</h2>
+                        <h2>Regroupement de champs&nbsp;: cases à cocher et boutons radio</h2>
                         <p>Les regroupements de champs sont aussi utilisés pour les cases à cocher et les boutons
                             radio.</p>
                         <p class="encadre">Il n'est pas utile de grouper une case à cocher seule (exemple&nbsp;:
@@ -5183,7 +5186,7 @@ p {
                 </header>
                 <div class="slide-double --title">
                     <div class="slide-double--title">
-                        <h2>Regroupement de champs - technique HTML et ARIA</h2>
+                        <h2>Regroupement de champs&nbsp;: technique HTML et ARIA</h2>
                     </div>
                     <div class="slide-double--left">
                         <h3>Avec HTML</h3>
@@ -5543,6 +5546,10 @@ p {
                                     href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#the-constraint-validation-api"
                                     target="_blank" rel="noopener noreferrer" lang="en">API Constraint Validator</a>
                             pour les personnaliser, les rendre conformes et identiques pour tous les navigateurs.</p>
+                        <p class="encadre center"><a
+                                href="https://demos-a11y.netlify.app/demo-code-form-validation.html"
+                                target="blank" rel="noreferrer noopener">DEMO: erreurs de saisie</a>
+                        </p>
                     </div>
                 </div>
             </section>
@@ -5593,11 +5600,481 @@ p {
                         <p>Le but est de permettre aux personnes présentant des troubles cognitifs ou un handicap moteur
                             de renseigner plus facilement les champs de saisie demandant des informations
                             personnelles.</p>
-                        <p><strong>L'attribut <code>autocomplete</code> permet d'indiquer au navigateur la donnée personnelle
-                            à remplir</strong>. Si l'utilisateur autorise le navigateur à effectuer un remplissage automatique et enregistre des informations personnelles dans les paramètres, le navigateur suggérera des valeurs pour remplir les champs.</p>
+                        <p><strong>L'attribut <code>autocomplete</code> permet d'indiquer au navigateur la donnée
+                            personnelle
+                            à remplir</strong>. Si l'utilisateur autorise le navigateur à effectuer un remplissage
+                            automatique et enregistre des informations personnelles dans les paramètres, le navigateur
+                            suggérera des valeurs pour remplir les champs.</p>
                         <p class="encadre center"><a
                                 href="https://www.w3.org/TR/WCAG21/#input-purposes"
                                 target="_blank" rel="noopener noreferrer">Liste des valeurs possible</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h1>Navigation</h1>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Navigation</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Moyens de navigation</h2>
+                        <p class="encadre">Critère 12.1. Chaque ensemble de pages dispose-t-il de deux systèmes de
+                            navigation différents, au moins (hors cas particuliers)&nbsp;?<br>Critère 12.2. Dans chaque
+                            ensemble de pages, le menu et les barres de navigation sont-ils toujours à la même place
+                            (hors cas particuliers)&nbsp;?<br>Critère 12.4. Dans chaque ensemble de pages, la page «
+                            plan du site » est-elle atteignable de manière identique&nbsp;?<br>Critère 12.5. Dans chaque
+                            ensemble de pages, le moteur de recherche est-il atteignable de manière identique
+                            &nbsp;?</p>
+                        <p><strong>Les moyens de navigation doivent être multiples</strong> pour permettre aux
+                            utilisateurs d'utiliser la
+                            plus appropriée.</p>
+                        <p>Pour chaque ensemble de page, <strong>deux moyens de navigation doivent être
+                            proposés</strong> parmi&nbsp;:</p>
+                        <ul>
+                            <li>une navigation principale</li>
+                            <li>un plan du site</li>
+                            <li>un recherche</li>
+                        </ul>
+                        <p>Afin de ne pas perturber les utilisateurs de lecteur d'écran et les personnes ayant un
+                            handicap cognitif,
+                            <strong>les moyens de navigation doivent être situés visuellement et dans le code au même
+                                emplacement</strong> pour chaque ensemble de pages.</p>
+                        <p class="encadre">Pour des sites sur une seule ou très peu de pages, il peut être proposé
+                            seulement un seul moyen de navigation.</p>
+                        <p class="encadre">Le moteur de recherche doit permettre de rechercher l'ensemble des contenus
+                            du site.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Navigation</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Plan du site</h2>
+                        <p class="encadre">Critère 12.3. La page "plan du site" est-elle pertinente&nbsp;?</p>
+                        <p>Le plan du site doit représenter l'architecture générale du site. Il n'est pas
+                            nécessaire d'indiquer l'ensemble des pages du site mais il doit permettre d'atteindre
+                            l'ensemble de pages.</p>
+                        <p class="encadre">Les liens du plan du site doivent tous être fonctionnels et doivent permettre
+                            d'atteindre les pages indiquées par l'intitulé du lien.</p>
+                        <p class="encadre">Tester les liens du plan du site avec l'extension Broken Link Checker <a
+                                href="https://addons.mozilla.org/fr/firefox/addon/find-broken-links/" target="_blank"
+                                rel="noopener noreferrer">pour Firefox</a> et <a
+                                href="https://chrome.google.com/webstore/detail/broken-link-checker/nibppfobembgfmejpjaaeocbogeonhch"
+                                target="_blank" rel="noopener noreferrer">pour Chrome</a>.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Navigation</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Zones de regroupement de contenus</h2>
+                        <p class="encadre">Critère 12.6. Les zones de regroupement de contenus présentes dans plusieurs
+                            pages web (zones d'en-tête, de navigation principale, de contenu principal, de pied de page
+                            et de moteur de recherche) peuvent-elles être atteintes ou évitées&nbsp;?</p>
+                        <p><strong>Afin de maximiser la compatibilité avec ces technologies anciennes, ARIA
+                            permet de définir le rôle Landmark des zones principales du document</strong>&nbsp;:</p>
+                        <ul>
+                            <li>La zone d'en-tête <code>&lt;header&gt;</code> doit avoir un attribut
+                                <code>role="banner"</code>.
+                            </li>
+                            <li>Le menu de navigation principal <code>&lt;nav&gt;</code> doit avoir un attribut <code>role="navigation"</code>.
+                            </li>
+                            <li>La zone de contenu principal <code>&lt;main&gt;</code> doit avoir un attribut <code>role="main"</code>.
+                            </li>
+                            <li>La zone de pied de page <code>&lt;footer&gt;</code> doit avoir un attribut <code>role="contentinfo"</code>.
+                            </li>
+                            <li>La zone de moteur de recherche sur le site doit avoir un attribut
+                                <code>role="search"</code>.
+                            </li>
+                        </ul>
+                        <p class="encadre --light">À noter&nbsp;: <strong>les zones de contenus ne doivent pas être
+                            cachés</strong>.
+                            C'est parfois le cas de la navigation ou de la recherche. S'ils
+                            sont cachés, il n'est pas possible de les atteindre à l'aide des technologies
+                            d'assistance. <strong>L'attribut correspondant doit alors être ajouté sur l'élément
+                                permettant de les afficher</strong> (un bouton).</p>
+                        <p class="encadre center"><a
+                                href="https://demos-a11y.netlify.app/demo-code-page-structure.html"
+                                target="blank" rel="noreferrer noopener">DEMO: zones de regroupement de contenus</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Navigation</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Lien d'évitement</h2>
+                        <p class="encadre">Critère 12.7. Dans chaque page web, un lien d'évitement ou d'accès rapide à
+                            la zone de contenu principal est-il présent (hors cas particuliers)&nbsp;?</p>
+                        <p><strong>Chaque page web doit avoir un lien pour éviter ou accéder à la zone de
+                            contenu.</strong> <br>Il doit&nbsp;:</p>
+                        <ul>
+                            <li><strong>Être situé à la même place sur toutes les pages</strong>. Pour un lien d'accès
+                                rapide, son positionnement idéal dans le code est juste après le bandeau des cookies
+                                s'il existe, ou en tout début de page.
+                            </li>
+                            <li><strong>Être visible ou visible à la prise de focus</strong>.</li>
+                            <li><strong>Être fonctionnel</strong>.</li>
+                        </ul>
+                        <p class="encadre">Ce lien est facultatif sur les <span lang="en">Single Page Application</span>
+                            sans menu, ni colonne, ni contenu annexe....</p>
+                        <p class="center"><img src="img_slide/skip-link.png"
+                                               alt="le lien d'évitement sur seine-et-marne.fr"></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Navigation</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Ordre de tabulation</h2>
+                        <p class="encadre">Critère 12.8. Dans chaque page web, l'ordre de tabulation est-il cohérent&nbsp;?</p>
+                        <p>Les utilisateurs au clavier (aveugles, malvoyants et handicaps moteurs) doivent pouvoir
+                            naviguer de façon logique.</p>
+                        <p><strong>L'ordre par défaut de navigation est l'ordre linéaire des éléments dans le
+                            code</strong>. Cependant,
+                            il peut être <strong>modifié en JavaScript ou via l'attribut <code>tabindex</code></strong>.
+                            Dans ce cas, <strong>s'assurer
+                                que l'ordre
+                                reste logique</strong>.</p>
+                        <p class="encadre center"><a
+                                href="https://demos-a11y.netlify.app/demo-code-taborder.html"
+                                target="blank" rel="noreferrer noopener">DEMO: ordre de navigation logique et
+                            maitrisé</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Navigation</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Contenus additionnels apparaissant au survol, au focus ou à l'activation d'un composant
+                            d'interface atteignables au clavier</h2>
+                        <p class="encadre">Critère 12.11. Dans chaque page web, les contenus additionnels apparaissant
+                            au survol, à la prise de focus ou à l'activation d'un composant d'interface sont-ils si
+                            nécessaire atteignables au clavier&nbsp;?</p>
+                        <p><strong>Les contenus additionnels</strong> qui sont présentés à l'utilisateur <strong>via un
+                            composant
+                            d'interface, à la prise de focus ou au survol</strong>, <strong>doivent pouvoir être
+                            contrôlés au
+                            clavier</strong>.</p>
+                        <p>C'est le cas par exemple d'un <strong>menu de navigation qui se déploie au survol
+                            de la souris et au focus, ou encore un menu burger qui s'ouvre au clic sur un
+                            bouton</strong>. Dans ce cas, les éléments à l'intérieur du menu déployés doivent être
+                            atteignables au clavier.</p>
+                        <p class="encadre center"><a
+                                href="https://demos-a11y.netlify.app/demo-code-taborder.html"
+                                target="blank" rel="noreferrer noopener">DEMO: ordre de navigation logique et
+                            maitrisé</a> - <a
+                                href="https://demos-a11y.netlify.app/demo-code-contenus-add.html"
+                                target="blank" rel="noreferrer noopener">DEMO: contrôle des contenus additionnels</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h1>Navigation</h1>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Consultation</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Limite de temps</h2>
+                        <p class="encadre">Critère 13.1. Pour chaque page web, l'utilisateur a-t-il le contrôle de
+                            chaque limite de temps modifiant le contenu (hors cas particuliers)&nbsp;?</p>
+                        <p>Les personnes ayant un handicap moteur ou cognitif ont besoin passer plus de temps sur une
+                            page pour réaliser une ou plusieurs actions.</p>
+                        <p>Quelques exemples&nbsp;:</p>
+                        <ul>
+                            <li>Un site d'information dont le contenu se rafraichit automatiquement et toutes les 5
+                                minutes.
+                            </li>
+                            <li>Un formulaire à remplir en moins de 5 minutes.</li>
+                        </ul>
+                        <p>Au moins l'une des règles suivantes doit être respectées&nbsp;:</p>
+                        <ul>
+                            <li>L'utilisateur peut arrêter ou relancer le rafraîchissement&nbsp;;</li>
+                            <li>L'utilisateur peut augmenter la limite de temps entre deux rafraîchissements de dix
+                                fois, au moins&nbsp;;
+                            </li>
+                            <li>L'utilisateur est averti de l'imminence du rafraîchissement et dispose de vingt
+                                secondes, au moins, pour augmenter la limite de temps avant le prochain rafraîchissement&nbsp;;
+                            </li>
+                            <li>La limite de temps entre deux rafraîchissements est de vingt heures, au moins.</li>
+                        </ul>
+                        <p class="encadre">À noter&nbsp;: lorsque l'accomplissement d'une tâche dans un temps imparti
+                            est essentiel, la règle n'est pas applicable. C'est le cas notamment lors d'un examen dans
+                            un temps imparti.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Consultation</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Ouverture de nouvelles fenêtres</h2>
+                        <p class="encadre">Critère 13.2. Dans chaque page web, l'ouverture d'une nouvelle fenêtre ne
+                            doit pas être déclenchée sans action de l'utilisateur. Cette règle est-elle
+                            respectée&nbsp;?</p>
+                        <p><strong>L'ouverture automatique d'une nouvelle fenêtre est un changement de contexte qui peut
+                            perturber les utilisateurs s'ils n'en sont pas avertis</strong>. Les utilisateurs pourraient
+                            ne pas comprendre ce qu'il s'est passé et mettraient du temps à revenir sur la page qu'ils
+                            étaient en train de consulter.</p>
+                        <p class="encadre">À noter&nbsp;: il n'est pas question ici d'ouverture de page dans une
+                            nouvelle fenêtre ou un nouvel onglet, ni de fenêtres modales qui s'ouvrent automatiquement.
+                            Bien que ces pratiques soit conformes, elles sont aussi à éviter, à moins que le contenu
+                            soit d'une importance capitale.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Consultation</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Alternatives aux documents bureautiques en téléchargement</h2>
+                        <p class="encadre">Critère 13.3. Dans chaque page web, chaque document bureautique en
+                            téléchargement possède-t-il, si nécessaire, une version accessible (hors cas particuliers)&nbsp;?<br>Critère
+                            13.4. Pour chaque document bureautique ayant une version accessible, cette version
+                            offre-t-elle la même information&nbsp;?</p>
+                        <p>Dans l'idéal, les documents proposés en téléchargement devraient être accessibles. Cependant,
+                            lorsque ce n'est pas le cas, il est nécessaire de proposer <strong>une solution permettant
+                                de
+                                fournir le même niveau d'information de manière accessible</strong>.</p>
+                        <p>Cela peut se traduire par&nbsp;:</p>
+                        <ul>
+                            <li>Un lien ou une liste de liens vers de pages de contenu web accessible.</li>
+                            <li>Un fichier dans un autre format, accessible.</li>
+                        </ul>
+                        <p class="encadre">À noter&nbsp;: les documents générés côté serveur doivent aussi être
+                            accessibles ou proposer une alternative accessible.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Consultation</h1>
+                </header>
+                <div class="slide-double">
+                    <div class="slide-double--left">
+                        <h2>Contenu cryptique</h2>
+                        <p class="encadre">Critère 13.5. Dans chaque page web, chaque contenu cryptique (art ASCII,
+                            émoticône, syntaxe cryptique) a-t-il une alternative&nbsp;?<br>Critère 13.6. Dans chaque
+                            page web, pour chaque contenu cryptique (art ASCII, émoticône, syntaxe cryptique) ayant une
+                            alternative, cette alternative est-elle pertinente&nbsp;?</p>
+                        <p><strong>Les contenus cryptiques comme l'art ASCII, les caractères unicode, les syntaxes
+                            cryptiques, ou les émoticônes doivent posséder des alternatives.</strong></p>
+                        <p class="encadre --light">À noter&nbsp;: <strong>les émojis en UTF-8 sont pour la plupart
+                            accessibles et proposent une alternative</strong>. Il est impératif de <strong>vérifier leur
+                            sens pour
+                            ne pas provoquer de faux sens, d'incompréhension, voire de contre sens</strong>. <br><br>Exemple&nbsp;:
+                            "😪 de la situation actuelle" ne signifie pas "Triste de la situation actuelle" mais "Visage
+                            endormi de la situation actuelle", ce qui n'a pas de sens. <br>Il est possible de vérifier
+                            le
+                            <a href="https://emojipedia.org/" rel="noopener noreferrer" target="_blank">sens des emojis
+                                sur le site emojipedia (en anglais)</a>.</p>
+                    </div>
+                    <div class="slide-double--right">
+                        <p>Exemples&nbsp;:</p>
+                        <ul>
+                            <li>Un émoticône&nbsp;: <code>&lt;abbr
+                                aria-label=&quot;sourire&quot;&gt;:)&lt;/abbr&gt;</code></li>
+                            <li>Une syntaxe cryptique en écriture Leet speak&nbsp;: <code>&lt;abbr aria-label=&quot;Accessibilit&eacute;&quot;&gt;/-\((&euro;&sect;&sect;!811_][&macr;|&macr;&euro;&lt;/abbr&gt;</code>
+                            </li>
+                            <li>De l'art ASCII&nbsp;: <br>
+                                <pre><code>&lt;span aria-label=&quot;chat&quot;&gt;
+ \    /\
+  )  ( ')
+  (  /  )
+   \(__)|
+&lt;/span&gt;</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Consultation</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Changement brusque de luminosité ou effet de flash</h2>
+                        <p class="encadre">Critère 13.7. Dans chaque page web, les changements brusques de luminosité ou
+                            les effets de flash sont-ils correctement utilisés&nbsp;?</p>
+                        <p>Les changements brusques de luminosité ou les effets de flashs <strong>peuvent provoquer une
+                            gêne
+                            importante, voire des crises d'épilepsie</strong> chez certaines personnes. <br>Les contenus
+                            avec des changements brusques de luminosité ou d'effets de flashs doivent respecter les
+                            règles suivantes&nbsp;:</p>
+                        <ul>
+                            <li>La fréquence de l'effet est inférieure à 3 par seconde.</li>
+                            <li>La surface totale cumulée des effets est inférieure ou égale à 21824 pixels.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Consultation</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Contenu en mouvement ou clignotant</h2>
+                        <p class="encadre">Critère 13.8. Dans chaque page web, chaque contenu en mouvement ou clignotant
+                            est-il contrôlable par l'utilisateur&nbsp;?</p>
+                        <p>Lorsqu'un contenu est en mouvement, <strong>l'attention des personnes ayant des troubles de
+                            l'attention</strong>, comme de l'hyper activité, <strong>porte sur ce mouvement, les
+                            empêchant de
+                            consulter le reste de la page</strong>.</p>
+                        <p>Ces éléments en mouvement doivent respecter les règles suivantes&nbsp;:</p>
+                        <ul>
+                            <li>La durée du mouvement est inférieure ou égale à 5 secondes, sans répétition.</li>
+                            <li>L'utilisateur peut arrêter et relancer le mouvement.</li>
+                            <li>L'utilisateur peut afficher et masquer le contenu en mouvement.</li>
+                            <li>L'utilisateur peut afficher la totalité de l'information sans le mouvement.</li>
+                        </ul>
+                        <p class="encadre center"><a
+                                href="https://demos-a11y.netlify.app/demo-code-mouvement.html"
+                                target="blank" rel="noreferrer noopener">DEMO: contenu en mouvement</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Consultation</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Contenu proposé en responsive quelle que soit l'orientation de l'écran</h2>
+                        <p class="encadre">Critère 13.9. Dans chaque page web, le contenu proposé est-il consultable
+                            quelle que soit l'orientation de l'écran (portrait ou paysage) (hors cas particuliers)&nbsp;?</p>
+                        <p>Certains utilisateurs utilisent des appareils tactiles monter sur un système fixe et ne
+                            peuvent pas en changer le sens. C'est notamment le cas d'une personne tétraplégique qui n'a
+                            pas la capacité de modifier le sens d'un écran en toute autonomie.</p>
+                        <p>Il est donc nécessaire de ne pas restreindre l'orientation de l'écran et de permettre aux
+                            contenus de s'adapter en mode portrait ou paysage.</p>
+                        <p class="encadre --light">À noter&nbsp;: il existe des cas particuliers lorsque l'orientation
+                            est essentielle à l'utilisation, comme un jeu vidéo par exemple.</p>
+                        <p class="center encadre"><a href="https://demos-a11y.netlify.app/role-landmarks-html.html"
+                                                     target="blank" rel="noreferrer noopener">DEMO d'utilisation des
+                            <span lang="en">medias queries</span></a></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Consultation</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Gestes complexes</h2>
+                        <p class="encadre">Critère 13.10. Dans chaque page web, les fonctionnalités utilisables ou
+                            disponibles au moyen d'un geste complexe peuvent-elles être également disponibles au moyen
+                            d'un geste simple (hors cas particuliers)&nbsp;?</p>
+                        <p>Les personnes ayant un handicap moteur peuvent rencontrer des difficultés à réaliser des
+                            gestes trop complexes comme des balayages. Dans le cas de gestes complexes, il est
+                            nécessaire de proposer aux utilisateurs des alternatives avec des gestes simples.</p>
+                        <ul>
+                            <li><strong>Geste complexe&nbsp;: geste impliquant plus d'un point de contact sur l'écran</strong> (zoom,
+                                dézoom), un geste basé sur le suivi d'une trajectoire ou un chemin (Drag and Drop).
+                            </li>
+                            <li><strong>Geste simple&nbsp;: geste impliquant uniquement un point de contact à la même place
+                                sur
+                                l'écran</strong> (simple clic ou pression, double clic ou double pression, ou clic ou pression
+                                prolongé).
+                            </li>
+                        </ul>
+                        <p class="encadre --light">À noter&nbsp;: il existe des cas particuliers notamment lorsque
+                            l'usage du geste complexe est essentiel comme la signature à main levé.</p>
+                        <p class="center encadre"><a href="https://www.sicoval.fr"
+                                                     target="blank" rel="noreferrer noopener">DEMO sur le site du SICOVAL (contenu "À lire")</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Consultation</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Annuler une action</h2>
+                        <p class="encadre">Critère 13.11. Dans chaque page web, les actions déclenchées au moyen d'un dispositif de pointage sur un point unique de l'écran peuvent-elles faire l'objet d'une annulation (hors cas particuliers)&nbsp;?</p>
+                        <p>Certains utilisateurs qui ne peuvent avoir une précision suffisante (handicap moteur) <strong>peuvent
+                            déclencher une action sur un élément interactif par inadvertance</strong>. Afin d'éviter des actions accidentelles, il est nécessaire de
+                            <strong>permettre aux utilisateurs d'annuler une action</strong>.</p>
+                        <p class="encadre">Si l'activation ne se produit que lorsque le pointeur est relâché, les utilisateurs ont la possibilité d'abandonner l'activation en éloignant leur pointeur ou leur doigt de la cible avant de relâcher.</p>
+                        <ul>
+                            <li>Réaliser les actions uniquement sur des événements relâché ou relevé (<code>mouseup</code>, <code>touchend</code>,
+                        <code>click</code>).</li>
+                            <li>L'événement clic se déclenche lorsque le bouton principal de la souris est relâché et constitue un exemple d'événement relâché implicite.</li>
+                            <li>Un glisser/déposer doit pouvoir être annulé en "déposant" dans une zone non réactive, ou via un bouton d'annulation.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Consultation</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Mouvement de l'appareil</h2>
+                        <p class="encadre">Critère 13.12. Dans chaque page web, les fonctionnalités qui impliquent un mouvement de l'appareil ou vers l'appareil peuvent-elles être satisfaites de manière alternative (hors cas particuliers)&nbsp;?</p>
+                        <p>Certaines interfaces permettent de <strong>réaliser des actions qui suivent le mouvement de
+                            l'appareil</strong>. Exemple&nbsp;: annuler une action en secouant l'appareil. <br>Les personnes ayant un
+                            <strong>handicap moteur pourrait ne pas pouvoir réaliser ce type de mouvement</strong>. <br>Certains utilisateurs ayant
+                            <strong>des tremblements pourrait déclencher des actions involontairement</strong>.</p>
+                        <p><strong>Prévoir des contrôles alternatifs simples</strong>, comme l'ajout d'un bouton pour activer et désactiver le contrôle du mouvement de l'appareil</p>
                     </div>
                 </div>
             </section>
