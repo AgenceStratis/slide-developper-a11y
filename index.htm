@@ -4954,14 +4954,19 @@ p {
                             la prise de focus ou au survol d'un composant d'interface sont-ils contrôlables par
                             l'utilisateur (hors cas particuliers)&nbsp;?
                         </p>
-                        <p>Les malvoyants utilisent des zooms d'écran (loupe physique ou virtuelle) pour lire et interagir avec le contenu. Lorsque l'interface est zoomée, il est nécessaire de
-                            <strong>s'assurer qu'un contenu additionnel qui apparait à la prise de focus ou au survol reste
+                        <p>Les malvoyants utilisent des zooms d'écran (loupe physique ou virtuelle) pour lire et
+                            interagir avec le contenu. Lorsque l'interface est zoomée, il est nécessaire de
+                            <strong>s'assurer qu'un contenu additionnel qui apparait à la prise de focus ou au survol
+                                reste
                                 contrôlable</strong> par l'utilisateur.</p>
                         <ul>
                             <li>Le contenu additionnel doit rester lisible.</li>
-                            <li>Le contenu additionnel doit être contrôlable pour pouvoir lire ce qu'il cache (touche <code>Echap</code>).</li>
+                            <li>Le contenu additionnel doit être contrôlable pour pouvoir lire ce qu'il cache (touche
+                                <code>Echap</code>).
+                            </li>
                         </ul>
-                        <p class="encadre center">Obligatoire seulement si le contenu additionnel masque un autre contenu, sur toutes les résolutions.</p>
+                        <p class="encadre center">Obligatoire seulement si le contenu additionnel masque un autre
+                            contenu, sur toutes les résolutions.</p>
                         <p class="encadre center"><a
                                 href="https://demos-a11y.netlify.app/demo-code-contenus-add.html#controle"
                                 target="blank" rel="noreferrer noopener">DEMO: contrôle des contenus additionnels</a>
@@ -4977,15 +4982,622 @@ p {
                 <div class="slide-simple">
                     <div class="slide-simple--wrapper">
                         <h2>Contrôle et visibilité des composants d'interface</h2>
-                        <p class="encadre">Critère 10.14. Dans chaque page web, les contenus additionnels apparaissant via les styles CSS uniquement peuvent-ils être rendus visibles au clavier et par tout dispositif de pointage&nbsp;?
+                        <p class="encadre">Critère 10.14. Dans chaque page web, les contenus additionnels apparaissant
+                            via les styles CSS uniquement peuvent-ils être rendus visibles au clavier et par tout
+                            dispositif de pointage&nbsp;?
                         </p>
-                        <p>Certains contenus sont masqués visuellement en CSS et affichés au survol de la souris. Les personnes handicapés moteurs qui utilisent
-                            <strong>un clavier ou un dispositif similaire doivent pouvoir afficher ces contenus masqués</strong>.</p>
+                        <p>Certains contenus sont masqués visuellement en CSS et affichés au survol de la souris. Les
+                            personnes handicapés moteurs qui utilisent
+                            <strong>un clavier ou un dispositif similaire doivent pouvoir afficher ces contenus
+                                masqués</strong>.</p>
                         <p>Les propriétés CSS :hover et :focus doivent être prise en compte.</p>
                         <p class="encadre center"><a
                                 href="https://demos-a11y.netlify.app/demo-code-contenus-add.html#visibilite"
                                 target="blank" rel="noreferrer noopener">DEMO: visibilité des contenus additionnels</a>
                         </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h1>Formulaires</h1>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Formulaires</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Étiquette de champ</h2>
+                        <p class="encadre">Critère 11.1. Chaque champ de formulaire a-t-il une étiquette&nbsp;?<br>Critère
+                            11.2. Chaque étiquette associée à un champ de formulaire est-elle pertinente (hors cas
+                            particuliers)&nbsp;?</p>
+                        <ul>
+                            <li><strong>L'étiquette est obligatoire.</strong></li>
+                            <li>Elle doit être <strong>assez pertinente pour connaître la nature, le type ou le format
+                                des informations attendues.</strong>.
+                            </li>
+                            <li>Elle permet aux aveugles ou aux grands malvoyants de naviguer de champ en champ de
+                                manière efficace.
+                            </li>
+                        </ul>
+                        <p>Plusieurs manières de lier une étiquette à un champ&nbsp;:</p>
+                        <ul>
+                            <li>Une <strong>balise <code>&lt;label&gt;</code> ayant un attribut <code>for</code>
+                                référençant l'<code>id</code> du champ associé</strong>.
+                            </li>
+                            <li><strong>Le champ possède un attribut <code>aria-labelledby</code> référençant
+                                l'<code>id</code> d'un passage de texte.</strong></li>
+                            <li><strong>Le champ possède un attribut <code>aria-label</code>.</strong></li>
+                            <li><strong>Le champ possède un attribut <code>title</code> (méthode la moins
+                                robuste).</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Formulaires</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Étiquette de champ</h2>
+                        <p><strong>L'étiquette visible associée au champ est la meilleure technique</strong> à tous les
+                            points de vue. <br><strong>Si
+                                l'étiquette est tout de même invisible</strong> (<code>&lt;label&gt;</code> masqué,
+                            <code>aria-label</code>),
+                            <strong>un texte visible doit permettre de comprendre la nature de la saisie
+                                attendue</strong>.</p>
+                        <ul>
+                            <li>Le champ est accompagné d'un <strong>passage de texte visible accolé au champ</strong>.
+                            </li>
+                            <li>Le champ est accompagné d'un <strong>passage de texte accolé qui devient visible à la
+                                prise
+                                de focus</strong>.
+                            </li>
+                            <li>Le champ possède un <strong>attribut <code>title</code></strong> (méthode la moins
+                                robuste).
+                            </li>
+                        </ul>
+                        <p><strong>L'étiquette invisible</strong> (<code>&lt;label&gt;</code> masqué,
+                            <code>aria-label</code>, <code>aria-title</code>) <strong>doit au moins contenir le texte
+                                visible</strong>.</p>
+                        <p class="encadre">Attention&nbsp;: l'attribut <code>placeholder</code> n'est pas une étiquette
+                            de champ. S'il est utilisé, le doubler avec un attribut
+                            <code>title</code>.</p>
+                        <p class="encadre center"><a
+                                href="https://demos-a11y.netlify.app/demo-code-form-label.html"
+                                target="blank" rel="noreferrer noopener">DEMO: étiquette de champ</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Formulaires</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Étiquette de champ répétée</h2>
+                        <p class="encadre">Critère 11.3. Dans chaque formulaire, chaque étiquette associée à un champ de
+                            formulaire ayant la même fonction et répétée plusieurs fois dans une même page ou dans un
+                            ensemble de pages est-elle cohérente&nbsp;?</p>
+                        <p>Lorsqu'une <strong>saisie identique</strong> est demandée à l'utilisateur <strong>sur un
+                            champ pouvant être
+                            répété plusieurs fois</strong> dans une page ou un ensemble de page, il est nécessaire que
+                            <strong>celui-ci
+                                soit cohérent</strong>.</p>
+                        <p><strong>Sur une fonctionnalité identique</strong> sur la même page ou sur d'autres pages,
+                            <strong>si des
+                                champs demandant la même information portent des étiquettes différentes</strong>, les
+                            personnes ayant des limitations cognitives
+                            <strong>pourraient ne pas comprendre qu'il faut les renseigner de la même manière</strong>.
+                        </p>
+                        <p class="encadre --light">Exemples&nbsp;: un formulaire d'inscription à la lettre d'information
+                        <p class="encadre">À noter&nbsp;: ce principe s'applique aussi aux boutons de formulaire.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Formulaires</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Étiquette accolée à son champ</h2>
+                        <p class="encadre">Critère 11.4. Dans chaque formulaire, chaque étiquette de champ et son champ
+                            associé sont-ils accolés (hors cas particuliers)&nbsp;?</p>
+                        <p><strong>Les utilisateurs malvoyants</strong> qui utilisent une loupe d'écran <strong>ne
+                            doivent pas avoir à
+                            chercher dans la page comment renseigner un champ</strong>. L'étiquette d'un champ doit donc
+                            être accolée à son champ.</p>
+                        <p><strong>Les étiquettes</strong> doivent donc être positionnées <strong>visuellement à la
+                            gauche ou au-dessus d'un
+                            champ</strong>.</p>
+                        <p><strong>Les étiquettes des cases à cocher ou des boutons radio</strong> doivent être
+                            positionnées <strong>visuellement
+                                à la droite ou en dessous</strong>.</p>
+                        <p class="encadre">À noter&nbsp;: le sens peut être inversé suivant le sens d'écriture de la
+                            langue.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Formulaires</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Regroupement de champs - étiquettes de champs identiques</h2>
+                        <p class="encadre">Critère 11.5. Dans chaque formulaire, les champs de même nature sont-ils
+                            regroupés, si nécessaire&nbsp;?<br>Critère 11.6. Dans chaque formulaire, chaque regroupement
+                            de champs de même nature a-t-il une légende&nbsp;?<br>Critère 11.7. Dans chaque formulaire,
+                            chaque légende associée à un regroupement de champs de même nature est-elle pertinente&nbsp;?
+                        </p>
+                        <p>Regrouper des champs permet de structurer un formulaire, et d'éviter les incompréhensions en
+                            cas d'étiquettes identiques mais de nature différentes.</p>
+                        <p>Exemple&nbsp;: Un formulaire d'inscription au centre aéré, demandant le nom et prénom de
+                            plusieurs enfants. Le regroupement de chaque couple de champs nom/prénom permet de
+                            comprendre l'information à saisir.</p>
+                        <p class="encadre center"><a
+                                href="https://demos-a11y.netlify.app/demo-code-form-fieldset.html#same-input"
+                                target="blank" rel="noreferrer noopener">DEMO: regroupement de champs - étiquettes de
+                            champs identiques</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Formulaires</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Regroupement de champs - cases à cocher et boutons radio</h2>
+                        <p>Les regroupements de champs sont aussi utilisés pour les cases à cocher et les boutons
+                            radio.</p>
+                        <p class="encadre">Il n'est pas utile de grouper une case à cocher seule (exemple&nbsp;:
+                            "accepter les CGV").</p>
+                        <p class="encadre center"><a
+                                href="https://demos-a11y.netlify.app/demo-code-form-fieldset.html#radio-checkbox"
+                                target="blank" rel="noreferrer noopener">DEMO: regroupement de champs - case à cocher et
+                            boutons radio</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Formulaires</h1>
+                </header>
+                <div class="slide-double --title">
+                    <div class="slide-double--title">
+                        <h2>Regroupement de champs - technique HTML et ARIA</h2>
+                    </div>
+                    <div class="slide-double--left">
+                        <h3>Avec HTML</h3>
+                        <pre><code class="--big">&lt;form action=&quot;#&quot;&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;L&#39;accessibilit&eacute;, c&#39;est :&lt;/legend&gt;
+        &lt;div class=&quot;field-wrapper&quot;&gt;
+            &lt;input type=&quot;radio&quot; name=&quot;a11y&quot; value=&quot;1&quot;&gt;&lt;label&gt;Une d&eacute;marche globale&lt;/label&gt;
+            &lt;input type=&quot;radio&quot; name=&quot;a11y&quot; value=&quot;2&quot;&gt;&lt;label&gt;Une fonctionnalit&eacute;&lt;/label&gt;
+            &lt;input type=&quot;radio&quot; name=&quot;a11y&quot; value=&quot;3&quot;&gt;&lt;label&gt;Une langage de programmation&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+                    </div>
+                    <div class="slide-double--right">
+                        <h3>Avec ARIA</h3>
+                        <pre><code class="--big">&lt;form action=&quot;#&quot;&gt;
+    &lt;div role=&quot;group&quot; aria-labelledby=&quot;legend&quot;&gt;
+        &lt;h2 id=&quot;legend&quot;&gt;L&#39;accessibilit&eacute;, c&#39;est :&lt;/h2&gt;
+        &lt;div class=&quot;field-wrapper&quot;&gt;
+            &lt;input type=&quot;radio&quot; name=&quot;a11y&quot; value=&quot;1&quot;&gt;&lt;label&gt;Une d&eacute;marche globale&lt;/label&gt;
+            &lt;input type=&quot;radio&quot; name=&quot;a11y&quot; value=&quot;2&quot;&gt;&lt;label&gt;Une fonctionnalit&eacute;&lt;/label&gt;
+            &lt;input type=&quot;radio&quot; name=&quot;a11y&quot; value=&quot;3&quot;&gt;&lt;label&gt;Une langage de programmation&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+                        <p class="encadre center"><a
+                                href="https://demos-a11y.netlify.app/demo-code-form-fieldset.html#group-aria"
+                                target="blank" rel="noreferrer noopener">DEMO: regroupement de champs avec ARIA - case à
+                            cocher et boutons radio</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Formulaires</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Liste déroulante ou liste de choix</h2>
+                        <p class="encadre">Critère 11.8. Dans chaque formulaire, les items de même nature d'une liste de
+                            choix sont-ils regroupés de manière pertinente&nbsp;?</p>
+                        <ul>
+                            <li>Lorsqu'<strong>une liste comporte beaucoup d'options</strong>, <strong>les options
+                                doivent être rangées
+                                dans un ordre logique</strong>.
+                            </li>
+                            <li>Pour créer <strong>une hiérarchie</strong>, <strong>les options doivent être
+                                regroupées</strong>.
+                            </li>
+                        </ul>
+                        <p><strong>L'élément <code>&lt;select&gt;</code> propose la balise <code>&lt;optgroup&gt;</code>
+                            pour grouper des options. L'attribut
+                            <code>label</code> sur la balise <code>&lt;optgroup&gt;</code> permet d'apporter une
+                            étiquette au groupe.</strong></p>
+                        <p><strong>L'élément <code>&lt;select&gt;</code> peut être remplacé par une balise ayant
+                            l'attribut <code>role="listbox"</code> et les options avec l'attribut
+                            <code>role="option"</code>.</strong><br>Cependant, le regroupement n'est plus possible.</p>
+                        <p class="encadre center"><a
+                                href="https://demos-a11y.netlify.app/demo-code-form-fieldset.html#optgroup"
+                                target="blank" rel="noreferrer noopener">DEMO: regroupement dans une liste de choix</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Formulaires</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Bouton pertinent</h2>
+                        <p class="encadre">Critère 11.9. Dans chaque formulaire, l'intitulé de chaque bouton est-il
+                            pertinent (hors cas particuliers)&nbsp;?</p>
+                        <p><strong>Les technologies d'assistance</strong> comme les lecteurs d'écran <strong>permettent
+                            de naviguer par
+                            boutons</strong>. <br>Tout comme les liens et les boutons de scripts, <strong>les boutons de
+                            formulaire
+                            nécessitent des intitulés pertinents</strong> qui permettent d'en comprendre l'action.</p>
+                        <p class="encadre">Banissez les boutons "OK", "Envoyer", "Valider". <br>Utiliser plutôt
+                            "Rechercher", "S'abonner", 'Envoyer mon message", "Créer mon compte", "Confirmer mon
+                            inscription"...</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Formulaires</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Bouton pertinent</h2>
+                        <p>Sur une même page ou ensemble de pages, <strong>les formulaires réalisant le même type
+                            d'action
+                            mais avec un objectif différent doivent avoir des intitulés de boutons différents</strong>.
+                            <br>Exemple&nbsp;:</p>
+                        <ul>
+                            <li><strong>Formulaire de recherche sur tout le site</strong>&nbsp;: "Rechercher sur tout le
+                                site".
+                            </li>
+                            <li><strong>Formulaire de recherche d'actualités</strong>&nbsp;: "Rechercher des
+                                actualités".
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Formulaires</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Bouton pertinent</h2>
+                        <p><strong>Les utilisateurs de contrôles vocaux énonçant le nom visible du bouton</strong> pour
+                            interagir avec ceux-ci, il est préférable que
+                            <strong>les intitulés soient visibles</strong>.</p>
+                        <p class="encadre">Un bouton doit donc toujours avoir un intitulé, ne doit jamais être vide et
+                            doit indiquer de façon pertinente l'action du bouton.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Formulaires</h1>
+                </header>
+                <div class="slide-double --title">
+                    <div class="slide-double--title">
+                        <h2>Bouton pertinent&nbsp;: réaliser un intitulé de bouton</h2>
+                    </div>
+                    <div class="slide-double--left">
+                        <h3>3 types de bouton de formulaire&nbsp;:</h3>
+                        <ul>
+                            <li>Balise <code>&lt;input&gt;</code> avec l'attribut <code>type=&quot;submit&quot;</code>,
+                                <code>type=&quot;reset&quot;</code>, <code>type=&quot;button&quot;</code></li>
+                            <li>Balise <code>&lt;input&gt;</code> avec l'attribut <code>type=&quot;image&quot;</code>
+                            </li>
+                            <li>Balise <code>&lt;button&gt;</code> avec l'attribut <code>type=&quot;submit&quot;</code>,
+                                <code>type=&quot;reset&quot;</code>, <code>type=&quot;button&quot;</code></li>
+                        </ul>
+                    </div>
+                    <div class="slide-double--right">
+                        <h3>L'intitulé du bouton peut être&nbsp;:</h3>
+                        <ul>
+                            <li>Le contenu de l'attribut <code>value</code> de la balise <code>&lt;input&gt;</code> de
+                                type <code>submit</code>, <code>reset</code>, <code>button</code>.
+                            </li>
+                            <li>Le contenu de l'alternative, l'attribut <code>alt</code> de la balise <code>&lt;input&gt;</code>
+                                de type
+                                <code>image</code>.
+                            </li>
+                            <li>Le contenu de la balise <code>&lt;button&gt;</code>.</li>
+                            <li>Le contenu du passage de texte associé au bouton via l'attribut
+                                <code>aria-labelledby</code>.
+                            </li>
+                            <li>Le contenu de l'attribut <code>aria-label</code>.</li>
+                            <li>Le contenu de l'attribut <code>title</code>.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Formulaires</h1>
+                </header>
+                <div class="slide-double --title">
+                    <div class="slide-double--title">
+                        <h2>Bouton pertinent&nbsp;: réaliser un intitulé de bouton</h2>
+                    </div>
+                    <div class="slide-double--left">
+                        <h3>Le nom accessible est obtenu selon l'ordre suivant&nbsp;:</h3>
+                        <ul>
+                            <li>Passage de texte associé au lien avec l'attribut <code>aria-labelledby</code>.</li>
+                            <li>Sinon, contenu de l'attribut <code>aria-label</code>.</li>
+                            <li>Sinon, l'attribut <code>alt</code> de la balise <code>&lt;input&gt;</code> de type
+                                <code>image</code>.
+                            </li>
+                            <li>Sinon, l'attribut <code>value</code> de la balise <code>&lt;input&gt;</code> de type
+                                <code>submit</code>, <code>reset</code>, <code>button</code>..
+                            </li>
+                            <li>Sinon, contenu de la balise <code>&lt;button&gt;</code>.</li>
+                            <li>Sinon, contenu de l'attribut <code>title</code>.</li>
+                        </ul>
+                    </div>
+                    <div class="slide-double--right">
+                        <p class="encadre">Le nom accessible doit impérativement reprendre l'intitulé visible du
+                            bouton.</p>
+                        <p>Exemple non conforme&nbsp;:</p>
+                        <pre><code class="--big">&lt;button aria-label=&quot;confirmer la saisie&quot;&gt;Valider la saisie&lt;/button&gt;</code></pre>
+                        <p>Exemple conforme&nbsp;:</p>
+                        <pre><code class="--big">&lt;button aria-label=&quot;M&#39;inscrire &agrave; la lettre d&#39;information&quot;&gt;M&#39;inscrire&lt;/button&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Formulaires</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Contrôle de saisie</h2>
+                        <p class="encadre">Critère 11.10. Dans chaque formulaire, le contrôle de saisie est-il utilisé
+                            de manière pertinente (hors cas particuliers)&nbsp;?<br><br>Critère 11.11. Dans chaque
+                            formulaire, le contrôle de saisie est-il accompagné, si nécessaire, de suggestions
+                            facilitant la correction des erreurs de saisie&nbsp;?</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Formulaires</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Contrôle de saisie&nbsp;: caractère obligatoire d'un champ</h2>
+                        <ul>
+                            <li>La mention de saisie obligatoire doit être <strong>indiquée de façon explicite et
+                                compréhensible</strong>.
+                            </li>
+                            <li>Cette information doit être <strong>positionnée avant le champ concerné</strong>, et
+                                <strong>idéalement
+                                    directement dans l'étiquette</strong> de celui-ci.
+                            </li>
+                            <li>Lorsque les champs obligatoires sont <strong>indiqués par l'utilisation d'un élément
+                                graphique</strong> comme une étoile "*", <strong>ajouter une mention avant le formulaire
+                                qui permet
+                                d'en comprendre le sens</strong>.
+                            </li>
+                        </ul>
+                        <h3>Plusieurs manières d'indiquer le caractère obligatoire d'un champ&nbsp;:</h3>
+                        <ul>
+                            <li><strong>Un texte avant le champ</strong> "Les champs nom, prénom et courriel sont
+                                obligatoires", <strong>positionné
+                                    au tout début formulaire</strong>.
+                            </li>
+                            <li><strong>Dans la balise <code>&lt;label&gt;</code> de chaque champ</strong> concerné "Nom
+                                (obligatoire)".
+                            </li>
+                            <li><strong>L'ajout d'un attribut <code>required</code> ou
+                                <code>aria-required</code></strong> sur le champ concerné,
+                                <strong>accompagné d'une indication visuelle</strong>.
+                            </li>
+                        </ul>
+                        <p class="encadre --light"><strong>Remarque concernant l'indication visuelle accompagnant
+                            l'attribut
+                            <code>required</code> ou <code>aria-required</code></strong>&nbsp;: <br>Afin d'éviter une
+                            redondance d'information, il est préférable de masquer cette information visible aux
+                            technologies d'assistance.</p>
+                        <pre><code class="--big">&lt;label for=&quot;name&quot;&gt;Nom&lt;span aria-hidden=&quot;true&quot;&gt; (obligatoire)&lt;/span&gt;&lt;/label&gt;
+&lt;input type=&quot;text&quot; name=&quot;name&quot; required&gt;</code></pre>
+                        <p class="encadre center"><a
+                                href="https://demos-a11y.netlify.app/demo-code-form-required.html"
+                                target="blank" rel="noreferrer noopener">DEMO: champs obligatoires</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Formulaires</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Contrôle de saisie&nbsp;: aide de saisie</h2>
+                        <p>L'aide à la saisie sur un champ <strong>permet d'apporter à l'utilisateur une information sur
+                            la façon de renseigner le champ</strong>. Elle est <strong>nécessaire uniquement quand le
+                            champ demande une saisie dans un format spécifique</strong>.</p>
+                        <p>Quelques exemples&nbsp;:</p>
+                        <ul>
+                            <li>"Courriel (prenomnom@domain.com)"</li>
+                            <li>"Code postal (00000)"</li>
+                            <li>"Date (jj/mm/aaaa)" si le champ n'est pas de type <code>date</code></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Formulaires</h1>
+                </header>
+                <div class="slide-double">
+                    <div class="slide-double--left">
+                        <h2>Contrôle de saisie&nbsp;: aide de saisie</h2>
+                        <p><strong>Lorsqu'un champ comporte un masque de saisie, l'aide de saisie ne doit pas être
+                            présente.</strong></p>
+                        <p>Le masque de saisie est géré par le navigateur et peut être différent selon les paramètres de
+                            l'utilisateur (langue, emplacement géographique).</p>
+                        <p>C'est notamment le cas pour les types de champs suivants&nbsp;:</p>
+                        <ul>
+                            <li>Type date</li>
+                            <li>Type datetime</li>
+                            <li>Type time</li>
+                        </ul>
+                    </div>
+                    <div class="slide-double--right">
+                        <p>L'aide de saisie peut être implémentée de plusieurs façons&nbsp;:</p>
+                        <ul>
+                            <li>Dans la balise <code>&lt;label&gt;</code>.</li>
+                            <li>Dans un passage de texte visible associé au champ avec l'attribut
+                                <code>aria-describedby</code>.
+                            </li>
+                        </ul>
+                        <p class="encadre --light">À noter&nbsp;: L'utilisation de l'attribut
+                            <code>aria-describedby</code> doit être rempli avec l'<code>id</code> d'un passage de texte,
+                            l'instar de l'attribut <code>aria-labelledby</code>. <br>Il permet d'ajouter une description
+                            à l'étiquette du champ, à l'inverse de l'attribut
+                            <code>aria-labelledby</code> qui remplace l'étiquette du champ.</p>
+                        <p class="encadre">L'attribut <code>placeholder</code> ne permet pas de remplir la fonction
+                            d'aide de saisie.</p>
+                        <p class="encadre center"><a
+                                href="https://demos-a11y.netlify.app/demo-code-form-help.html"
+                                target="blank" rel="noreferrer noopener">DEMO: aide de saisie</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Formulaires</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Contrôle de saisie&nbsp;: erreur de saisie</h2>
+                        <p><strong>L'absence de saisie ou la saisie incorrecte</strong> d'un champ doit être signalée à
+                            l'utilisateur par une
+                            <strong>information visible</strong> et doit permettre d'<strong>identifier nommément le
+                                champ</strong>. <br><strong>Cela
+                                concerne tous les champs en erreur, même ceux qui ne sont pas obligatoire</strong>.</p>
+                        <p><strong>Le message d'erreur doit proposer un exemple de saisie réelle.</strong> Par exemple,
+                            pour un courriel, le message d'erreur pourrait être "veuillez renseigner un courriel valide,
+                            exemple : jean.dupond@gmail.com".</p>
+                        <p>De la même façon que pour l'aide de saisie, le message d'erreur doit être indiqué
+                            par&nbsp;:</p>
+                        <ul>
+                            <li>Dans la balise <code>&lt;label&gt;</code>.</li>
+                            <li>Dans un passage de texte visible associé au champ avec l'attribut
+                                <code>aria-describedby</code>.
+                            </li>
+                            <li>Avec l'attribut <code>aria-invalid="true"</code>, accompagné d'un message d'erreur
+                                visible dans l'étiquette du champ.
+                            </li>
+                        </ul>
+                        <p class="encadre">Par défaut, les navigateurs fournissent une gestion très efficace des
+                            erreurs, mais ils ne comportent pas toujours d'exemple selon le navigateur. Utiliser l'<a
+                                    href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#the-constraint-validation-api"
+                                    target="_blank" rel="noopener noreferrer" lang="en">API Constraint Validator</a>
+                            pour les personnaliser, les rendre conformes et identiques pour tous les navigateurs.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Formulaires</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Données sensibles et modifications</h2>
+                        <p class="encadre">Critère 11.12. Pour chaque formulaire qui modifie ou supprime des données, ou
+                            qui transmet des réponses à un test ou à un examen, ou dont la validation a des
+                            conséquences financières ou juridiques, les données saisies peuvent-elles être modifiées,
+                            mises à jour ou récupérées par l'utilisateur&nbsp;?</p>
+                        <p>Le but de ce critère est d'<strong>éviter que des informations sensibles erronées puissent
+                            être
+                            envoyées sans que l'utilisateur n'ait pu les vérifier avant envoi</strong>. Certains
+                            utilisateurs déficients cognitifs présentent un trouble de la mémoire à court terme, ou
+                            handicapés moteurs pourraient saisir et envoyées des données erronées.</p>
+                        <ul>
+                            <li>Lors de la soumission d'un formulaire, l'utilisateur doit pouvoir vérifier et modifier
+                                ses données avant l'envoi final.
+                            </li>
+                            <li>Si le formulaire est composé de plusieurs étapes, il doit pouvoir revenir à toutes les
+                                étapes du processus.
+                            </li>
+                            <li>Lorsqu'il n'est pas possible de modifier les données envoyées après la soumission du
+                                formulaire (achat d'actions, virement bancaire...), une confirmation doit être demandée
+                                avant l'envoi sous forme de case à cocher ou d'une étape supplémentaire.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slide">
+                <header class="main-header clearfix">
+                    <h1 class="main-title">Formulaires</h1>
+                </header>
+                <div class="slide-simple">
+                    <div class="slide-simple--wrapper">
+                        <h2>Remplissage automatique des données personnelles</h2>
+                        <p class="encadre">Critère 11.13. La finalité d'un champ de saisie peut-elle être déduite pour
+                            faciliter le remplissage automatique des champs avec les données de l'utilisateur&nbsp;?</p>
+                        <p class="encadre">Note&nbsp;: Il est question ici des suggestions fournies par les navigateurs,
+                            pas de plugins externes ni de scripts personnalisés.</p>
+                        <p>Le but est de permettre aux personnes présentant des troubles cognitifs ou un handicap moteur
+                            de renseigner plus facilement les champs de saisie demandant des informations
+                            personnelles.</p>
+                        <p><strong>L'attribut <code>autocomplete</code> permet d'indiquer au navigateur la donnée personnelle
+                            à remplir</strong>. Si l'utilisateur autorise le navigateur à effectuer un remplissage automatique et enregistre des informations personnelles dans les paramètres, le navigateur suggérera des valeurs pour remplir les champs.</p>
+                        <p class="encadre center"><a
+                                href="https://www.w3.org/TR/WCAG21/#input-purposes"
+                                target="_blank" rel="noopener noreferrer">Liste des valeurs possible</a></p>
                     </div>
                 </div>
             </section>
