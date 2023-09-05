@@ -192,14 +192,9 @@ alt="stratis.fr"/></a>
                     <div class="slide-simple--wrapper">
                         <h2>Ressources en ligne</h2>
                         <ul>
-                            <li>Télécharger NVDA&nbsp;:
-                                <ul>
-                                    <li><a href="https://www.nvaccess.org/download/" target="_blank"
-                                           rel="noopener noreferrer">Site officiel (anglais)</a></li>
-                                    <li><a href="https://www.nvda-fr.org/article.php?id=21" target="_blank"
-                                           rel="noopener noreferrer">Site français</a></li>
-                                </ul>
-                            <li>Guide rapide d'utilisation de NVDA sur le site de Tanaguru&nbsp;:
+                            <li><a href="https://www.nvda-fr.org/article.php?id=21" target="_blank"
+                                rel="noopener noreferrer">Télécharger NVDA</a></li>
+                            <li>Guide rapide d'utilisation et de configuration de NVDA sur le site de Tanaguru&nbsp;:
                                 <ul>
                                     <li>
                                         <a href="https://www.tanaguru.com/guide-et-raccourcis-nvda-pour-les-tests-daccessibilite/"
@@ -211,9 +206,9 @@ alt="stratis.fr"/></a>
                                            rel="noopener noreferrer">Version PDF</a></li>
                                 </ul>
                             </li>
-                            <li><a href="https://webaim.org/articles/nvda/" target="_blank"
-                                   rel="noopener noreferrer">Guide rapide d'utilisation sur le site de WebAIM
-                                (anglais)</a></li>
+                        </ul>
+                        <h3>Autres ressources utiles</h3>
+                        <ul>
                             <li><a href="https://dequeuniversity.com/assets/pdf/screenreaders/nvda.pdf" target="_blank"
                                    rel="noopener noreferrer">Guide rapide d'utilisation (fichier PDF, anglais)</a></li>
                             <li><a href="https://www.nvda-fr.org/doc/userGuide.html" target="_blank"
@@ -375,35 +370,37 @@ alt="stratis.fr"/></a>
                         <h2>Quand utiliser ARIA&nbsp;?</h2>
                         <ol>
                             <li>Pour <strong>reproduire la sémantique des éléments HTML</strong>
-                                (<code>&lt;nav&gt; => role="navigation"</code>, <code>&lt;h1&gt; => role="heading"
-                                    aria-level="1"</code>) lorsqu'il n'est
+                                lorsqu'il n'est
                                 pas possible de le faire en HTML (conserver la rétrocompatibilité, satisfaire les SEO,
                                 accès limité au code...)&nbsp;;
+                                <ul>
+                                    <li>Exemple : <code>&lt;h1&gt; => role="heading" aria-level="1"</code> dans le module des cookies du Starter</li>
+                                </ul>
                             </li>
                             <li>Pour <strong>ajouter de la sémantique qui n'existe pas en HTML</strong>
                                 (<code>search</code>, <code>tablist</code>...)&nbsp;;
                                   <ul>
-                                    <li>Exemple : <a href="https://integration.stratis.fr/frontend.v4-integration-main-pre-release/" target="_blank">search du Starter</a></li>
-                                    <li>Exemple : <a href=""https://integration.stratis.fr/frontend.v4-integration-main-pre-release/page-content.html"" target="_blank">Tablist (onglest) du Starter</a></li>
+                                    <li>Exemple : <a href="https://integration.stratis.fr/frontend.v4-integration-main-pre-release/" target="_blank">Zone de recherche du Starter</a></li>
+                                    <li>Exemple : <a href="https://integration.stratis.fr/frontend.v4-integration-main-pre-release/page-content.html" target="_blank">Tablist (onglets) du Starter</a></li>
                                 </ul>
                             </li>
                             <li>Pour <strong>signaler la mise à jour dynamique d'un contenu</strong>
                                 (<code>aria-live</code>, <code>role="log|status|alert"</code>)&nbsp;;
                                  <ul>
-                                    <li>Exemple : <a href="https://integration.stratis.fr/frontend.v4-integration-main-pre-release/" target="_blank">quicklinks du Starter</a></li>
+                                    <li>Exemple : <a href="https://integration.stratis.fr/frontend.v4-integration-main-pre-release/list-news.html" target="_blank">Pagination infinie des actualités du Starter</a></li>
                                 </ul>
                             </li>
                             <li>Pour <strong>nommer des composants</strong> (carrousel, fenêtre modale)&nbsp;;
                                 <ul>
-                                    <li>Exemple : <a href="https://integration.stratis.fr/frontend.v4-integration-main-pre-release/" target="_blank">Publication du Starter</a></li>
-                                    <li>Exemple : <a href="https://integration.stratis.fr/frontend.v4-integration-main-pre-release/" target="_blank">La recherche (fenêtre modale)</a></li>
+                                    <li>Exemple : <a href="https://integration.stratis.fr/frontend.v4-integration-main-pre-release/" target="_blank">Widget des Publications du Starter</a></li>
+                                    <li>Exemple : <a href="https://integration.stratis.fr/frontend.v4-integration-main-pre-release/" target="_blank">Formulaire de recherche du Starter</a></li>
                                 </ul>
                             </li>
                             <li>Pour <strong>renommer
                                 des éléments interactifs</strong> (lien, bouton, champs)&nbsp;;
                                 <ul>
-                                    <li>Exemple : <a href="https://integration.stratis.fr/frontend.v4-integration-main-pre-release/#tarteaucitronCloseAlert" target="_blank">Bouton Personnaliser du module des cookies</a></li>
-                                    <li>Exemple : <a href="https://integration.stratis.fr/frontend.v4-integration-main-pre-release/single-news.html" target="_blank">Pagination des actualités</a></li>
+                                    <li>Exemple : <a href="https://integration.stratis.fr/frontend.v4-integration-main-pre-release/#tarteaucitronCloseAlert" target="_blank">Bouton "Personnaliser" du module des cookies du Starter</a></li>
+                                    <li>Exemple : <a href="https://integration.stratis.fr/frontend.v4-integration-main-pre-release/single-news.html" target="_blank">Pagination d'une actualité du Starter</a></li>
                                 </ul>
                             </li>
                             <li>Pour <strong>assurer la compatibilité avec les technologies d'assistance anciennes qui
